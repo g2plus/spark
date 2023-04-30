@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*模拟相对于页面的坐标的验证条件*/
+        
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.addEventListener("click", function(e) {
+            //可视区的x坐标
+            console.log(e.clientX);
+            console.log(e.clientY);
+            console.log("------------------");
+            //相对于页面的x坐标
+            console.log(e.pageX);
+            console.log(e.pageY);
+
+        })
+    </script>
+</body>
+
+</html>

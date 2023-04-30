@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li {
+            list-style-type: none;
+            border: none;
+        }
+        
+        #box li {
+            float: left;
+            width: 200px;
+            height: 100px;
+            vertical-align: baseline;
+            border: none;
+            width: 150px;
+        }
+        
+        #box::after {
+            content: "";
+            display: block;
+            visibility: hidden;
+            height: 0;
+            clear: both;
+        }
+        
+        #box {
+            *zoom: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #box li img {
+            width: 150px;
+        }
+    </style>
+    <script>
+        //TODO 图片资源的获取采用简单爬虫技术实现
+        window.onload = function() {
+            var imgs = document.getElementById("box").querySelectorAll("img");
+            for (var j = 0; j < imgs.length; j++) {
+                switch (j) {
+                    case 0:
+                        imgs[j].style.backgroundColor = "red";
+                        break;
+                    case 1:
+                        imgs[j].style.backgroundColor = "orangered";
+                        break;
+                    case 2:
+                        imgs[j].style.backgroundColor = "blue";
+                        break;
+                    case 3:
+                        imgs[j].style.backgroundColor = "pink";
+                        break;
+                }
+            }
+            for (var i = 0; i < imgs.length; i++) {
+                imgs[i].onclick = function() {
+                    document.body.style.backgroundColor = this.style.backgroundColor;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="box">
+        <li><img src="img/2079367.jpg" alt=""></li>
+        <li><img src="img/2084683.jpg" alt=""></li>
+        <li><img src="img/2087175.jpg" alt=""></li>
+        <li><img src="img/2093291.jpg" alt=""></li>
+    </ul>
+</body>
+
+</html>

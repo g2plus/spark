@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34_使用css来进行修饰table.html</title>
+    <style>
+        table {
+            width: 500px;
+            margin: auto;
+        }
+        
+        th {
+            height: 30px;
+        }
+        
+        table,
+        th,
+        td {
+            border: 1px solid pink;
+            /*合并相邻的边框*/
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>何佳铭</td>
+                <td>500000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>泰妍</td>
+                <td>500000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>王雨婷</td>
+                <td>500000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>泰勒</td>
+                <td>50000000</td>
+            </tr>
+        </tbody>
+        <tr>
+            <td>5</td>
+            <td>何佳铭</td>
+            <td>500000</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>泰妍</td>
+            <td>500000</td>
+        </tr>
+
+    </table>
+</body>
+
+</html>

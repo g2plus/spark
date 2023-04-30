@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>跟随鼠标移动的天使</title>
+    <style>
+        /*验证为什么使用pageX，pageY*/
+        
+        body {
+            height: 3000px;
+        }
+        
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="image/favicon.ico" alt="">
+
+    <script>
+        var pic = document.querySelector('img');
+        document.addEventListener('mousemove', function(e) {
+            // 1. mousemove只要我们鼠标移动1px 就会触发这个事件
+            // console.log(1);
+            // 2.核心原理： 每次鼠标移动，我们都会获得最新的鼠标坐标， 把这个x和y坐标做为图片的top和left 值就可以移动图片
+            var x = e.pageX;
+            var y = e.pageY; //页面下拉，图标下移动
+            console.log('x坐标是：' + x + ' y坐标是：' + y);
+            // 3.千万不要忘记给left 和top 添加px 单位
+            //50为图片宽度的一半
+            pic.style.left = x - 16 + 'px';
+            //40为图片高度的一半
+            pic.style.top = y - 16 + 'px';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var flag = false;
+            var obj = {
+                foo: '南京师范大学!',
+                times: 0
+            };
+            //freeze作用禁用修改，提高性能
+            //https://blog.csdn.net/weixin_67490903/article/details/126572820
+            // Object.freeze(obj)
+            new Vue({
+                el: '#app',
+                data() {
+                    return obj;
+                },
+                methods: {
+                    freezeObj() {
+                        Object.freeze(obj);
+                        //设置是否冻结了，冻结了无法修改
+                        flag = true;
+                    },
+                    changeContent() {
+                        obj.times++;
+                        console.log(obj.times);
+                        if (!flag) {
+                            if (obj.times % 2 == 0) {
+                                this.foo = "南京师范大学!";
+                            } else {
+                                this.foo = "去你妈的vue";
+                            }
+                        }
+                    },
+                    unfreezeObj() {
+                        flag = false;
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <p>{{foo}}</p>
+    <!-- this will no longer update `foo`! -->
+    <!-- <button v-on:click="foo = 'baz'">Change it</button> -->
+    <!--点击时将foo赋值为baz--->
+    <!-- <button @click="foo = '去你妈的vue'">this will no longer update `foo`</button> -->
+    <button @click="changeContent">{{foo}}</button>
+    <button @click="freezeObj">冻结</button>
+    <button @click="unfreezeObj">解冻</button>
+</div>
+</body>
+
+</html>

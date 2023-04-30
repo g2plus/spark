@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        //模拟从数据库中取出的数据
+        var list = ["audio/1.mp3", "audio/2.aac", "audio/3.mp3"];
+        // window.addEventListener("load", function() {
+        //     var i = 0;
+        //     var body = document.body;
+        //     var prev = body.children[0];
+        //     var play = body.children[1];
+        //     var pause = body.children[2];
+        //     var next = body.children[3];
+        //     var audio = document.getElementById("music");
+
+
+        //     prev.onclick = function() {
+        //         i--;
+        //         if (i < 0) {
+        //             i = list.length - 1;
+        //             audio.pause();
+        //             audio.src = list[i];
+        //             audio.play();
+        //         } else {
+        //             audio.pause();
+        //             audio.src = list[i];
+        //             audio.play();
+        //         }
+        //     }
+
+        //     play.onclick = function() {
+        //         audio.play();
+        //     }
+
+        //     pause.onclick = function() {
+        //         audio.pause();
+        //     }
+
+        //     next.onclick = function() {
+        //         i++;
+        //         if (i > list.length - 1) {
+        //             i = 0;
+        //             audio.pause();
+        //             audio.src = list[i];
+        //             audio.play();
+        //         } else {
+        //             audio.pause();
+        //             audio.src = list[i];
+        //             audio.play();
+        //         }
+        //     }
+        // });
+        $(function () {
+
+            var data = {
+                message: "It's you!"
+            }
+            var vm = new Vue({
+                el: '#app',
+                data() {
+                    return data
+                },
+                methods: {
+                    //change:function(){} change(){}
+                    change: function () {
+                        //data的属性message由自定义对象传入，使用vm.message="" 进行修改属性值。
+                        this.message = "Henry!";
+                    },
+                    pause: function () {
+                        audio.stop();
+                    }
+                }
+            })
+
+            var audio = $("#musicplayer").get(0);
+
+            // alert(vm.$data === data) // => true
+            //     //vm.$el 获取到对象为js原生对象
+            // alert(vm.$el === document.getElementById('app')) // => true
+            //     //jQuery对象转换为js原生对象
+            // alert(vm.$el === $("#app").get(0)) //=>true
+
+            // $watch is an instance method(vue实列监控属性message变化，然后触发的函数)
+            vm.$watch('message', function (newValue, oldValue) {
+                // This callback will be called when `vm.message` changes
+                console.log("starts to play music!!!");
+                audio.play();
+            })
+
+            // var playerbtn = $("#music").get(0)
+            // playerbtn.onclick = function() {
+            //     audio.play();
+            // };
+
+
+        })
+    </script>
+</head>
+
+<body>
+
+<div id="app">
+    {{message}}
+    <br/>
+    <!--标签中绑定函数的方法--->
+    <button @click="change">start playing music</button>
+    <!--v-model 模型数据的通信-->
+    <input v-model="message">
+    <audio controls="controls" id="musicplayer" loop="loop" src="asset/music.mp3" style="display: none;"></audio>
+</div>
+
+
+</body>
+
+</html>

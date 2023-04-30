@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>btn</button>
+    <script>
+        window.addEventListener("load", function() {
+            console.log("0-----------------------");
+            console.log(this);
+            var btn = document.querySelector("button");
+            btn.onclick = function() {
+                console.log("1-----------------------");
+                console.log(this);
+            }
+
+            function Fun() {
+                console.log("2-----------------------");
+                console.log(this);
+            }
+            var fun = new Fun();
+            var obj = {
+                sayHi: function() {
+                    console.log("3-----------------------");
+                    console.log(this);
+                }
+            }
+            obj.sayHi();
+        })
+    </script>
+</body>
+
+</html>

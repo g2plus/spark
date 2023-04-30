@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var data = {
+                rawHtml: "<div style='background-color:red'>What?</div>",
+                number: 1,
+                flag: true,
+                message: "Hello world!"
+            }
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    rawHtml: data.rawHtml,
+                    number: data.number,
+                    flag: data.flag,
+                    message: data.message
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <!--v-html可以将文本以html的形式进行解析-->
+    <!-- 双大括号"Mustache"会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，你需要使用 v-html 指令： -->
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+    <p>{{ number + 1 }}</p>
+    <!--不能是使用js比如if(flag)
+    流控制也不会生效，请使用三元表达式
+    {{ if (ok) { return message } }}-->
+    <p>{{ flag ? 'YES' : 'NO'}}</p>
+    <p>{{ message.split('').reverse().join('') }}</p>
+</div>
+
+</body>
+<script>
+</script>
+
+</html>

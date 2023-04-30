@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrapper {
+            position: fixed;
+            width: 613px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        ul>li {
+            list-style-type: none;
+        }
+        
+        .tab::after {
+            content: "";
+            height: 0;
+            display: block;
+            clear: both;
+            visibility: hidden;
+        }
+        
+        .tab>li {
+            float: left;
+            padding: 5px 10px;
+            background-color: bisque;
+        }
+        
+        .wrapper .tab .active {
+            border-bottom: 2px solid red;
+        }
+        
+        .wrapper .products .main {
+            width: 613px;
+            height: 230px;
+            display: none;
+        }
+        
+        .wrapper .products .selected {
+            display: block;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function() {
+            $(".tab>li").mouseenter(function() {
+                var idx = $(this).index();
+                $(this).addClass("active").siblings("li").removeClass("active");
+                $(".products>.main").eq(idx).addClass("selected").siblings("div").removeClass("selected");
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="tab">
+            <li class="tab-item active">pic1</li>
+            <li class="tab-item">pic2</li>
+            <li class="tab-item">pic3</li>
+            <li class="tab-item">pic4</li>
+        </ul>
+        <div class="products">
+            <div class="main selected" style="background-color:red;">
+                <a href="#"><img src="img/pic6.webp" alt="" width="613" ;></a>
+            </div>
+            <div class="main" style="background-color:orange">
+                <a href="#"><img src="img/pic2.webp" alt="" width="613"></a>
+            </div>
+            <div class="main" style="background-color:orangered">
+                <a href="#"><img src="img/pic6.webp" alt="" width="613"></a>
+            </div>
+            <div class="main" style="background-color:skyblue">
+                <a href="#"><img src="img/pic1.webp" alt="" width="613"></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

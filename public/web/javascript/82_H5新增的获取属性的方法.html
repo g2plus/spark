@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var div1 = document.querySelector('div');
+            var div2 = document.querySelector('body div:nth-child(2)')
+            alert(div2)
+            console.log(div1.getAttribute("data-index"))
+            console.log(div1.dataset.index)
+            console.log(div2.dataset.listSize);
+        }
+    </script>
+</head>
+
+<body>
+    <div data-index="512"></div>
+    <div data-list-size="1024"></div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "http://localhost/ajaxServlet");
+        xhr.send();
+        xhr.onload = function() {
+            var obj = JSON.parse(xhr.responseText);
+            alert(typeof obj);
+            document.write("<h2>"+obj.msg+"</h2>");
+            console.log(xhr.responseText);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

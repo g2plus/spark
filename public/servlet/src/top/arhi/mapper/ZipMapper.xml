@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis的DTD约束-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!--
+        mapper：核心根标签
+        namespace属性：名称空间,
+        Dom4j读取配置文件方式，反射创建对象
+    -->
+<mapper namespace="top.arhi.mapper.ZipMapper">
+    <resultMap id="BaseResultMap" type="top.arhi.domain.Zip">
+        <id column="id" property="id"/>
+        <result column="source_name"  property="sourceName"/>
+        <result column="target_name" property="targetName"/>
+    </resultMap>
+        <!--提高sql语句的复用性-->
+        <sql id="select">SELECT source_name FROM zip</sql>
+        <!--
+            select：查询功能的标签
+            id属性：唯一标识
+            resultType属性：指定结果映射对象类型
+            parameterType属性：指定参数映射对象类型
+        -->
+        <select id="selectByTargetName" resultType="string" parameterType="string">
+            <include refid="select"/> where target_nmae=#{targetName}
+        </select>
+
+        <insert id="add"  parameterType="top.arhi.domain.Zip">
+            insert into zip (id,source_name,target_name) values (NULL,#{sourceName},#{targetName})
+        </insert>
+</mapper>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>119_3D转换之3D导航栏案例rotateX.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        ul {
+            width: 830px;
+            height: 40px;
+            margin: 0 auto;
+            padding-top: 40px;
+            *zoom: 1;
+        }
+        
+        ul::after {
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+        
+        ul li {
+            width: 150px;
+            height: 50px;
+            float: left;
+            margin-right: 20px;
+            /*添加透视，调试使用*/
+            /* perspective: 800px; */
+        }
+        
+        ul li:last-child {
+            margin-right: 0;
+        }
+        
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /*保留3d效果*/
+            transform-style: preserve-3d;
+            /*过渡效果设置*/
+            transition: all 0.4s;
+        }
+        
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+        
+        .box .front,
+        .box .back {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 50px;
+            background-color: red;
+        }
+        
+        .box .front {
+            transform: translateZ(25px);
+            z-index: 1;
+        }
+        
+        .box .back {
+            transform: translateY(25px) rotateX(-90deg);
+        }
+        
+        .box1 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            transition: all 0.3s;
+            margin: 0 auto;
+            z-index: 2;
+            transform-style: preserve-3d;
+        }
+        
+        .box1:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .box1 .front,
+        .box1 .back {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-size: 10px;
+            background-color: red;
+        }
+        
+        .box1 .front {
+            z-index: 2;
+        }
+        
+        .box1 .back {
+            z-index: 1;
+            transform: rotateY(180deg);
+        }
+        
+        .music {
+            width: 330px;
+            height: 86px;
+            margin: 0 auto;
+        }
+        
+        .top {
+            width: 100%;
+            height: 300px;
+            background-color: white;
+            border-radius: 10px 10px 0 0;
+            border: none;
+        }
+        
+        .bottom {
+            width: 100%;
+            height: 200px;
+            background-color: white;
+            border-radius: 0 0 10px 10px;
+            border: none;
+        }
+        
+        .container {
+            position: absolute;
+            width: 900px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .container::after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 89px;
+            transform: translateX(-50%);
+            border-style: solid solid solid solid;
+            border-color: red transparent transparent transparent;
+            border-width: 285px 415px 0 415px;
+        }
+        
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='top'>
+            <ul>
+                <li>
+                    <div class='box'>
+                        <div class='front'>エンベロップ</div>
+                        <div class='back'>我</div>
+                    </div>
+                </li>
+                <li>
+                    <div class='box'>
+                        <div class='front'>エンベロップ</div>
+                        <div class='back'>只</div>
+                    </div>
+                </li>
+                <li>
+                    <div class='box'>
+                        <div class='front'>エンベロップ</div>
+                        <div class='back'>喜</div>
+                    </div>
+                </li>
+                <li>
+                    <div class='box'>
+                        <div class='front'>エンベロップ</div>
+                        <div class='back'>欢</div>
+                    </div>
+                </li>
+                <li>
+                    <div class='box'>
+                        <div class='front'>エンベロップ</div>
+                        <div class='back'>你</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class='bottom'>
+            <div class='box1'>
+                <div class='front'>エンベロップ</div>
+                <div class='back'>FUNPLUS</div>
+            </div>
+            <div class='music'>
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=534539057&auto=1&height=66"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

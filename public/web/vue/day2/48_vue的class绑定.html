@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .active {
+            background-color: red;
+        }
+
+        .textdanger {
+            text-align: center;
+            color: pink;
+            font-size: 50px;
+        }
+
+        .pink {
+            background-color: pink;
+            text-align: center;
+            font-size: 26px;
+            color: antiquewhite;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px 50px 20px;
+            padding: 10px 10px;
+            border-radius: 18px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <div :class="selectedClassName">
+        你好!
+    </div>
+    <select v-model="selectedClassName">
+        <option :value="option.value" v-for="option in options">
+            {{option.text}}
+        </option>
+    </select>
+    <span>Selected: {{ selectedClassName }}</span>
+    <div v-bind:class="className">
+        Hello!
+    </div>
+    <button @click="changeClassName">点击切换样式:{{className}}</button>
+    <div v-bind:class="activeObj">
+        Hola!
+    </div>
+    <div v-bind:class="textDangerObj">
+        你还好吗?
+    </div>
+</div>
+</body>
+<script>
+    var time = 0;
+    var app = new Vue({
+        el: "#app",
+        data: {
+            isActive: false,
+            isTextDanger: true,
+            selectedClassName: 'active',
+            //options list
+            options: [{
+                text: '背景红色',
+                value: 'active'
+            }, {
+                text: '文本居中',
+                value: 'textdanger'
+            }],
+            className: 'active'
+
+        },
+        methods: {
+            changeClassName: function () {
+                time++;
+                if (time % 2) {
+                    this.className = "textdanger";
+                } else {
+                    this.className = "active";
+                }
+            }
+        },
+        computed: {
+            activeObj: function () {
+                return {
+                    pink: this.isActive,
+                }
+            },
+            textDangerObj: function () {
+                return {
+                    textdanger: this.isTextDanger,
+                }
+            }
+        }
+    })
+</script>
+
+</html>

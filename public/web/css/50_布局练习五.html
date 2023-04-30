@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50_布局练习五.html</title>
+    <style>
+        .top {
+            height: 200px;
+            margin-top: 20px;
+            background-color: red;
+        }
+        
+        .banner {
+            height: 200px;
+            margin-top: 20px;
+            background-color: red;
+        }
+        
+        .box {
+            margin-top: 20px;
+            /* height: 400px; */
+        }
+        
+        .box .left {
+            width: 30%;
+            float: left;
+            height: 400px;
+            background-color: red;
+        }
+        
+        .box .right {
+            width: 70%;
+            float: left;
+            height: 400px;
+            background-color: red;
+        }
+        
+        .foot {
+            /* margin-top: 20px;
+            border: 1px solid transparent; */
+            /*清除浮动，盒子设置margin-top失效，再次设置border，margin-top仍然失效,解决方案:给浮动元素添加父元素，并设置高度。*/
+            clear: both;
+            height: 180px;
+            /*content区域与border之间的距离*/
+            padding-top: 20px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='top'>top</div>
+    <div class='banner'>banner</div>
+    <div class='box'>
+        <div class='left'>left</div>
+        <div class='right'>right</div>
+    </div>
+    <div class='foot'>footer</div>
+</body>
+
+</html>

@@ -1,0 +1,1069 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?72qqcp');
+    src: url('../fonts/icomoon.eot?72qqcp#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?72qqcp') format('truetype'), url('fonts/icomoon.woff?72qqcp') format('woff'), url('../fonts/icomoon.svg?72qqcp#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.header {
+    background-color: #f1f1f1;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.shortcut::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.shortcut {
+    *zoom: 1;
+}
+
+.shortcut .left {
+    float: left;
+    width: 220px;
+}
+
+.shortcut .right {
+    float: right;
+    width: 773px;
+}
+
+.shortcut .left ul li {
+    float: left;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    padding-right: 10px;
+}
+
+.shortcut .left ul li:nth-of-type(3) {
+    color: red;
+    padding-right: 0;
+}
+
+.shortcut .right ul li {
+    float: left;
+    padding: 0 25px;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: -1px;
+    position: relative;
+}
+
+.shortcut .right ul li:nth-of-type(7) {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.shortcut .right ul li:nth-of-type(2)::after {
+    position: absolute;
+    font-family: 'icomoon';
+    content: '\ea43';
+    display: block;
+    background-color: transparent;
+    height: 32px;
+    right: 8px;
+    top: 50%;
+    margin-top: -16px;
+}
+
+.shortcut .right ul li:nth-of-type(5)::after {
+    position: absolute;
+    font-family: 'icomoon';
+    content: '\ea43';
+    display: block;
+    background-color: transparent;
+    height: 32px;
+    right: 8px;
+    top: 50%;
+    margin-top: -16px;
+}
+
+.shortcut .right ul li:nth-of-type(6)::after {
+    position: absolute;
+    font-family: 'icomoon';
+    content: '\ea43';
+    display: block;
+    background-color: transparent;
+    height: 32px;
+    right: 8px;
+    top: 50%;
+    margin-top: -16px;
+}
+
+.shortcut .right ul li:nth-of-type(7)::after {
+    position: absolute;
+    font-family: 'icomoon';
+    content: '\ea43';
+    display: block;
+    background-color: transparent;
+    height: 32px;
+    right: -18px;
+    top: 50%;
+    margin-top: -16px;
+}
+
+.nav {
+    *zoom: 1;
+    margin-top: 27px;
+    background-color: #ffffff;
+}
+
+.nav::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.nav .left {
+    float: left;
+    width: 220px;
+    height: 61px;
+}
+
+.nav .middle {
+    float: left;
+    width: 753px;
+    height: 61px;
+}
+
+.nav .middle .search {
+    width: 543px;
+    height: 35px;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.nav .middle .search input {
+    float: left;
+    width: 454px;
+    height: 34px;
+    border: 1px solid #b1191a;
+    outline: none;
+    text-indent: 10px;
+}
+
+.nav .middle .search button {
+    box-sizing: content-box;
+    float: left;
+    width: 86px;
+    height: 34px;
+    margin-left: -1px;
+    border: 1px solid #b1191a;
+    background-color: #b1191a;
+    font-size: 16px;
+    line-height: 33px;
+    color: #faf4f4;
+}
+
+.nav .right {
+    float: left;
+    width: 227px;
+    height: 61px;
+}
+
+.nav .right .shopping_car {
+    position: relative;
+    width: 140px;
+    height: 36px;
+    margin-left: 25px;
+    background-color: #f7f7f7;
+    line-height: 35px;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+}
+
+.nav .right .shopping_car .car {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 0;
+    top: 0;
+}
+
+.nav .right .shopping_car .car img {
+    width: 80%;
+    height: 80%;
+}
+
+.nav .right .shopping_car .cnt {
+    position: absolute;
+    width: 24px;
+    height: 20px;
+    right: 25px;
+    top: -10px;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.nav .right .shopping_car .cnt span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -8px;
+    color: white;
+}
+
+.nav .right .shopping_car::after {
+    position: absolute;
+    font-family: 'icomoon';
+    content: '\ea15';
+    display: block;
+    background-color: transparent;
+    height: 36px;
+    right: 15px;
+    top: 50%;
+    margin-top: -18px;
+}
+
+.nav .middle .search ul li {
+    float: left;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 15px;
+    padding-top: 5px;
+    font-size: 12px;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner>.aside {
+    position: absolute;
+    right: 50%;
+    top: 0;
+    width: 100px;
+    height: 341px;
+    margin-right: 610px;
+    margin-top: 210px;
+    background-color: pink;
+    z-index: 1;
+}
+
+.banner>.aside>ul>li {
+    height: 31px;
+}
+
+.banner .top {
+    width: 1200px;
+    margin-top: 25px;
+    *zoom: 1;
+}
+
+.banner .top::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner .top .left {
+    float: left;
+    width: 210px;
+    height: 44px;
+    background-color: #b1191a;
+    text-align: center;
+    line-height: 44px;
+    font-size: 16px;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.banner .top .right {
+    float: left;
+    width: 745px;
+}
+
+.banner .top .right ul li {
+    float: left;
+    margin-left: 25px;
+    margin-right: 10px;
+    padding: 0 10px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 15px;
+    color: #333333;
+}
+
+.banner .line {
+    width: 100%;
+    height: 2px;
+    background-color: #b1191a;
+}
+
+.banner>.middle {
+    width: 1200px;
+    height: 465px;
+    background-color: black;
+    margin-top: 0px;
+    *zoom: 1;
+}
+
+.banner>.middle::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.middle .left {
+    float: left;
+    width: 210px;
+    height: 465px;
+    margin-right: 10px;
+}
+
+.banner>.middle .left ul li {
+    width: 200px;
+    height: 31px;
+    line-height: 31px;
+    padding-left: 10px;
+    font-size: 14px;
+    background-color: red;
+    color: white;
+}
+
+.banner>.middle .left ul li:hover {
+    background-color: white;
+    color: red;
+}
+
+.banner>.middle .middle {
+    float: left;
+    width: 721px;
+    height: 455px;
+    margin-top: 10px;
+    background-color: pink;
+}
+
+.banner>.middle .right {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 249px;
+    height: 455px;
+    background-color: skyblue;
+}
+
+.banner>.middle>.right>.top {
+    width: 247px;
+    height: 25px;
+    border: 1px solid red;
+    border-bottom: none;
+    background-color: pink;
+    margin-top: 0;
+    padding: 8px 0;
+}
+
+.banner>.middle>.right>.top>ul li:nth-child(1) {
+    float: left;
+    padding-left: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.banner>.middle>.right>.top>ul li:nth-child(2) {
+    float: right;
+    position: relative;
+    padding-right: 25px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.banner>.middle>.right>.top>ul li:nth-child(2)::after {
+    position: absolute;
+    font-family: 'icomoon';
+    content: '\ea15';
+    display: block;
+    height: 30px;
+    width: 30px;
+    right: -10px;
+    line-height: 30px;
+    font-size: 16px;
+    top: 50%;
+    margin-top: -15px;
+}
+
+.banner>.middle>.right>.center {
+    width: 247px;
+    border: 1px solid red;
+    border-bottom: none;
+    height: 133px;
+    background-color: orange;
+}
+
+.banner>.middle>.right>.center>ul>li {
+    padding-left: 10px;
+    height: 26.6px;
+    background-color: white;
+    line-height: 26.6px;
+    font-size: 15px;
+}
+
+.banner>.middle>.right>.btm {
+    height: 205px;
+    background-color: white;
+    ;
+}
+
+.banner>.recommend {
+    *zoom: 1;
+}
+
+.banner>.recommend::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.middle>.right>.btm>ul li {
+    float: left;
+    height: 64px;
+    width: 59px;
+    border: 1px solid red;
+    margin-left: -1px;
+    margin-top: -1px;
+    text-align: center;
+    line-height: 64px;
+}
+
+.banner>.middle>.right>.btm>ul>.spec {
+    margin-left: 4px;
+}
+
+.banner>.middle>.right>.ad {
+    width: 249px;
+    height: 72px;
+    margin-top: 2px;
+}
+
+.banner>.middle>.right>.ad img {
+    width: 100%;
+    height: 100%;
+}
+
+.banner>.recommend>.left {
+    float: left;
+    width: 210px;
+    height: 165px;
+    background-color: #5c5251;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 165px;
+}
+
+.banner>.recommend>.right>ul li {
+    float: left;
+    width: 247.5px;
+    height: 165px;
+    background-color: pink;
+    margin-top: 10px;
+}
+
+.banner>.recommend>.right>ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+.banner>.fav {
+    margin-top: 20px;
+}
+
+.banner>.fav>.top {
+    height: 40px;
+    background-color: aqua;
+}
+
+.banner>.fav>.bottom>ul {
+    *zoom: 1;
+}
+
+.banner>.fav>.bottom>ul::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.fav>.bottom>ul li {
+    float: left;
+    width: 200px;
+    height: 235px;
+    background-color: red;
+    text-align: center;
+    line-height: 235px;
+    color: white;
+}
+
+.banner>.funny {
+    margin-top: 20px;
+}
+
+.banner>.funny>.top {
+    height: 40px;
+    background-color: aqua;
+}
+
+.banner>.funny>.bottom {
+    *zoom: 1;
+}
+
+.banner>.funny>.bottom::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.funny>.bottom>.bottom1 {
+    float: left;
+    width: 400px;
+    height: 413px;
+    background-color: pink;
+}
+
+.banner>.funny>.bottom>.bottom2 {
+    float: left;
+    width: 240px;
+    height: 413px;
+    background-color: black;
+}
+
+.banner>.funny>.bottom>.bottom3 {
+    float: left;
+    width: 400px;
+    height: 413px;
+    background-color: red;
+}
+
+.banner>.funny>.bottom>.bottom4 {
+    float: left;
+    width: 160px;
+    height: 413px;
+    background-color: skyblue;
+}
+
+.banner>.funny>.bottom>.bottom2>.part1 {
+    height: 53px;
+    background-color: black;
+}
+
+.banner>.funny>.bottom>.bottom2>.part2 {
+    height: 220px;
+    background-color: green;
+}
+
+.banner>.funny>.bottom>.bottom2>.part3 {
+    height: 140px;
+    background-color: yellow;
+}
+
+.banner>.funny>.bottom>.bottom3>.part1 {
+    height: 53px;
+    background-color: bisque;
+}
+
+.banner>.funny>.bottom>.bottom3>.part2 {
+    height: 220px;
+    background-color: black;
+}
+
+.banner>.funny>.bottom>.bottom3>.part3 {
+    height: 140px;
+    background-color: red;
+    *zoom: 1;
+}
+
+.banner>.funny>.bottom>.bottom3>.part3::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.funny>.bottom>.bottom3>.part3 ul li {
+    float: left;
+    width: 50%;
+    height: 140px;
+    background-color: chocolate;
+}
+
+.banner>.funny>.bottom>.bottom3>.part3 ul li:nth-child(2) {
+    background-color: darkcyan;
+}
+
+.banner>.funny>.bottom>.bottom4>ul {
+    *zoom: 1;
+}
+
+.banner>.funny>.bottom>.bottom4>ul::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.funny>.bottom>.bottom4>ul li {
+    float: left;
+    width: 80px;
+    height: 59px;
+}
+
+.banner>.dianqi {
+    margin-top: 20px;
+}
+
+.banner>.dianqi>.top {
+    height: 40px;
+    background-color: aqua;
+}
+
+.banner>.dianqi>.bottom {
+    background-color: rgb(235, 220, 222);
+    *zoom: 1;
+}
+
+.banner>.dianqi>.bottom::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.dianqi>.bottom>.part1 {
+    float: left;
+    width: 210px;
+    height: 360px;
+    background-color: pink;
+}
+
+.banner>.dianqi>.bottom>.part2 {
+    float: left;
+    width: 328px;
+    height: 360px;
+    background-color: black;
+}
+
+.banner>.dianqi>.bottom>.part3 {
+    float: left;
+    width: 225px;
+    height: 360px;
+    background-color: blue;
+}
+
+.banner>.dianqi>.bottom>.part3>.layer1 {
+    height: 180px;
+    background-color: blueviolet;
+}
+
+.banner>.dianqi>.bottom>.part3>.layer2 {
+    height: 180px;
+    background-color: burlywood;
+}
+
+.banner>.dianqi>.bottom>.part4 {
+    float: left;
+    width: 212px;
+    height: 360px;
+    background-color: orange;
+}
+
+.banner>.dianqi>.bottom>.part5 {
+    float: left;
+    width: 225px;
+    height: 360px;
+    background-color: blue;
+}
+
+.banner>.dianqi>.bottom>.part5>.layer1 {
+    height: 180px;
+    background-color: blueviolet;
+}
+
+.banner>.dianqi>.bottom>.part5>.layer2 {
+    height: 180px;
+    background-color: burlywood;
+}
+
+.banner>.label {
+    margin-top: 20px;
+}
+
+.banner>.label ul {
+    *zoom: 1;
+}
+
+.banner>.label ul::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.label>ul>li {
+    float: left;
+    width: 120px;
+    height: 65px;
+    background-color: pink;
+}
+
+.banner>.tongxun {
+    margin-top: 20px;
+}
+
+.banner>.tongxun>.top {
+    height: 40px;
+    background-color: aqua;
+}
+
+.banner>.tongxun>.bottom {
+    background-color: rgb(235, 220, 222);
+    *zoom: 1;
+}
+
+.banner>.tongxun>.bottom::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.tongxun>.bottom>.part1 {
+    float: left;
+    width: 210px;
+    height: 360px;
+    background-color: pink;
+}
+
+.banner>.tongxun>.bottom>.part2 {
+    float: left;
+    width: 328px;
+    height: 360px;
+    background-color: black;
+}
+
+.banner>.tongxun>.bottom>.part3 {
+    float: left;
+    width: 225px;
+    height: 360px;
+    background-color: blue;
+}
+
+.banner>.tongxun>.bottom>.part3>.layer1 {
+    height: 180px;
+    background-color: blueviolet;
+}
+
+.banner>.tongxun>.bottom>.part3>.layer2 {
+    height: 180px;
+    background-color: burlywood;
+}
+
+.banner>.tongxun>.bottom>.part4 {
+    float: left;
+    width: 212px;
+    height: 360px;
+    background-color: orange;
+}
+
+.banner>.tongxun>.bottom>.part5 {
+    float: left;
+    width: 225px;
+    height: 360px;
+    background-color: blue;
+}
+
+.banner>.tongxun>.bottom>.part5>.layer1 {
+    height: 180px;
+    background-color: blueviolet;
+}
+
+.banner>.tongxun>.bottom>.part5>.layer2 {
+    height: 180px;
+    background-color: burlywood;
+}
+
+.banner>.bangong {
+    margin-top: 20px;
+}
+
+.banner>.bangong>.top {
+    height: 40px;
+    background-color: aqua;
+}
+
+.banner>.bangong>.bottom {
+    background-color: rgb(235, 220, 222);
+    *zoom: 1;
+}
+
+.banner>.bangong>.bottom::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.bangong>.bottom>.part1 {
+    float: left;
+    width: 210px;
+    height: 360px;
+    background-color: pink;
+}
+
+.banner>.bangong>.bottom>.part2 {
+    float: left;
+    width: 328px;
+    height: 360px;
+    background-color: black;
+}
+
+.banner>.bangong>.bottom>.part3 {
+    float: left;
+    width: 225px;
+    height: 360px;
+    background-color: blue;
+}
+
+.banner>.bangong>.bottom>.part3>.layer1 {
+    height: 180px;
+    background-color: blueviolet;
+}
+
+.banner>.bangong>.bottom>.part3>.layer2 {
+    height: 180px;
+    background-color: burlywood;
+}
+
+.banner>.bangong>.bottom>.part4 {
+    float: left;
+    width: 212px;
+    height: 360px;
+    background-color: orange;
+}
+
+.banner>.bangong>.bottom>.part5 {
+    float: left;
+    width: 225px;
+    height: 360px;
+    background-color: blue;
+}
+
+.banner>.bangong>.bottom>.part5>.layer1 {
+    height: 180px;
+    background-color: blueviolet;
+}
+
+.banner>.bangong>.bottom>.part5>.layer2 {
+    height: 180px;
+    background-color: burlywood;
+}
+
+.banner>.fenqiang {
+    margin-top: 20px;
+}
+
+.banner>.fenqiang>.top {
+    height: 40px;
+    background-color: aqua;
+}
+
+.banner>.fenqiang>.bottom {
+    *zoom: 1;
+}
+
+.banner>.fenqiang>.bottom::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.banner>.fenqiang>.bottom>.part1 {
+    float: left;
+    width: 240px;
+    height: 286px;
+    background-color: pink;
+}
+
+.banner>.fenqiang>.bottom>.part2 {
+    float: left;
+    width: 240px;
+    height: 286px;
+    background-color: black;
+}
+
+.banner>.fenqiang>.bottom>.part3 {
+    float: left;
+    width: 240px;
+    height: 286px;
+    background-color: skyblue;
+}
+
+.banner>.fenqiang>.bottom>.part4 {
+    float: left;
+    width: 240px;
+    height: 286px;
+    background-color: orange;
+}
+
+.banner>.fenqiang>.bottom>.part5 {
+    float: left;
+    width: 240px;
+    height: 286px;
+    background-color: blue;
+}
+
+.banner>.fenqiang>.bottom>.part2>.layer1 {
+    height: 143px;
+    background-color: teal;
+}
+
+.banner>.fenqiang>.bottom>.part2>.layer2 {
+    height: 143px;
+    background-color: red;
+}
+
+.banner>.fenqiang>.bottom>.part3>.layer1 {
+    height: 143px;
+    background-color: red;
+}
+
+.banner>.fenqiang>.bottom>.part3>.layer2 {
+    height: 143px;
+    background-color: pink;
+}
+
+.banner>.fenqiang>.bottom>.part4>.layer1 {
+    height: 143px;
+    background-color: black;
+}
+
+.banner>.fenqiang>.bottom>.part4>.layer2 {
+    height: 143px;
+    background-color: red;
+}
+
+.footer {
+    margin-top: 40px;
+    background-color: gainsboro;
+}
+
+.footer>.top>ul {
+    *zoom: 1;
+}
+
+.footer>.top>ul::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.footer>.top>ul li {
+    float: left;
+    width: 240px;
+    height: 110px;
+}
+
+.footer>.center {
+    *zoom: 1;
+}
+
+.footer>.center::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.footer>.center>.left {
+    float: left;
+    width: 975px;
+    background-color: pink;
+    *zoom: 1;
+}
+
+.footer>.center>.left::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.footer>.center>.left>ul li {
+    float: left;
+    width: 195px;
+    height: 190px;
+}
+
+.footer>.center>.right {
+    float: left;
+    width: 225px;
+    height: 190px;
+    background-color: red;
+}
+
+.footer>.bottom>.top>ul {
+    width: 1008px;
+    padding-left: 96px;
+    padding-right: 96px;
+    *zoom: 1;
+}
+
+.footer>.bottom>.top>ul::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.footer>.bottom>.top ul li {
+    float: left;
+    width: 84px;
+    height: 40px;
+}
+
+.footer>.bottom>.middle {
+    height: 40px;
+    background-color: pink;
+}
+
+.footer>.bottom>.bottom {
+    height: 40px;
+    background-color: black;
+}

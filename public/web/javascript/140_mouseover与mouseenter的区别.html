@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #father {
+            position: relative;
+            width: 1200px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: aqua;
+        }
+        
+        #father #son {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 500px;
+            height: 200px;
+            transform: translate(-50%, -50%);
+            background-color: brown;
+            font-size: 40px;
+            text-align: center;
+            line-height: 200px;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="father">
+        <div id="son">Another me</div>
+    </div>
+    <script>
+        //mouseover事件冒泡，mouseenter没有这个特点
+        //mouseleave与mouseenter一样，不会冒泡
+        var mouseover = document.querySelector("#father");
+        mouseover.addEventListener("mouseover", function() {
+                console.log("Another me!");
+            })
+            // var mouseenter = document.querySelector("#father");
+
+        // mouseenter.addEventListener("mouseenter", function() {
+        //     console.log("another me!");
+        // })
+    </script>
+</body>
+
+</html>

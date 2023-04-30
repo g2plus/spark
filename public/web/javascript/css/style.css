@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: url(../image/bg.jpg) no-repeat fixed top center;
+}
+
+.box:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.box {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 10px solid rgb(235, 232, 232);
+    background-color: white;
+    *zoom: 1;
+}
+
+.box .boxleft {
+    float: left;
+    width: 200px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.box .boxcenter {
+    float: left;
+    width: 800px;
+}
+
+.box .boxright {
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+    width: 145px;
+}
+
+.box .boxright a {
+    color: pink;
+}
+
+.box .boxcenter form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.box .boxcenter form .left {
+    width: 100px;
+    text-align: right;
+}
+
+.box .boxcenter form .right {
+    width: 300px;
+    padding-left: 15px;
+    height: 50px;
+}
+
+#username,
+#password,
+#email,
+#name,
+#tel,
+#dob,
+#checkcode {
+    width: 190px;
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#checkcode {
+    width: 140px;
+    vertical-align: middle;
+}
+
+.box .boxcenter form .right img {
+    vertical-align: middle;
+}
+
+.box .boxcenter form table button {
+    margin-top: 1px;
+    width: 100px;
+    height: 45px;
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 100px;
+}
+
+#male {
+    margin-left: 0;
+}
+
+#female {
+    margin-left: 20px;
+}
+
+.error {
+    color: red;
+}

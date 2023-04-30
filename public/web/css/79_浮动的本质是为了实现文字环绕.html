@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>79_浮动的本质是为了实现文字环绕.html</title>
+    <style>
+        .img {
+            float: left;
+            width: 256px;
+            height: 158px;
+            margin-right: 20px;
+        }
+        
+        #box {
+            width: 600px;
+            *zoom: 1;
+            background-color: pink;
+        }
+        
+        #box::after {
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+        
+        .img img {
+            vertical-align: bottom;
+        }
+        
+        p {
+            padding-top: 12px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='box'>
+        <div class='img'>
+            <img src="image/th.jpg" alt="">
+        </div>
+        <p>刷屏！马化腾：腾讯只是一家普通公司，随时都可以被替换...</p>
+        <p>刷屏！马化腾：腾讯只是一家普通公司，随时都可以被替换...</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        
+        input {
+            outline: none;
+            height: 30px;
+            display: block;
+            float: left;
+            width: 200px;
+            border: 1px solid rgb(160, 160, 241);
+            text-indent: 0.5em;
+        }
+        
+        button {
+            display: block;
+            float: left;
+            background-color: rgb(160, 160, 241);
+            border: none;
+            height: 34px;
+            width: 50px;
+            line-height: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        #box::after {
+            content: "";
+            height: 0;
+            clear: both;
+            display: block;
+            visibility: hidden;
+        }
+        
+        #box {
+            *zoom: 1;
+        }
+        
+        #vue {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var search = document.getElementById("search");
+            search.onmouseenter = function() {
+                this.value = "";
+            }
+            search.onmouseout = function() {
+                this.style.color = "red";
+            }
+            search.onblur = function() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("get", "http://localhost/greet?name=bilibili");
+                xhr.send();
+                xhr.onload = function() {
+                    var url = JSON.parse(xhr.responseText).message;
+                    window.location.href = url;
+                }
+
+            }
+            var flag = false;
+            var btn = document.getElementById("btn");
+            btn.onclick = function() {
+                if (!flag) {
+                    document.body.style.backgroundImage = "url(image/bg.jpg)";
+                    document.body.style.backgroundRepeat = "no-repeat";
+                    flag = true;
+                } else {
+                    document.body.style.background = "black";
+                    flag = false;
+                }
+
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="vue">
+        <div id="box">
+            <lable for="search">
+                <input type="text" id="search" value="手机">
+            </lable>
+            <button id="btn">搜&nbsp;索</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

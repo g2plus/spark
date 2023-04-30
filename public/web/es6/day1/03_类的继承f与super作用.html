@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    class Object {
+        constructor(userName, userAge) {
+            this.userName = userName;
+            this.userAge = userAge;
+        }
+        showProfile() {
+            console.log(this.userName);
+            console.log(this.userAge);
+        }
+        job() {
+            console.log("作家");
+        }
+    }
+
+    class SubObject extends Object {
+        constructor(userName, userAge, gender) {
+            super(userName, userAge);
+            this.gender = gender;
+        }
+        showProfile() {
+            console.log(this.userName + "-" + this.userAge + "-" + this.gender);
+        }
+        job() {
+            super.job();
+            this.relation();
+        }
+        relation() {
+            console.log("unknown");
+        }
+
+    }
+
+    var obj = new Object("余华", 50);
+    obj.showProfile();
+
+    var subObj = new SubObject("余华", 50, "male");
+    //使用父类的方法
+    // subObj.super is not a function
+    // subObj.super().showProfile();
+    //使用本类的方法
+    subObj.showProfile();
+    subObj.job();
+</script>
+
+</html>

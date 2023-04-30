@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <!-- 在失去焦点的时候触发，去除清空的空格 -->
+    <input v-model.trim="msg">
+    <button @click="show">提交</button>
+</div>
+</body>
+<script>
+    var obj = {
+        msg: ""
+    }
+    new Vue({
+        el: "#app",
+        data: function () {
+            return obj;
+        },
+        methods: {
+            show: function () {
+                console.log(this.$data.msg);
+                if (this.msg === "Hello world!") {
+                    console.log("trimed");
+                }
+            }
+        }
+
+    })
+</script>
+
+</html>

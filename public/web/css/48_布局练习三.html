@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>48_布局练习三.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 1232px;
+            height: 618px;
+            margin: 20px auto;
+            background-color: pink;
+        }
+        
+        li {
+            list-style-type: none;
+            width: 235px;
+            height: 302px;
+            line-height: 302px;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .left {
+            float: left;
+            width: 235px;
+            height: 618px;
+            background-color: red;
+            margin-right: 14px;
+            text-align: center;
+            line-height: 619px;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .right {
+            float: right;
+            width: 982px;
+            height: 618px;
+            background-color: skyblue;
+            text-align: center;
+        }
+        
+        .right li {
+            float: left;
+            margin-right: 14px;
+            background-color: blue;
+        }
+        
+        .right .top-last {
+            margin-right: 0;
+        }
+        
+        .right .bottom {
+            margin-top: 14px;
+        }
+        
+        .right .bottom-last {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='box'>
+        <div class='left'>1</div>
+        <div class='right'>
+            <ul>
+                <li>2-0</li>
+                <li>2-1</li>
+                <li>2-2</li>
+                <li class='top-last'>2-3</li>
+                <li class='bottom'>2-4</li>
+                <li class='bottom'>2-5</li>
+                <li class='bottom'>2-6</li>
+                <li class='bottom bottom-last'>2-7</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

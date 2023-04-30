@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id=""></textarea>
+    <button>发布</button>
+    <ul>
+
+    </ul>
+    <script>
+        var btn = document.querySelector("button");
+        var text = document.querySelector("textarea")
+        btn.onclick = function() {
+            //=赋值
+            //==等于
+            //===类型与属性全等
+            if (text.value == '') {
+                alert("nothing input");
+                //特别注意，事件的返回值为bool类型
+                //多用于参数上的校验
+                //给submit函数进行调用，如果成功进行提交
+                return false;
+            } else {
+                var value = text.value;
+                //创建元素li
+                var li = document.createElement("li");
+                var ul = document.querySelector("ul");
+                li.innerHTML = value + "<a href='javascript:;'>删除</a>";
+                ul.insertBefore(li, ul.children[0]);
+                text.value = '';
+                var as = document.querySelectorAll('a');
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function() {
+                        //获取父节点，删除父节点
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>

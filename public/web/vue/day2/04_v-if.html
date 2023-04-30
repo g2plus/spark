@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    seen: true,
+                    none: false,
+                    awesome: false,
+                    type: 'F',
+                    ok: false
+                },
+
+            });
+            var btn = $("#btn");
+            var time = 0;
+            //jq的点解事件
+            btn.click(function () {
+                if (time++ % 2 == 0) {
+                    vm.$data.none = true;
+                } else {
+                    vm.$data.none = false;
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <!-- 用 key 管理可复用的元素
+    Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。
+    这么做除了使 Vue 变得非常快之外，还有其它一些好处。例如，如果你允许用户在不同的登录方式之间切换： -->
+    <!-- v-if的作用是控制标签是否在页面上面进行显示 -->
+    <p v-if="seen">现在你看到我了</p>
+    <p v-if="none">你看不到我</p>
+    <button id="btn">click to see what hiddened</button>
+    <h1 v-if="awesome">Vue is awesome!</h1>
+    <h1 v-else>Oh no 😢</h1>
+    <div v-if="type === 'A'">
+        A
+    </div>
+    <div v-else-if="type === 'B'">
+        B
+    </div>
+    <div v-else-if="type === 'C'">
+        C
+    </div>
+    <div v-else>
+        Not A/B/C
+    </div>
+    <h1 v-show="ok">Hello!</h1>
+</div>
+</body>
+
+</html>

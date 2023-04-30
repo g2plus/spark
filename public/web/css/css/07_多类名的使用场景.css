@@ -1,0 +1,15 @@
+.box {
+  width: 300px;
+  height: 300px;
+  font-size: 40px;
+  text-align: center;
+  line-height: 300px;
+  /*设置line-height与height同高，可以设置文字垂直居中*/
+  /*div标签独占一行*/
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}

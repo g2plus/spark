@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 用于获取对象自身所有的属性
+        var obj = {
+            id: 1,
+            pname: '小米',
+            price: 1999,
+            num: 2000
+        };
+        console.log(Object.prototype);
+        var arr = Object.keys(obj); //keys值新的数组
+        var values = Object.values(obj);
+        console.log(arr);
+        arr.forEach(function(value, index, arr) {
+            console.log(value); //id...
+
+        })
+    </script>
+</body>
+
+</html>

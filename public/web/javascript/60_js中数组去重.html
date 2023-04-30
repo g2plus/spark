@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function duplicateRemoval() {
+            var arr = ["c", "a", "z", "a", "x", "a", "x", "c", "b"];
+            var temp = arr;
+            var storage = [];
+            for (var i = 0; i < temp.length; i++) {
+                var count = 0;
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (temp[i] === arr[j]) {
+                        count++;
+                    }
+                }
+                if (count == 0) {
+                    //保留最后一个出现的此元素
+                    storage.push(temp[i]);
+                }
+            }
+            console.log(storage)
+
+        }
+        duplicateRemoval();
+
+        function duplicateRemoval2() {
+            var arr = ["c", "a", "z", "a", "x", "a", "x", "c", "b"];
+            var storage = [];
+            for (var i = 0; i < arr.length; i++) {
+                //indexOf(arr[i])==-1说明此元素不存在，进行添加
+                if (storage.indexOf(arr[i]) == -1) {
+                    //保留第一个出现的此元素
+                    storage.push(arr[i]);
+                }
+            }
+            console.log(storage);
+        }
+        duplicateRemoval2();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

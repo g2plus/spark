@@ -1,0 +1,1 @@
+- 同一目录下配置文件的加载顺序 properties>yml>yaml

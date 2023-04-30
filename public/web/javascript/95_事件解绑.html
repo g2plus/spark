@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>btn1</button>
+    <button>btn2</button>
+    <script>
+        var body = document.body;
+        var btn1 = body.children[0];
+        //传统方式进行事件的解绑
+        btn1.onclick = function() {
+            alert("Hello world!");
+            this.onclick = null;
+        }
+        var btn2 = body.children[1];
+
+        //使用监听方式下，如何进行事件解绑
+        btn2.addEventListener("click", fun);//注意不用加()
+        function fun() {
+            alert("Hello world!");
+            btn2.removeEventListener("click", fun);
+        }
+    </script>
+</body>
+
+</html>

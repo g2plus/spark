@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>58_清除浮动之父元素双伪元素.html</title>
+    <style>
+        .box {
+            /*css属性继承问题*/
+            border: 1px solid blue;
+        }
+        
+        .box1 {
+            float: left;
+            width: 30%;
+            height: 400px;
+            background-color: red;
+        }
+        
+        .box2 {
+            float: left;
+            width: 70%;
+            height: 400px;
+            background-color: yellow;
+        }
+        
+        .box3 {
+            height: 600px;
+            background-color: pink;
+        }
+        /*分组选择器*/
+        
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+        
+        .clearfix:after {
+            clear: both;
+        }
+        
+        .clearfix {
+            *zoom: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='box clearfix'>
+        <div class='box1'>1</div>
+        <div class='box2'>2</div>
+    </div>
+    <div class='box3'></div>
+</body>
+
+</html>

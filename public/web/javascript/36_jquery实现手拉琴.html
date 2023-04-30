@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/36_jquery实现手拉琴.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <!-- src="js/36_jquery实现手拉琴.js -->
+    <script>
+        $(function() {
+            $("ul>li").mouseenter(function() {
+                $(this).children("div").show().parent().siblings().children("div").hide();
+            })
+            $("ul>li").mouseleave(function() {
+                $(this).children("div").hide();
+            });
+        });
+    </script>
+
+    <body>
+        <ul>
+            <li>
+                <a href="#">首页</a>
+                <div style="display:none">
+                    <div>凌波微步</div>
+                    <div>九阳神功</div>
+                </div>
+            </li>
+            <li>
+                <a href="#">课程</a>
+                <div style="display:none">
+                    <div>降龙十八掌</div>
+                    <div>天山折梅手</div>
+                </div>
+            </li>
+            <li>
+                <a href="#">职业规划</a>
+                <div style="display:none">
+                    <div>阿威十八式</div>
+                </div>
+            </li>
+
+    </body>
+
+</html>

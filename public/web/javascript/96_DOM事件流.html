@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul>li {
+            background-color: bisque;
+        }
+        
+        .test {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-top: 1px;
+        }
+        
+        .test li {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>test</li>
+    </ul>
+
+    <ol class="test">
+        <li>test1</li>
+    </ol>
+    <script>
+        //捕获，目标，冒泡
+        //onclick方式在冒泡时候生效
+        var body = document.body;
+        const ul = document.querySelector("body ul");
+        ul.onclick = function() {
+            alert("0");
+        }
+        var li = ul.children[0];
+        li.onclick = function() {
+            alert("1");
+        }
+
+        //true 在捕获时生效。
+        const ol = document.querySelector("body ol");
+        ol.addEventListener("click", function() {
+            alert("father1");
+        }, true);
+        li2 = document.querySelector("body ol li");
+        li2.addEventListener("click", function() {
+            alert("son1");
+        }, true)
+
+        //false 在冒泡时生效
+        const ol2 = document.querySelector("body ol");
+        ol.addEventListener("click", function() {
+            alert("father2");
+        }, false);
+        li3 = document.querySelector("body ol li");
+        li3.addEventListener("click", function() {
+            alert("son2");
+        }, false)
+    </script>
+</body>
+
+</html>

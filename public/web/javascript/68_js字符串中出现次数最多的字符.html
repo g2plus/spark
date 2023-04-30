@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function displayCharInputOften(input) {
+            var obj = {};
+            for (var i = 0; i < input.length; i++) {
+                var chars = input.charAt(i);
+                //判断是否有该属性值，没有初始化为1
+                if (obj[chars]) {
+                    obj[chars]++;
+                } else {
+                    obj[chars] = 1;
+                }
+            }
+            console.log(obj)
+            var max = 0;
+            var ch = "";
+            for (var key in obj) {
+                if (obj[key] > max) {
+                    max = obj[key];
+                    ch = key;
+                }
+            }
+            alert(ch + ":" + max);
+        }
+        var input = prompt("please input");
+        displayCharInputOften(input);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>find方法</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var ary = [{
+            id: 1,
+            name: '张三'
+        }, {
+            id: 2,
+            name: '李四'
+        }];
+        //找寻id为2的item并返回 箭头函数
+        let target1 = ary.find(item => item.id == 2);
+        let target2 = ary.find(
+            function() {
+                for (var i = 0; i < ary.length; i++) {
+                    if (ary[i].id == 2) {
+                        return ary[i];
+                    }
+                }
+            }
+        )
+
+        console.log(target1); //{id:2,name:'李四'}
+        console.log(target2);
+    </script>
+</body>
+
+</html>

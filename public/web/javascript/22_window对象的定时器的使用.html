@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+    <script>
+        // 定时器属于window对象
+        // 定时器的分类,一次任务setTimeout(function对象,时间ms数值),循环任务setInterval(function对象,时间ms数值);
+        // 取消定时器clearTimeout(timerId),clearInterval(timerId);
+        window.onload = function() {
+            //setInterval需要写在onload代码内部，否则不会被执行。
+            var seconds = document.getElementById('time').innerText;
+            var container = document.getElementById('time');
+
+            var timer = setInterval(fun, 1000);
+
+            function fun() {
+                if (seconds <= 0) {
+                    clearInterval(timer)
+                    location.href = "https://www.baidu.com";
+                }
+                container.innerHTML = seconds-- + "";
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div><span id='time'>60</span>s后跳转到百度首页</div>
+    <!-- <script>
+        var seconds = 5;
+        var container = document.getElementById('time');
+
+        function fun() {
+            if (seconds <= 0) {
+                location.href = "https://www.baidu.com";
+            }
+            container.innerHTML = seconds-- + "";
+        }
+        setInterval(fun, 1000);
+    </script> -->
+</body>
+
+</html>

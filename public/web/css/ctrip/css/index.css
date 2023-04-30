@@ -1,0 +1,171 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    -webkit-tap-heightlight-color: transparent;
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+.search-wrap {
+    display: flex;
+    /*固定定位跟父级没有关系，以屏幕为准*/
+    position: fixed;
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    top: 0;
+    /*写了left，需要写transform，京东移动端没有做left设置*/
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 44px;
+    background-color: pink;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(149, 147, 147);
+}
+
+.search-wrap .input {
+    flex: 1;
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 17px;
+    position: relative;
+}
+
+.search-wrap .user {
+    width: 44px;
+    height: 44px;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+}
+
+.search-wrap .user::before {
+    content: "";
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/sprite.png) -58px -194px no-repeat;
+    background-size: 104px auto;
+    left: 50%;
+    top: 2px;
+    transform: translateX(-50%);
+}
+
+.search-wrap .input::before {
+    content: "";
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    background: url(../images/sprite.png) -58px -278px no-repeat;
+    background-size: 104px auto;
+    left: 17px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.search-wrap .input::after {
+    content: "凤凰古城三日游";
+    display: block;
+    height: 20px;
+    position: absolute;
+    left: 45px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.focus img {
+    width: 100%;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.local-nav {
+    margin: 3px 4px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.local-nav ul {
+    display: flex;
+    height: 64px;
+    background-color: black;
+}
+
+.local-nav ul li {
+    flex: 1;
+    position: relative;
+    display: flex;
+}
+
+.local-nav ul li a {
+    flex: 1;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.local-nav ul li a span:nth-child(1) {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: purple;
+    background: url(../images/localnav.png) 0 0 no-repeat;
+    background-size: 80px auto;
+    vertical-align: middle;
+}
+
+nav {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+nav .nav-common {
+    height: 70px;
+    background-color: pink;
+    display: flex;
+}
+
+nav .nav-common>img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+nav .nav-common>div {
+    flex: 1;
+}
+
+nav .nav-common .nav-common-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+nav .nav-common .nav-common-inner>div {
+    flex: 1;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+}

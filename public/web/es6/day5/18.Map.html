@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    console.log(Map.prototype);
+    let myMap = new Map([
+        ['age', 24],
+        ['name', 'xixixi']
+    ])
+    console.log(myMap) // {"age" => 24, "name" => "xixixi"}
+    console.log(myMap.size) // 2
+    console.log("-------------")
+        //打印values
+    myMap.forEach(item => console.log(item));
+    var age = myMap.get("age");
+    console.log(age);
+    alert(myMap.has("age"));
+    console.log(myMap.size);
+    // myMap.delete("name");
+    console.log(myMap.has("name"));
+
+    //遍历方式iterator遍历使用for of
+    for (let item of myMap.keys()) {
+        console.log(item);
+    }
+
+    console.log("--------------------------");
+    //使用for of遍历iterator
+    for (let [key, value] of myMap.entries()) {
+        console.log(key + "->" + value);
+    }
+
+    console.log("--------------------------");
+    //js中对象获取key的方式
+    var person = {
+        fname: "John",
+        lname: "Doe",
+        age: 25
+    };
+
+    //使用for in 遍历对象
+    for (var key in person) {
+        console.log(key + "->" + person[key]);
+    }
+
+    //forEach一般用来遍历数组
+    console.log("--------------------------");
+    var arr = [1, 2, 3];
+
+    for (var key in arr) {
+        console.log(key + "->" + arr[key]);
+    }
+
+    arr.forEach(item => console.log(item));
+</script>
+
+</html>

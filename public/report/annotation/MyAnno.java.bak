@@ -1,0 +1,4 @@
+package top.arhi;
+
+public @interface MyAnno {
+}

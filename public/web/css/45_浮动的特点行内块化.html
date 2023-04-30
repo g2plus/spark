@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>45_浮动的特点行内块化.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .normal {
+            width: 10px;
+            height: 10px;
+            background-color: green;
+        }
+        
+        .special {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <span class='normal'>我是一个span标签</span>
+    <!--设置浮动，脱离普通流，向父元素的边缘浮动或则浮动框的边缘浮动-->
+    <span class='special'>我是一个浮动设置的span标签，具有行内块的特点</span>
+    <!--行内块的默认属性，与其他行内元素，行内块元素之见留有空隙。-->
+    <!--对齐方式，设置了浮动，浮动元素的顶部对齐，
+        不浮动的元素对齐为baseline对齐
+        https://www.cnblogs.com/xuhaodong/p/basseline.html
+        https://developer.mozilla.org/zh-CN/docs/Web/CSS/vertical-align
+        https://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/
+    -->
+    <span style='display:inline-block;width:100px;height:100px;background-color:red;'>我是一个设置了display为inine-block的span标签</span>
+</body>
+
+</html>

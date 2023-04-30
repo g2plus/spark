@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31_css的继承的优先级.html</title>
+    <style>
+        .nav {
+            color: red;
+            background-color: cyan;
+        }
+        
+        li {
+            color: orange;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class='nav'>
+        <!-- 继承的优先级为0,0,0,0 -->
+        <!-- 标签选择器的优先级为0,0,0,1 -->
+        <!-- 字体的颜色为orange -->
+        <li>Who are you?</li>
+    </ul>
+</body>
+
+</html>

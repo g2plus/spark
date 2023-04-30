@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>109_animation.html</title>
+    <style>
+        @keyframes HappyBirthday {
+            0% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(0);
+            }
+        }
+        
+        div {
+            width: 330px;
+            height: 330px;
+            background-color: orange;
+            margin: 150px auto;
+            overflow: hidden;
+        }
+        
+        div::after {
+            content: "Happy Birthday!";
+            text-align: center;
+            line-height: 300px;
+            display: block;
+            width: 330px;
+            height: 330px;
+            background-color: red;
+            transform-origin: left bottom;
+            /* transform: rotate(180deg); */
+            /* transition: all 0.5s; */
+            font-size: 40px;
+            color: white;
+            animation-name: HappyBirthday;
+            animation-duration: 184s;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=534539057&auto=1&height=66"></iframe>
+    </div>
+
+</body>
+
+</html>

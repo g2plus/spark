@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+}
+table{
+    width:500px;
+    margin:0 auto;
+}
+table tr{
+    display:flex;
+    flex-direction:row;
+}
+table tr td{
+    flex:1;
+    height:20px;
+    line-height:20px;
+    text-align: center;
+}
+table,tr,td{
+    border: 1px solid pink;
+    /*合并相邻的边框*/
+    border-collapse: collapse;
+}
+
+
+table tr td:last-child{
+    flex:3;
+}

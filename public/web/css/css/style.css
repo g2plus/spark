@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.promo-bd {
+    position: absolute;
+    width: 520px;
+    height: 280px;
+    left: 50%;
+    margin-left: -260px;
+    top: 50%;
+    margin-top: -140px;
+    background-color: transparent;
+}
+
+.promo-bd .index0 {
+    position: absolute;
+    width: 520px;
+    height: 280px;
+    background-color: transparent;
+}
+
+.promo-bd .index0 img {
+    border-radius: 12px;
+}
+
+.promo-bd .index0 .nav {
+    position: absolute;
+    width: 100px;
+    height: 16px;
+    border-radius: 10px;
+    left: 50%;
+    bottom: 10px;
+    margin-left: -50px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.promo-bd .index0 .nav li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    margin: 4px 6px 4px 6px;
+    background-color: white;
+}
+
+.promo-bd .index1 {
+    position: absolute;
+    width: 520px;
+    height: 280px;
+    background-color: transparent;
+    display: none;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    margin-top: -21px;
+    width: 21px;
+    height: 42px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover {
+    color: black;
+    background-color: white;
+}
+
+.next:hover {
+    color: black;
+    background-color: white;
+}
+
+.promo-bd:hover .index1 {
+    display: block;
+}

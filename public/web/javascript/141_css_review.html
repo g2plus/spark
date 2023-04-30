@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #app {
+            position: absolute;
+            margin: auto;
+            width: 600px;
+            height: 600px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            border-radius: 20px;
+            border: none;
+            border-color: transparent;
+        }
+        
+        #app #top {
+            position: relative;
+            margin: 0 auto;
+            width: 200px;
+            height: 325px;
+        }
+        
+        #app #top>#left-top-left,
+        #left-top-right {
+            position: absolute;
+            width: 100px;
+            height: 325px;
+            top: 0;
+            background-color: red;
+            border: none;
+        }
+        
+        #app #top #left-top-left {
+            left: 0;
+            border-bottom-left-radius: 100px;
+        }
+        
+        #app #top #left-top-right {
+            right: 0;
+            border-bottom-right-radius: 100px;
+        }
+        
+        #app #middle {
+            margin: 0 auto;
+            width: 22px;
+            height: 255px;
+            background-color: red;
+        }
+        
+        #app #bottom {
+            position: relative;
+            margin: 0 auto;
+            width: 200px;
+            height: 20px;
+            background-color: black;
+            clear: both;
+        }
+        
+        #app #bottom:after {
+            content: "";
+            /*额外标签法的升级版*/
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        
+        #app #bottom #left {
+            float: left;
+            width: 89px;
+            height: 20px;
+            border-top-left-radius: 20px;
+            background-color: red;
+        }
+        
+        #app #bottom #center {
+            float: left;
+            width: 22px;
+            height: 20px;
+            background-color: red;
+        }
+        
+        #app #bottom #right {
+            float: left;
+            width: 89px;
+            height: 20px;
+            border-top-right-radius: 20px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="top">
+            <div id="left-top-left"></div>
+            <div id="left-top-right"></div>
+        </div>
+        <div id="middle"></div>
+        <div id="bottom">
+            <div id="left"></div>
+            <div id="center"></div>
+            <div id="right"></div>
+        </div>
+    </div>
+</body>
+
+</html>s

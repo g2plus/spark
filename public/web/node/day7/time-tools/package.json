@@ -1,0 +1,11 @@
+{
+    "name": "time-tools",
+    "version": "1.0.0",
+    "description": "时间处理工具类",
+    "main": "index.js",
+    "keywords": [
+        "timeutils"
+    ],
+    "author": "Hejiaming",
+    "license": "ISC"
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>delete</button>
+    <ul>
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+    <script>
+        var ul = document.querySelector("ul");
+        var btn = document.querySelector('button');
+        btn.onclick = function() {
+            //ul的子元素的长度为0时，进行按钮的禁用，避免前端报错。
+            if (ul.children.length == 0) {
+                this.disabled = true;
+            } else {
+                //ul为父节点
+                ul.removeChild(ul.children[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

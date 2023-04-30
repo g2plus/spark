@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>start timer</button>
+    <button>stop timer</button>
+    <script>
+        let btn1 = document.querySelector("body button:nth-child(1)");
+        //alert(btn1);
+        let btn2 = document.querySelector("body button:nth-child(2)");
+        //alert(btn2);
+        var timer = null //null为对象的占位符号
+        btn1.onclick = function() {
+            timer = setInterval(callback, 1000);
+        }
+        btn2.onclick = function() {
+            clearInterval(timer);
+        }
+
+        function callback() {
+            console.log("it runs"); //一般采用这种模式，清晰
+        }
+
+        var fn = function() {
+            console.log("it runs");
+        }
+
+        var fun = Function("console.log('it runs')");
+    </script>
+</body>
+
+</html>

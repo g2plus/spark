@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 200px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var box = document.querySelector('.box');
+        //鼠标在盒子内部移动事件
+        box.addEventListener('mousemove', function(e) {
+            console.log(e.pageX); //鼠标在盒子内部时，对应在页面的坐标点（pageX>=200&&pageX<=500）
+            console.log(e.pageY); //（pageY>=200&&pageY<=500）
+            console.log(box.offsetLeft);
+            var x = e.pageX - this.offsetLeft; //父盒子是否有定位，没有定位以body作为参考offsetLeft200（this为box对象 200）
+            var y = e.pageY - this.offsetTop; ////父盒子是否有定位，没有定位以body作为参考offsetTop=200
+            this.innerHTML = 'x坐标是' + x + ' y坐标是' + y;
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url("images/bg.jpg") no-repeat;
+        }
+
+        #vue {
+            position: absolute;
+            width: 320px;
+            top: 30%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 10px;
+            height: 365px;
+        }
+
+        #top ul::after {
+            content: "";
+            height: 0;
+            clear: both;
+            display: block;
+            visibility: hidden;
+        }
+
+        #top ul {
+            margin: 10px 0;
+            *zoom: 1;
+        }
+
+        #top ul li {
+            float: left;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        #top p {
+            padding: 1px 20px;
+            font-size: 14px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        #top ul li:hover {
+            color: blue;
+        }
+
+        #middle {
+            position: relative;
+        }
+
+        #middle input {
+            display: block;
+            margin: 15px 20px;
+            width: 280px;
+            height: 35px;
+            outline: none;
+            border-radius: 5px;
+            text-indent: 10px;
+            border-color: rgb(188, 188, 243);
+        }
+
+        #bottom #btn {
+            width: 282px;
+            height: 45px;
+            margin: 15px 20px;
+            background-color: rgb(73, 73, 245);
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            line-height: 45px;
+            border-radius: 5px;
+        }
+
+        #bottom {
+            position: relative;
+            width: 320px;
+        }
+
+        #bottom p {
+            width: 280px;
+            height: 30px;
+            margin: 15px 20px;
+            font-size: 15px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        #bottom p a {
+            text-decoration: none;
+        }
+
+        #bottom button {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            border: none;
+            background-color: transparent;
+            font-size: 15px;
+            color: rgb(73, 73, 245);
+        }
+
+        #top #close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            height: 10px;
+            width: 10px;
+            background-color: white;
+            border: none;
+            color: red;
+            font-size: 20px;
+        }
+
+        #middle button {
+            position: absolute;
+            top: 56px;
+            right: 18px;
+            height: 35px;
+            width: 100px;
+            border: none;
+            background-color: white;
+            color: rgb(73, 73, 245);
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var close = document.getElementById("close");
+            var vue = document.getElementById("vue");
+            var loginBtn = document.getElementById("btn");
+            close.onclick = function () {
+                vue.style.display = "none";
+            }
+            var sendCode = document.getElementById("sendCode");
+
+            var seconds;
+            var timer;
+
+            var phoneNumberFlag = false;
+            //进行手机号码的验证
+            var phoneNumber = document.getElementById("phoneNumber");
+            phoneNumber.onmouseout = function () {
+                var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+                if (reg.test(phoneNumber.value)) {
+                    phoneNumberFlag = true;
+                } else {
+                    phoneNumberFlag = false;
+                }
+            }
+            phoneNumber.onblur = function () {
+                var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+                if (reg.test(phoneNumber.value)) {
+                    phoneNumberFlag = true;
+                } else {
+                    phoneNumberFlag = false;
+                }
+            }
+
+            var verificationCodeFlag = false;
+            var verificationCode = document.getElementById("verificationCode");
+            verificationCode.onmoueout = function () {
+                var reg = /^\d{6}$/;
+                if (reg.test(verificationCode.value)) {
+                    verificationCodeFlag = true;
+                } else {
+                    verificationCodeFlag = false;
+                }
+            }
+            verificationCode.onblur = function () {
+                var reg = /^\d{6}$/;
+                if (reg.test(verificationCode.value)) {
+                    verificationCodeFlag = true;
+                } else {
+                    verificationCodeFlag = false;
+                }
+            }
+
+            sendCode.onclick = function () {
+                //根据校验结果执行不同的逻辑
+                if (phoneNumberFlag) {
+                    phoneNumber.disabled = true;
+                    sendCode.style.width = "60px";
+                    sendCode.innerText = "60s";
+                    seconds = parseInt(sendCode.innerText);
+                    timer = setInterval(fun, 1000);
+                    // //调用后端接口，后端开始请求发送短信到此手机号上。
+                    // var xhr = new XMLHttpRequest();
+                    // xhr.open("post", "http://localhost/sendVerification");
+                    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    // xhr.send("phoneNumber=" + phoneNumber.value);
+                    // xhr.onload = function () {
+                    //
+                    // }
+                    ajax({
+                        type:'post',
+                        url:'http://localhost/sendVerification',
+                        data:{
+                            'phoneNumber':phoneNumber.value
+                        },
+                        success:function(data,xhr){
+                        }
+                    })
+
+                } else {
+                    //TODO将手机下方的隐藏盒子进行显示
+                    alert("请输入正确的手机号");
+                    //TODO后端接口联调，测试发送短信
+                }
+            }
+
+
+            loginBtn.onclick = function () {
+                if (phoneNumberFlag && verificationCodeFlag) {
+                    // var xhr = new XMLHttpRequest();
+                    // xhr.open("post", "http://localhost/login");
+                    // xhr.setRequestHeader("Content-Type", "application/json");
+                    // xhr.send(JSON.stringify({
+                    //     phoneNumber: phoneNumber.value,
+                    //     verificationCode: verificationCode.value
+                    // }))
+                    // xhr.onload = function () {
+                    //     var obj = JSON.parse(xhr.responseText);
+                    //     if (obj.code === 200) {
+                    //         window.location.href = "http://localhost/index.html";
+                    //     }
+                    // }
+                    ajax({
+                        type:'post',
+                        url:'http://localhost/login',
+                        header:{
+                            "Content-Type": "application/json"
+                        },
+                        data:{
+                            phoneNumber: phoneNumber.value,
+                            verificationCode: verificationCode.value
+                        },
+                        success:function(data,xhr){
+                           if(data.code===200){
+                               window.location.href = "http://localhost/index.html";
+                           }
+                        },
+                        error:function(data,xhr){
+                        }
+                    })
+                } else {
+                    //手机号码或者验证码有误
+                }
+            }
+
+            var text;
+
+            function fun() {
+                --seconds;
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    sendCode.style.width = "100px";
+                    sendCode.innerText = "发送验证码";
+                    phoneNumber.disabled = false;
+                    sendCode.disabled = false;
+                } else {
+                    sendCode.disabled = true;
+                    text = seconds < 10 ? "0" + seconds : seconds;
+                    sendCode.innerText = text + "s";
+                }
+
+            }
+
+            function ajax(options) {
+
+                var defaults = {
+                    type: 'get',
+                    url: '',
+                    data: {},
+                    header: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    success: function () {
+                    },
+                    error: function () {
+                    }
+                }
+
+                Object.assign(defaults, options);
+
+                var xhr = new XMLHttpRequest();
+                var params = '';
+                for (var attr in options.data) {
+                    params += attr + '=' + options.data[attr] + '&';
+                }
+                params = params.substring(0, params.length - 1);
+
+
+                if (options.type == 'get') {
+                    options.url += "?" + params;
+                    xhr.open(options.type, options.url);
+                    xhr.setRequestHeader("Content-Type", "text/html");
+                    xhr.send();
+                    xhr.onload = function () {
+                        var contentType = xhr.getResponseHeader("Content-Type");
+                        var responseText = xhr.responseText;
+                        if (contentType.includes("application/json")) {
+                            responseText = JSON.parse(responseText);
+                        }
+                        if (xhr.status == 200) {
+                            options.success(responseText, xhr);
+                        } else {
+                            options.error(responseText, xhr);
+                        }
+                    }
+                }
+                if (options.type == 'post') {
+                    xhr.open(options.type, options.url);
+                    var contentType = options.header['Content-Type'];
+                    xhr.setRequestHeader("Content-Type", contentType);
+                    if (contentType == 'application/x-www-form-urlencoded') {
+                        xhr.send(params);
+                    }
+                    if (contentType == 'application/json') {
+                        xhr.send(JSON.stringify(options.data));
+                    }
+                    xhr.onload = function () {
+                        var contentType = xhr.getResponseHeader("Content-Type");
+                        var responseText = xhr.responseText;
+                        if (contentType.includes("application/json")) {
+                            responseText = JSON.parse(responseText);
+                        }
+                        if (xhr.status == 200) {
+                            options.success(responseText, xhr);
+                        } else {
+                            options.error(responseText, xhr);
+                        }
+                    }
+
+                }
+            }
+
+
+            ajax({
+                type: 'get',
+                url: 'http://localhost/greet',
+                data: {
+                    name: '哔哩哔哩'
+                },
+                header: {
+                    'Content-Type': "application/x-www-form-urlencoded"
+                },
+                success: function (data, xhr) {
+                   window.location.href=data.message.substring(this.data.name.length,data.message.length);
+                },
+                error: function (data, xhr) {
+                    console.log(data.message);
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+<div id="vue">
+    <div id="top">
+        <ul>
+            <li>账号登录</li>
+            <li>短信登录</li>
+        </ul>
+        <button id="close">x</button>
+        <p>验证即登录，未注册将自动创建百度账号</p>
+    </div>
+    <div id="middle">
+        <label for="phoneNumber" id="btn1">
+            <input type="text" id="phoneNumber">
+        </label>
+        <label for="verificationCode">
+            <input type="text" id="verificationCode">
+        </label>
+        <button id="sendCode">发送验证码</button>
+    </div>
+    <div id="bottom">
+        <p id="btn">登&nbsp;录</p>
+        <p>阅读并接受<a href="#">&nbsp;百度用户协议&nbsp;</a>和<a href="#">&nbsp;隐私政策</a></p>
+        <button>立即注册</button>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+package top.arhi.mapper;
+
+import org.apache.ibatis.annotations.Mapper;
+import top.arhi.domain.User;
+
+@Mapper
+public interface UserMapper extends MyBaseMapper<User> {
+
+    User findById(Long id);
+
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        ul::after {
+            content: "";
+            visibility: hidden;
+            clear: both;
+            height: 0;
+            display: block;
+        }
+        
+        ul {
+            *zoom: 1;
+        }
+        
+        ul>li {
+            float: left;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: pink;
+            color: white;
+        }
+        
+        #box {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+        }
+        
+        div {
+            display: none;
+        }
+        
+        .current {
+            background-color: red;
+        }
+    </style>
+    <script>
+        //核心思想：排他思想，自定义属性的使用.div[i].style.display="block"无法使用的解决办法
+        window.onload = function() {
+            var lis = document.querySelectorAll('ul>li');
+            var divs = document.querySelectorAll('#box div');
+            for (var i = 0; i < lis.length; i++) {
+                //设置自定义属性data-index
+                lis[i].setAttribute('data-index', i);
+                lis[i].onclick = function() {
+                    for (var j = 0; j < lis.length; j++) {
+                        lis[j].className = '';
+                    }
+                    this.className = 'current';
+                    //获取对应的div
+                    var index = this.getAttribute('data-index');
+                    for (var i = 0; i < divs.length; i++)
+                    //行内修饰级别最高
+                        divs[i].style.display = "none";
+                }
+                divs[index].style.display = 'block';
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li>test1</li>
+            <li>test2</li>
+            <li>test3</li>
+            <li>test4</li>
+        </ul>
+        <div class="item" style="display:block">test1</div>
+        <div class="item">test2</div>
+        <div class="item">test3</div>
+        <div class="item">test4</div>
+    </div>
+
+</body>
+
+</html>

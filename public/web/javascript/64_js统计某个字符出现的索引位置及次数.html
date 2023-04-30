@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = "ajkafgjaljajigios";
+        var index = str.indexOf('a'); //获取a的第一次出现的索引位置
+        var count = 0;
+        //如果不存在该字符，返回-1结束循环
+        while (index != -1) {
+            console.log(index);
+            count++;
+            index = str.indexOf("a", index + 1); //获取下一次出现的索引位置
+        }
+        console.log("字符串中a出现的次数:" + count);
+
+        var practice = ["hello", "world!", "I", "I", "apple"];
+        var idx = practice.indexOf("I");
+        var count = 0;
+        while (idx != -1) {
+            console.log(idx);
+            count++;
+            idx = practice.indexOf("I", idx + 1);
+        }
+        console.log("数组中I出现的次数:" + count);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

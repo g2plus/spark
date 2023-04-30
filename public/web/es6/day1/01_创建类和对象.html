@@ -1,0 +1,29 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //类的定义方式 class 类名 
+    //构造方法constructor(param1,param2){...}
+    class Object {
+        constructor(userName, userAge) {
+            this.userName = userName;
+            this.userAge = userAge;
+        }
+    }
+
+    //实例化对象 new 关键字
+    var obj = new Object("余华", 50);
+    console.log(obj);
+    console.log(obj.userName);
+    console.log(obj.userAge);
+</script>
+
+</html>

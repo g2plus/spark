@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*body的大小为屏幕的大小*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .onblur {
+            background-color: red;
+        }
+        
+        .onfocus {
+            background-color: pink;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            document.getElementById('enter').onblur = function() {
+                document.getElementById('enter').parentElement.className = 'onblur';
+            }
+            document.getElementById('enter').onfocus = function() {
+                document.getElementById('enter').parentElement.className = 'onfocus';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input id='enter' type="text">
+</body>
+
+</html>

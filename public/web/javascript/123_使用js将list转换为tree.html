@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var list = [{
+        "menuId": "5f50c5fb8f0d74536bbfb7a4",
+        "menuName": "菜单管理",
+        "parentMenuId": null
+    }, {
+        "menuId": "5f524416ff216c2cbc554907",
+        "menuName": "频道管理",
+        "parentMenuId": "5f50c5fb8f0d74536bbfb7a4"
+    }, {
+        "menuId": "5f576677d9588f3d78fbdb74",
+        "menuName": "分类管理",
+        "parentMenuId": "5f524416ff216c2cbc554907"
+    }, {
+        "menuId": "5f588b22499cd2538411b98a",
+        "menuName": "发布管理",
+        "parentMenuId": "5f50c5fb8f0d74536bbfb7a4"
+    }, {
+        "menuId": "5f588b85499cd2538411b98b",
+        "menuName": "权限管理",
+        "parentMenuId": "5f50c5fb8f0d74536bbfb7a4"
+    }, {
+        "menuId": "5f588f8358bc0d3e647403a1",
+        "menuName": "菜单管理",
+        "parentMenuId": "5f588b85499cd2538411b98b"
+    }];
+
+    const list2tree1 = (list, parentMenuId) => {
+        return list.filter(item => {
+            if (item.parentMenuId === parentMenuId) {
+                item.children = list2tree1(list, item.menuId)
+                return true
+            }
+            return false
+        })
+    }
+    console.log(list2tree1(list, null));
+    console.log("----------------------------------------");
+
+    const list2tree2 = (list, parentMenuId) => {
+        return list.filter(item => {
+            if (item.parentMenuId !== parentMenuId) {
+                let parent = list.find(parent => parent.menuId === item.parentMenuId)
+                if (!parent.children) parent.children = []
+                parent.children.push(item)
+                return false
+            }
+            return true
+        })
+    }
+    console.log(list2tree2(list, null));
+    console.log("-----------------------------------------");
+
+
+    const list2tree3 = (list, parentMenuId) => {
+        let parentObj = {}
+        return list.filter(item => {
+            if (item.parentMenuId !== parentMenuId) {
+                if (!parentObj[item.parentMenuId]) {
+                    parentObj[item.parentMenuId] = list.find(parent => parent.menuId === item.parentMenuId)
+                    parentObj[item.parentMenuId].children = []
+                }
+                parentObj[item.parentMenuId].children.push(item)
+                return false
+            }
+            return true
+        })
+    }
+    console.log(list2tree3(list, null));
+    console.log("------------------------------------------");
+
+
+    const list2tree4 = (list, parentMenuId) => {
+        let menuObj = {}
+        list.forEach(item => {
+            item.children = []
+            menuObj[item.menuId] = item
+        })
+        return list.filter(item => {
+            if (item.parentMenuId !== parentMenuId) {
+                menuObj[item.parentMenuId].children.push(item)
+                return false
+            }
+            return true
+        })
+    }
+    console.log(list2tree4(list, null));
+</script>
+
+</html>

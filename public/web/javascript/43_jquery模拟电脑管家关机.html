@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 350px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: red;
+        }
+        
+        .box .btn span {
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+        }
+        
+        .box .hd {
+            height: 345px;
+            background-color: aqua;
+        }
+        
+        .box .btn {
+            height: 40px;
+            background-color: pink;
+        }
+        
+        .box .bd {
+            height: 120px;
+            background-color: brown;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function() {
+            $("#box>.btn>#closeButton").click(function() {
+                $("#box>.btn").hide();
+                $("#box>#bottomPart").animate({
+                    height: 0
+                }, 1000, "linear", function() {
+                    $("#box").animate({
+                        width: 0
+                    }, 1000, "linear", function() {
+
+                    })
+                })
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="btn">
+            <span id="closeButton"></span>
+        </div>
+        <div class="hd" id="headPart">
+            <img src="" alt="">
+        </div>
+        <div class="bd" id="bottomPart">
+            <img src="" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

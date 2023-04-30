@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>70_字体图标.html</title>
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?xhinm9');
+            src: url('fonts/icomoon.eot?xhinm9#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?xhinm9') format('truetype'), url('fonts/icomoon.woff?xhinm9') format('woff'), url('fonts/icomoon.svg?xhinm9#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        
+        .aws,
+        .a,
+        .twitter {
+            float: left;
+            height: 120px;
+            width: 120px;
+            font-family: 'icomoon';
+            background-color: aqua;
+            line-height: 120px;
+            text-align: center;
+        }
+        
+        .aws {
+            font-size: 100px;
+            color: orange;
+        }
+        
+        .a {
+            font-size: 95px;
+            color: red;
+        }
+        
+        .twitter {
+            font-size: 90px;
+            color: rgb(69, 69, 238);
+            /* vertical-align的使用场景：使行内元素盒模型与其行内元素容器垂直对齐，常用与span与img的垂直对齐。 */
+            /* vertical-align: middle; */
+        }
+    </style>
+</head>
+
+<body>
+    <span class='aws'></span>
+    <span class='a'></span>
+    <span class='twitter'></span>
+</body>
+
+</html>

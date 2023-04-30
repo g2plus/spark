@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Document</title>
+</head>
+
+<body>
+<div id="app">
+    <!-- vue3.x请使用computed -->
+    <p v-bind:title="info|capitalizefilter">{{message|capitalizefilter}}</p>
+</div>
+
+<script src="./lib/vue-2.6.12.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello vue.js',
+            info: 'everything is an object!',
+        },
+        //声明filters
+        filters: {
+            // 私有过滤器，只能被当前vm所控制的区域所使用
+            //将第一个字母大写
+            capitalizefilter(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1)
+            }
+        }
+    })
+
+    console.log("hello world!".charAt(0).toUpperCase() + "hello world!".slice(-2).toUpperCase())
+
+</script>
+</body>
+
+</html>

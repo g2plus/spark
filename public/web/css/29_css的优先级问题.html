@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29_css的优先级问题.html</title>
+    <style>
+        #box {
+            background: red!important;
+            height: 100px;
+            text-align: center;
+            font-size: 50px;
+            line-height: 100px;
+            color: white;
+        }
+        
+        .nav {
+            background: blue;
+            height: 100px;
+            text-align: center;
+            font-size: 50px;
+            line-height: 100px;
+            color: green;
+        }
+        
+        div {
+            background: burlywood;
+            height: 100px;
+            text-align: center;
+            font-size: 50px;
+            line-height: 100px;
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='box' class='nav' style='background-color:blueviolet;'>孤勇者</div>
+</body>
+
+</html>

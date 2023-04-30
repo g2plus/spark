@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload = function() {
+            var lis = document.getElementsByTagName("li");
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].onclick = function() {
+                    for (var j = 0; j < lis.length; j++) {
+                        lis[j].style.backgroundColor = "";
+                    }
+                    this.style.backgroundColor = "red";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>btn1</li>
+        <li>btn2</li>
+        <li>btn3</li>
+        <li>btn5</li>
+        <li>btn6</li>
+        <li>btn7</li>
+        <li>btn8</li>
+        <li>btn4</li>
+    </ul>
+</body>
+
+</html>

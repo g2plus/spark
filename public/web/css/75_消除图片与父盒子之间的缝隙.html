@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>75_消除图片与父盒子之间的缝隙.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            border: 2px solid red;
+            *zoom: 1;
+        }
+        /*清除浮动设置*/
+        /*div::after {
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        } */
+        
+        img {
+            /* vertical-align的默认值为baseline */
+            /* float: left; */
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="image/tudou.png" alt="">立刻有
+    </div>
+</body>
+
+</html>

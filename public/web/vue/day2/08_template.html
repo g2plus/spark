@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            //使用Vue的内置方法来创建一个自定义的标签
+            Vue.component('todo-item', {
+                props: ['todo'], //属性绑定item
+                template: '<li>{{todo.id}}-----{{ todo.text }}</li>'
+            })
+            var app = new Vue({
+                el: '#app',
+                //数据
+                data() {
+                    //使用return是data加{}，
+                    //里面的内容为return {}
+                    return {
+                        groceryList: [{
+                            id: 0,
+                            text: 'Vegetables'
+                        }, {
+                            id: 1,
+                            text: 'Cheese'
+                        }, {
+                            id: 2,
+                            text: 'Whatever else humans are supposed to eat'
+                        }]
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <ul>
+        <!--
+        Now we provide each todo-item with the todo object
+        it's representing, so that its content can be dynamic.
+        We also need to provide each component with a "key",
+        which will be explained later.
+        todo 属性绑定 item
+      -->
+        <!--vue.js的默认支持key属性-->
+        <!--item list中的变量。用于遍历list-->
+        <!-- <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item> -->
+        <todo-item :item-id="item.id" :todo="item" v-for="item in groceryList" v-if=item.id%2==0></todo-item>
+    </ul>
+</div>
+</body>
+
+</html>

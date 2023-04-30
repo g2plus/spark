@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            //鼠标作用与div对象
+            var mouse = document.getElementById("box");
+            //event事件
+            mouse.onmousedown = function(event) {
+                    if (event.button == 0) {
+                        alert("鼠标左键被按下");
+                    } else if (event.button == 1) {
+                        alert("鼠标滚轮被按下");
+                    } else {
+                        alert("鼠标右键被按下");
+                    }
+                }
+                //onkeydown仅对输入有用
+            var keyboard = document.getElementById("enter");
+            keyboard.onkeydown = function(event) {
+                //13为enter键被按下
+                if (event.which == 13) {
+                    alert("提交表单");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id='box'></div>
+    <input id='enter' type="text">
+</body>
+
+</html>

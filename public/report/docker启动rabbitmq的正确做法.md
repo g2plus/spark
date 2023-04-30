@@ -1,0 +1,1 @@
+docker run -d -p5672:5672 -p15672:15672 --name rabbitmq rabbitmq:management

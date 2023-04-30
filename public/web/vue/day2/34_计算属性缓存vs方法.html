@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <!-- <input type="text" name="firstName" v-bind:value="firstName" > -->
+    <input name="lastName" type="text" v-model="firstName">
+    <label for="firstName">名</label>
+    <input name="lastName" type="text" v-model="lastName">
+    <label for="lastName">姓</label>
+</div>
+
+</body>
+<script>
+    var data = {
+        firstName: 'Foo',
+        lastName: 'Bar'
+    }
+    var vm = new Vue({
+        el: '#app',
+        data() {
+            return data
+        },
+        computed: {
+            fullName: function () {
+                console.log(vm.$data.firstName + ' ' + vm.$data.lastName);
+                return vm.$data.firstName + ' ' + vm.$data.lastName
+            }
+        }
+    });
+    vm.$watch(data, function (newValue, oldValue) {
+        // This callback will be called when `vm.message` changes
+        console.log(data.firstName + ' ' + data.lastName);
+    });
+</script>
+
+</html>

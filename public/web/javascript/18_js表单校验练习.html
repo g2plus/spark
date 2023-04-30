@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.onload = function() {
+            document.getElementById("form").onsubmit = function() {
+                    //调用方法的方式
+                    //如果一个为false则无法进行表单的提交
+                    return checkUsername() && checkUsername();
+                }
+                //onblur绑定的是对象。方法名为对象名
+                //输入一个信息之后进行判断提高用户的体验
+            document.getElementById('username').onblur = checkUsername;
+            document.getElementById('password').onblur = checkPassword;
+            document.getElementById('email').onblur = checkEmail;
+            document.getElementById('name').onblur = checkName;
+            document.getElementById('tel').onblur = checkTel;
+            document.getElementById('checkcode').onblur = checkCode;
+
+
+        }
+
+        function checkUsername() {
+            //使用正则表达式进行用户名校验。
+            var reg = /^\w{6,12}/;
+            var value = document.getElementById("username").value;
+            var flag = reg.test(value);
+            if (flag) {
+                document.getElementById("rg_username").innerHTML = "<img src='image/favicon.ico'>";
+            } else {
+                document.getElementById('rg_username').innerHTML = '格式错误';
+            }
+            return flag;
+        }
+
+        function checkPassword() {
+            //使用正则表达式进行密码校验。
+            var reg = /^\w{6,12}/;
+            var value = document.getElementById("password").value;
+            var flag = reg.test(value);
+            if (flag) {
+                document.getElementById("rg_password").innerHTML = "<img src='image/favicon.ico'>";
+            } else {
+                document.getElementById('rg_password').innerHTML = '格式错误';
+            }
+            return flag;
+        }
+        //邮箱正则表达式
+        function checkEmail() {
+            var reg = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+            var value = document.getElementById("email").value;
+            alert(value);
+            var flag = reg.test(value);
+            if (flag) {
+                document.getElementById("rg_email").innerHTML = "<img src='image/favicon.ico'>";
+            } else {
+                document.getElementById('rg_email').innerHTML = '格式错误';
+            }
+            return flag;
+        }
+        //姓名正则表达式
+        function checkName() {
+            var reg = /^\w{6,12}/;
+            var value = document.getElementById("name").value;
+            var flag = reg.test(value);
+            if (flag) {
+                document.getElementById("rg_name").innerHTML = "<img src='image/favicon.ico'>";
+            } else {
+                document.getElementById('rg_name').innerHTML = '格式错误';
+            }
+            return flag;
+        }
+        //手机号正则表达式
+        function checkTel() {
+            var reg = /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
+            var value = document.getElementById("tel").value;
+            var flag = reg.test(value);
+            if (flag) {
+                document.getElementById("rg_tel").innerHTML = "<img src='image/favicon.ico'>";
+            } else {
+                document.getElementById('rg_tel').innerHTML = '格式错误';
+            }
+            return flag;
+        }
+        //验证码正则表达式
+        function checkCode() {
+            var reg = /^\w{4,4}/;
+            /*通过属性直接获取属性值*/
+            var value = document.getElementById("checkcode").value;
+            var flag = reg.test(value);
+            if (flag) {
+                document.getElementById("rg_code").innerHTML = "<img src='image/favicon.ico'>";
+            } else {
+                document.getElementById('rg_code').innerHTML = '格式错误';
+            }
+            return flag;
+        }
+    </script>
+</head>
+
+<body>
+    <div class='box'>
+        <div class='boxleft'>
+            <p>新用户注册</p>
+            <p>USER REGISTER</p>
+        </div>
+        <div class='boxcenter'>
+            <form action='#' id='form' method='post' name='register'>
+                <table>
+                    <tr>
+                        <td class='left'>用户名</td>
+                        <td class='right'>
+                            <input id='username' type='text' name='username' placeholder='请输入账号' value='' required>
+                            <span id='rg_username' class='error'></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>密码</td>
+                        <td class='right'>
+                            <input id='password' type='password' name='password' placeholder='请输入密码' value='' required>
+                            <span id='rg_password' class='error'></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>Email</td>
+                        <td class='right'>
+                            <input id='email' type='email' name='email' placeholder='请输入Email' value='' required>
+                            <span id='rg_email' class='error'></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>姓名</td>
+                        <td class='right'>
+                            <input id="name" type='text' name='name' placeholder='请输入姓名' value='' required>
+                            <span id='rg_name' class='error'></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>手机号</td>
+                        <td class='right'>
+                            <input id='tel' type='text' name='phoneNumber' placeholder='请输入手机号' value='' required>
+                            <span id='rg_tel' class='error'></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>性别</td>
+                        <td class='right'>
+                            <input id='male' type='radio' name='gender' value='male' id='male' required><label for='male'>男</label>
+                            <input id='female' type='radio' name='gender' value='female' id='female' required><label for='female'>女</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>出生日期</td>
+                        <td class='right'>
+                            <input id='dob' type='date' name='birthday' value='' required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>验证码</td>
+                        <td class='right'>
+                            <input id='checkcode' type='text' name='code' value='' required>
+                            <span id='rg_code' class='error'></span>
+                            <image src='image/favicon.ico' height='30'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=2>
+                            <button type='submit'>注&nbsp;&nbsp;&nbsp;&nbsp;册</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class='boxright'>
+            <p>已有账号？<a href="#">立即登录</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

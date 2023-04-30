@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>72_css实现三角形的引入.html</title>
+    <style>
+        .triangle {
+            /*实现三角形的方式：盒子设置宽高为0，设置border的其他三边为透明色，为了向下兼容，设置line-height为0，font-size为0*/
+            width: 0;
+            height: 0;
+            border-top: 100px solid red;
+            border-right: 100px solid green;
+            border-bottom: 100px solid pink;
+            border-left: 100px solid blue;
+            /*兼容性设置*/
+            line-height: 0;
+            font-size: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='triangle'></div>
+</body>
+
+</html>

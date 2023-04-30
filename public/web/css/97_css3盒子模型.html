@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>97_css3盒子模型.html</title>
+    <style>
+        .content-box {
+            box-sizing: content-box;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 10px;
+            text-align: center;
+            line-height: 400px;
+            font-size: 40px;
+            color: white;
+        }
+        
+        .border-box {
+            box-sizing: border-box;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 10px;
+            /*设置文字的垂直居中应该设置盒子的line-height等于盒子内容的高度*/
+            line-height: 360px;
+            text-align: center;
+            font-size: 40px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='content-box'>I love you</div>
+    <div class='border-box'>I love you</div>
+</body>
+
+</html>

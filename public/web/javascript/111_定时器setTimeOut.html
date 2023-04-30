@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            color: orange;
+            font-size: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>模拟广告</div>
+    <h1>Hello world!</h1>
+    <script>
+        window.addEventListener("load", function() {
+            var div = document.querySelector("div");
+
+            var timer1 = setTimeout(callback, 5000);
+
+            function callback() {
+                div.style.display = "none";
+            }
+            div.onclick = function() {
+                //清除定时器
+                clearTimeout(timer1);
+                alert("清除定时器");
+            }
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var app = new Vue({
+                el: '#app',
+                //使用datascope 使用return关键字时，需要在data后面加()
+                data() {
+                    return {
+                        message: "去你妈的Vue",
+                        message2: "南京师范大学"
+                    }
+                },
+                // data: {
+                //     message: "上海自来水来自海上"
+                // },
+
+                methods: {
+                    reverseMessage() {
+                        this.message = this.message.split('').reverse().join('')
+                    },
+                    reverseMessage2() {
+                        this.message2 = this.message2.split('').reverse().join('')
+                    },
+                    greet() {
+                        console.log("Hello!");
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <!--v-on它用于监听 DOM 事件-->
+    <!--use function method here-->
+    <button v-on:click="reverseMessage">click me</button>
+    <span @click="reverseMessage">{{message}}</span>
+    <br>
+    <!--<a v-on:[eventName]="doSomething"> ... </a>
+    在这个示例中，当 eventName 的值为 "focus" 时，v-on:[eventName] 将等价于 v-on:focus。-->
+    <!-- http://c.biancheng.net/view/5955.html 键盘事件-->
+    <button v-on:click="reverseMessage2">click me</button>
+    <span @click="reverseMessage2">{{message2}}</span>
+    <!-- https://liufr.blog.csdn.net/article/details/124247846 -->
+
+    <!--keyup事件-->
+    <button @keyup="reverseMessage2">keyup:{{message2}}</button>
+    <button v-on:mousedown="reverseMessage2">mousedown:{{message2}}</button>
+    <span @click="reverseMessage2">{{message}}</span>
+</div>
+</body>
+
+</html>

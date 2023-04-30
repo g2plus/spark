@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>findIndex方法</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let ary = [10, 20, 50];
+        //找到大于第一个item大于15的元素，结束。
+        let index1 = ary.findIndex(item => item > 15);
+
+        let index2 = fn(ary, 15);
+
+
+        function fn(ary, number) {
+            for (var i = 0; i < ary.length; i++) {
+                if (ary[i] > number) {
+                    return i;
+                }
+            }
+        }
+        console.log(index1 === 1); //true
+
+        console.log(index2);
+    </script>
+</body>
+
+</html>

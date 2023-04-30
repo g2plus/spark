@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <!-- <li>1</li> -->
+    </ul>
+    <script>
+        //重要，经常使用
+        //当cloneNode的参数为空或为false时，不拷贝内容
+        //为true才进行内容的copy
+        var li = document.querySelector("ul>li:nth-child(1)");
+        //alert(li.innerHTML);
+        //li -- 被copy的对象。
+        var copiedli = li.cloneNode(true);
+        //获取父元素
+        var ul = document.querySelector("ul");
+        //添加到父元素的最后
+        ul.appendChild(copiedli);
+    </script>
+</body>
+
+</html>

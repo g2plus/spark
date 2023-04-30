@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>61_position定位之absolute情况2.html</title>
+    <style>
+        /* 绝对定位根据定位的父元素进行定位，如果没有定位的父元素则根据document定位。不占用原位置。但是会压住标准流的内容。 */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .special {
+            position: absolute;
+            background-color: pink;
+            top: 20px;
+            left: 20px;
+        }
+        
+        .box {
+            position: relative;
+            background-color: skyblue;
+            width: 200px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='box'>
+        我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2
+        <div class='special'>我是div1</div>
+    </div>
+    <div>我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2</div>
+
+</body>
+
+</html>

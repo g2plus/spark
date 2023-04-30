@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*消除聚焦时的outline*/
+        
+        input {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        //使用事件判断keyCode是否为特定值，如果是，使用聚焦函数。
+        //keyup在按键弹起时触发。keydown只要键盘还是按下的状态，一直运行。
+        var search = document.querySelector("input");
+        document.addEventListener("keyup", function(e) {
+            //console.log(e.keyCode);
+            if (e.keyCode === 83) {
+                //聚焦函数
+                search.focus();
+            }
+        })
+    </script>
+</body>
+
+</html>

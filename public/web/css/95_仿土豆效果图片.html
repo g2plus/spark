@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>95_仿土豆效果图片.html</title>
+    <style>
+        .box {
+            position: relative;
+            width: 490px;
+            height: 276px;
+            margin: 10px auto;
+            background-color: pink;
+        }
+        
+        .box::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, .3) url(image/favicon.ico) no-repeat center center;
+            display: none;
+        }
+        /*经过box盒子，显示after伪元素*/
+        
+        .box:hover::after {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='box'>
+        <img src="image/tudou.png" alt="">
+    </div>
+</body>
+
+</html>

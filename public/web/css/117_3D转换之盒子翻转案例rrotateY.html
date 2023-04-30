@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>117_3D转换之盒子翻转案例rrotateY.html</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        
+        .container {
+            position: absolute;
+            width: 330px;
+            height: 186px;
+            background-color: rgb(17, 17, 116);
+            padding-top: 10px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+        }
+        
+        .box1 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            transition: all 0.3s;
+            transform-style: preserve-3d;
+        }
+        
+        .box1:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .box1 .front,
+        .box1 .back {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-size: 10px;
+            background-color: red;
+        }
+        
+        .box1 .front {
+            z-index: 2;
+        }
+        
+        .box1 .back {
+            z-index: 1;
+            transform: rotateY(180deg);
+        }
+        
+        .music {
+            width: 330px;
+            height: 86px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='box1'>
+            <div class='front'>HEJIAMING</div>
+            <div class='back'>WANGYUTING</div>
+        </div>
+        <div class='music'>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=26305547&auto=1&height=66"></iframe>
+        </div>
+    </div>
+</body>
+
+</html>

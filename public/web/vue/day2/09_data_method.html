@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            // Our data object
+            var datas = {
+                message: "Hello world!"
+            }
+
+            // The object is added to a Vue instances
+            var vm = new Vue({
+                el: "#app",
+                data() {
+                    return datas
+                }
+            })
+
+            // Getting the property on the instance
+            // returns the one from the original data
+
+            //数据更改vue是如何处理的
+            console.log(vm.$data.message == datas.message) // => true
+
+            console.log(vm.message == datas.message);
+            // Setting the property on the instance
+            // also affects the original data
+            vm.message = "hello world!"
+            alert(datas.message) // => 2
+
+            // ... and vice-versa
+            datas.message = "南京师范大学!"
+            alert(vm.message) // => 3
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <div>{{message}}</div>
+</div>
+</body>
+
+</html>

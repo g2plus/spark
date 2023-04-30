@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>123_flex布局基本认识.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: #000;
+            ;
+        }
+        
+        div {
+            /**/
+            display: flex;
+            width: 800px;
+            height: 200px;
+            background-color: skyblue;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        
+        div span {
+            /*不进行display设置修改属性,设置宽高无效，
+            设置复合为flex布局，此时span的宽高设置生效*/
+            width: 100px;
+            height: 40px;
+            background-color: white;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+</body>
+
+</html>

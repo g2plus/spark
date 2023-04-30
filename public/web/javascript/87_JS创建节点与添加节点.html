@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1234</li>
+    </ul>
+    <script>
+        var child = document.createElement("li");
+        child.innerHTML = "<a href=#>Hello</a>"
+        var parent = document.querySelector("ul");
+        //Js原生的创建元素与添加。更多参考83_DOM的节点的cruid操作
+        //在后面添加子节点.类似与数组的push
+        parent.appendChild(child);
+    </script>
+</body>
+
+</html>

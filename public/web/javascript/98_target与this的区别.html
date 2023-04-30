@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+        }
+        
+        ul {
+            background-color: red;
+        }
+        
+        li {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+    <script>
+        var div = document.querySelector('div');
+        div.addEventListener('click', function(e) {
+
+            console.log(e.target);
+            console.log(this);
+        })
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function(e) {
+            //e.target 触发事件的对象
+            console.log(e.target); //点击li，指向li，点击ul，指向ul
+            //this,事件绑定的对象
+            console.log(this); //点击li，指向ul
+        })
+    </script>
+</body>
+
+</html>

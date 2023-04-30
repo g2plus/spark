@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="vue"></div>
+</body>
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+    var vue = document.getElementById("vue");
+    console.log(vue);
+    //js的dom对象转变为jquery对象
+    $(vue).height(100).css("background-color", 'pink')
+    $(function() {
+        var $vue = $("div#vue")
+        console.log($vue)
+            //jquery对象转换为js的dom对象
+        var vue1 = $(vue)[0]
+        vue1.textContent = "Hello world!";
+    });
+</script>
+<!-- <style>
+    #vue {
+        height: 100px;
+    }
+    
+    .on {
+        background-color: red;
+    }
+    
+    .off {
+        background-color: green;
+    }
+</style> -->
+</html>

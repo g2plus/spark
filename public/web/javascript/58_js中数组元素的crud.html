@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [1, 2, 3, 4, 5, "Hello"];
+        //在数组的末尾添加元素，返回数组的长度
+        console.log(arr.push("world!"));
+        console.log(arr);
+        //在数组的开头添加元素，返回数组的长度
+        console.log(arr.unshift("0", "1234"));
+        console.log(arr);
+        //删除尾部元素,返回删除的元素
+        console.log(arr.pop());
+        console.log(arr);
+        //在数组的头部删除某个元素,返回删除的元素
+        console.log(arr.shift());
+        console.log(arr);
+
+        //数组反转
+        function reverse(arr) {
+            if (Array.isArray(arr)) {
+                for (var i = 0; i < arr.length / 2; i++) {
+                    var temp;
+                    temp = arr[i];
+                    arr[i] = arr[arr.length - 1 - i];
+                    arr[arr.length - 1 - i] = temp;
+                }
+                return arr;
+            }
+        }
+        console.log(reverse([0, 1, 2, 3]));
+        console.log(reverse([0, 1, 2, 3, 4]));
+
+        //调用js的自带方法
+        var test = [1, 2, 3, 4, 5];
+        console.log("reversed:" + test.reverse());
+
+        //求数组中的最大值
+        function max(arr) {
+            if (Array.isArray(arr)) {
+                arr = filter(arr);
+                var max = arr[0];
+                for (var i = 1; i < arr.length; i++) {
+                    if (arr[i] > max) {
+                        max = arr[i];
+                    }
+                }
+                return max;
+            }
+
+        }
+
+        function sum(arr) {
+            if (Array.isArray(arr)) {
+                arr = filter(arr);
+                var sum = 0;
+                for (var i = 0; i < arr.length; i++) {
+                    sum += arr[i];
+                }
+                return sum;
+            }
+        }
+
+        //筛选数组
+        function filter(arr) {
+            var temp = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (typeof(arr[i]) === "number") {
+                    temp.push(arr[i]);
+                }
+            }
+            return temp;
+        }
+
+        function bubbleSort(arr) {
+            var start = +new Date();
+            for (var i = 0; i < arr.length - 1; i++) {
+                var flag = false;
+                //如果数组为[1,2,3,4,5];
+                //则只进行一次外部循环操作后结束
+                for (var j = 0; j < arr.length - 1; j++) {
+                    var temp;
+                    if (arr[j] > arr[j + 1]) {
+                        temp = arr[j + 1];
+                        arr[j + 1] = arr[j];
+                        arr[j] = temp;
+                        //发生了元素替换现象，外部循环继续。
+                        flag = true;
+                    }
+                }
+                if (!flag) {
+                    break;
+                }
+            }
+            var end = +new Date();
+            console.log(end - start);
+            return arr;
+        }
+        var sortArr = [1, 7, 4, 13, 11];
+        console.log(bubbleSort(sortArr));
+        //调用js的自动排序算法进行排序
+        console.log(sortArr.sort(function(o1, o2) {
+            //o1-o2 为升序
+            //o2-o1 为降序
+            return o1 - o2;
+        }));
+
+
+        alert(max([1, 2, 100, "Hello", "world", 10]));
+        alert("-----------------");
+        alert(sum([1, 2, 100, "Hello", "world", 10]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

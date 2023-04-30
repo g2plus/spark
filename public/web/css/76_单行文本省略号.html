@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>76_单行文本省略号.html</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 90px;
+            background-color: pink;
+            /*white-space的默认值为normal文字一行无法显示进行自动换行*/
+            white-space: nowrap;
+            /*溢出部分进行隐藏*/
+            overflow: hidden;
+            /* 多余的文字使用省略号(ellipsis)进行显示 */
+            text-overflow: ellipsis;
+        }
+        
+        .box1 {
+            margin-top: 25px;
+            width: 500px;
+            height: 200px;
+            background-color: pink;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='box'>关于你是猪的这个想法，是典型的词汇缺乏症的表现，要我教你们吗？你是猪，可以延伸为你是野猪、豪猪、花猪、光猪、蠢猪、笨猪、乌克兰小乳猪、猪八戒。你是圈养杂食的懒惰生物体，你是星光灿烂下一只绝望而孤独的动物，是永远飞不上蓝天的蠢猪。</div>
+    <div class='box1'>The idea that you are a pig is a typical manifestation of vocabulary deficiency. Do you want me to teach you? You are a pig, which can be extended to be a wild boar, a porcupine, a flower pig, a light pig, a stupid pig, a stupid pig, a Ukrainian suckling
+        pig, and a pig. You are a captive omnivorous lazy creature, a desperate and lonely animal under the stars, a stupid pig who will never fly to the sky.</div>
+</body>
+
+
+</html>

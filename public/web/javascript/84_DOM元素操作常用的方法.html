@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>根据DOM提供的方法获取元素</p>
+    <ul>
+        <li>document.getElementById()</li>
+        <li>document.getElementsByTagName()</li>
+        <li>document.querySelector()</li>
+    </ul>
+    <p>利用层级关系获取元素</p>
+    <ul>
+        <li>获取父节点node.parentNode</li>
+        <li>获取子节点node.childNodes(包含所有节点含文本节点)</li>
+        <li>获取元素子节点node.children</li>
+        <li>获取第一个元素子节点node.children[0]</li>
+        <li>获取最后一个元素子节点node.children[node.children.length-1]</li>
+    </ul>
+    <ul>
+        <li>禁止使用+进行拼接，效率低，一般将数据push到数组，然后整个进行操作</li>
+        <li>innerHtml会覆盖页面的原有内容</li>
+        <li>数组转成字符串采用数组名.join("")方法进行连接</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        
+        .cls {
+            position: relative;
+            width: 500px;
+            height: 200px;
+            background-color: orangered;
+        }
+        
+        a {
+            color: pink;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            text-decoration: none;
+        }
+        
+        ul {
+            width: 500px;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .lis {
+            height: 30px;
+            padding: 0px 10px;
+            background-color: orange;
+            font-size: 18px;
+        }
+        
+        .div {
+            width: 500px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 28px;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        //js原生获取dom对象方式
+        window.onload = function() {
+            var vue = document.getElementById("vue");
+            vue.className = "cls";
+            vue.innerHTML = '<a href="https://www.baidu.com" target="_blank">百度一下</a>';
+            var li = document.getElementsByTagName("li");
+            for (var i = 0; i < li.length; i++) {
+                li[i].className = "lis";
+            }
+            var divcls = document.getElementsByClassName("div");
+            divcls[0].textContent = "I love you more than beans and rice"
+            var divname = document.getElementsByName("div");
+            divname[0].textContent = "I love you 3,000."
+                //H5新添加的获取element方法获取指定选择器的第一个对象
+            console.log(document.querySelector(".div"));
+            //获取指定选择器匹配到的所有dom对象
+            console.log(document.querySelectorAll(".div"));
+        }
+    </script>
+</head>
+
+<body>
+    <div id="vue"></div>
+    <ul>
+        <li>java</li>
+        <li>git</li>
+        <li>maven</li>
+        <li>spring</li>
+        <li>springboot</li>
+        <li>springcloud</li>
+        <li>dubbo</li>
+        <li>zookeeper</li>
+        <li>nacos</li>
+        <li>eureka</li>
+        <li>redis</li>
+        <li>mongodb</li>
+        <li>mysql</li>
+        <li>rabbitmq</li>
+        <li>rocketmq</li>
+        <li>kafka</li>
+        <li>seata</li>
+        <li>xxl-job</li>
+        <li>springtask</li>
+        <li>quartz</li>
+    </ul>
+    <div class="div">I hate you,I love you!</div>
+    <div name="div" class="div">I hate you,I love you!</div>
+</body>
+
+</html>

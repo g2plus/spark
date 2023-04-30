@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con"></div>
+        <input type="text" placeholder="请输入您的快递单号" class="jd">
+    </div>
+    <script>
+        // 获取要操作的元素
+        var con = document.querySelector('.con');
+        var jd_input = document.querySelector('.jd');
+        // 给输入框注册keyup事件
+        jd_input.addEventListener('keyup', function() {
+                // 判断输入框内容是否为空
+                if (this.value == '') {
+                    // 为空，隐藏放大提示盒子
+                    con.style.display = 'none';
+                } else {
+                    // 不为空，显示放大提示盒子，设置盒子的内容
+                    con.style.display = 'block';
+                    con.innerText = this.value;
+                }
+            })
+            // 给输入框注册失去焦点事件，隐藏放大提示盒子
+        jd_input.addEventListener('blur', function() {
+                con.style.display = 'none';
+            })
+            // 给输入框注册获得焦点事件
+        jd_input.addEventListener('focus', function() {
+            // 判断输入框内容是否为空
+            if (this.value !== '') {
+                // 不为空则显示提示盒子
+                con.style.display = 'block';
+            }
+        })
+    </script>
+</body>
+
+</html>

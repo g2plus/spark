@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    class Object {
+        constructor(userName, userAge) {
+                this.userName = userName;
+                this.userAge = userAge;
+            }
+            //类中方法的定义方式
+        showProfile() {
+            console.log(this.userName);
+            console.log(this.userAge);
+        }
+    }
+    var obj = new Object("余华", 50);
+    //调试
+    obj.showProfile();
+</script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>122_传统布局.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #000;
+        }
+        
+        .outer {
+            position: relative;
+            width: 800px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        
+        .outer .inner {
+            position: absolute;
+            width: 800px;
+            height: 40px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .outer .inner span {
+            float: left;
+            width: 100px;
+            height: 40px;
+            margin-right: 75px;
+            text-align: center;
+            line-height: 40px;
+            background-color: white;
+        }
+        
+        .outer .inner span:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='outer'>
+        <div class='inner'>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

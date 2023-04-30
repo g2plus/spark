@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector("div");
+        var params = location.search.substring(1);
+        try {
+            //解决中文编码的问题
+            params = decodeURI(params);
+        } catch (e) {
+            console.error(e);
+        }
+        var arr = params.split('=');
+        div.innerHTML = "welocome " + arr[1] + "!"
+    </script>
+</body>
+
+</html>

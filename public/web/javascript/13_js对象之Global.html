@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // encodeURI() URL编码
+        // decodeURI() URL解码
+        // parseInt() 逐一判断每个字符是否是数字，直到不是数字为止，将前面的数字部分转换为number。
+        var wd = "湖南交通工程学院";
+        var encode = encodeURI(wd);
+        document.write(encode + "<br>");
+        window.document.write(decodeURI(encode) + "<br>");
+        //解析能解析的数字例如"123abc"解析成123
+        var number = "123abc";
+        alert(parseInt(number) + 1);
+        var numberC = NaN;
+        window.alert(isNaN(numberC));
+        // eval可解析js字符串进行执行命令
+        eval('document.write("Hello World!"+"<br>")');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+
+    <style>
+        .btn {
+            width: 80px;
+            height: 20px;
+            border-radius: 5px;
+            background-color: red;
+            border-width: 0;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/echarts.js"></script>
+    <script>
+        $(function () {
+            var obj = {
+                //default checked
+                //picked 的值等于input的value值，该选项被选中
+                picked: "female"
+            }
+            var app = new Vue({
+                el: "#app",
+                data() {
+                    return obj;
+                },
+                methods: {
+                    showWhathasBeenPicked() {
+                        alert(this.picked);
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- <link rel="stylesheet" href=""> -->
+
+</head>
+
+<body>
+<div id="app">
+    <!--default checked=checked
+    if you use checked=chedcked with v-model,v-model works,checked="checked" never
+    checked-->
+    <!-- https://onlymyenglish.com/symbol-name-list-english/ -->
+    <input id="male" type="radio" v-model="picked" value="male">
+    <label for="one">male</label>
+    <br>
+    <input id="female" type="radio" v-model="picked" value="female">
+    <label for="two">female</label>
+    <br>
+    <input id="secret" type="radio" v-model="picked" value="secret">
+    <label for="secret">secret</label>
+    <br>
+    <!-- explaination here we needed
+    the variable's value is the value of the radio you picked-->
+    <span>Picked: {{ picked }}</span>
+    <br>
+    <button @click="showWhathasBeenPicked" class="btn">click me</button>
+</div>
+</body>
+
+</html>

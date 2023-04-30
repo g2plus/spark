@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #vue {
+            width: 600px;
+            height: 365px;
+            line-height: 365px;
+            text-align: center;
+            background-color: pink;
+            color: white;
+            font-size: 95px;
+            display: none;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function() {
+            $("#show").click(function() {
+                $("#vue").slideDown(1000, function() {
+                    alert("it showed");
+                });
+            });
+            $("#hide").click(function() {
+                $("#vue").slideUp(1000, function() {
+                    alert("it hided");
+                });
+            });
+            $("#toggle").click(function() {
+                $("#vue").slideToggle(1000, function() {
+                    alert("it toggled");
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <button id="show">显示</button>
+    <button id="hide">隐藏</button>
+    <button id="toggle">切换</button>
+    <div id="vue">Hello world!</div>
+</body>
+
+</html>

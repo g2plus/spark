@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>80_分页按钮的制作.html</title>
+    <style>
+        .father {
+            text-align: center;
+        }
+        
+        .father a {
+            display: inline-block;
+            /*内容大小宽度*/
+            width: 42px;
+            height: 42px;
+            background-color: orange;
+            text-align: center;
+            line-height: 42px;
+            vertical-align: middle;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .father .prev,
+        .father .next {
+            /* 设置padding的大小，盒子从视觉上整个盒子的宽度变大，但盒子的内容大小宽度不变 */
+            /* padding-left: 10px;
+            padding-right: 10px; */
+            width: 110px;
+        }
+        
+        .father .btn {
+            text-align: center;
+            width: 50px;
+        }
+        
+        .father .current {
+            background-color: transparent;
+        }
+        
+        .father .ellipsis {
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='father'>
+        <a href="#" class='prev'>&lt;&lt;上一页</a>
+        <a href="#">1</a>
+        <a href="#" class='current'>2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#" class='ellipsis'>...</a>
+        <a href="#" class='next'>&gt;&gt;下一页</a> 到第
+        <a href="#"></a>
+        页
+        <a href="#" class='btn'>确认</a>
+    </div>
+</body>
+
+</html>

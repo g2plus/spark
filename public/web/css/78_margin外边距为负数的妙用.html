@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>78_margin外边距为负数的妙用.html</title>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+        
+        li {
+            list-style: none;
+        }
+        /*使用margin的负数值实现边框大小只有1px*/
+        /*hover修改边框颜色，使用相对定位。没有使用相对定位，若使用了定位，使用z-index解决问题（四条边可能仅显示三条边的bug）*/
+        /*定位：定位方式+边偏移
+        绝对定位（脱离标准流）absolute：根据已定位的父元素进行定位，如果没有定位的父元素则根据doucment进行定位
+        相对定位（不脱离标准流）relative：相对本身的位置进行定位，仍然占用用来的位置
+        窗口定位（脱离标准流）fixed：根据浏览器的窗口进行定位
+        静态定位（不脱离标准流）static：正常的文档流。
+        日常开发中，子绝父相用的最多。
+        */
+        
+        ul li {
+            position: relative;
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+            border: 1px solid green;
+            margin-left: -1px;
+        }
+        
+        ul li img {
+            width: 100%;
+            height: 100%;
+            vertical-align: bottom;
+        }
+        
+        ul li:hover {
+            z-index: 1;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><img src="image/li1.jpg" alt=""></li>
+        <li><img src="image/li2.jpg" alt=""></li>
+        <li><img src="image/li3.jpg" alt=""></li>
+        <li><img src="image/li4.jpg" alt=""></li>
+        <li><img src="image/li5.jpg" alt=""></li>
+    </ul>
+</body>
+
+</html>

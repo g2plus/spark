@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        table {
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        tr {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        td {
+            text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        div {
+            width: 500px;
+            margin: 5px auto;
+        }
+        
+        button {
+            padding: 5px 10px;
+            background-color: orange;
+            border: 1px solid orange;
+            border-radius: 10px;
+        }
+        
+        .over {
+            background-color: pink;
+        }
+        
+        .out {
+            background-color: white;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            //全选
+            document.getElementById("selectAll").onclick = function() {
+                    var inputs = document.getElementsByTagName("input");
+                    for (var i = 0; i < inputs.length; i++) {
+                        inputs[i].checked = true;
+                    }
+                }
+                //全不选
+            document.getElementById("unselectAll").onclick = function() {
+                    var inputs = document.getElementsByTagName("input");
+                    for (var i = 0; i < inputs.length; i++) {
+                        inputs[i].checked = false;
+                    }
+
+                }
+                //反选
+            document.getElementById("reverseSelect").onclick = function() {
+                    var inputs = document.getElementsByTagName("input");
+                    for (var i = 0; i < inputs.length; i++) {
+                        inputs[i].checked = !inputs[i].checked;
+                    }
+                }
+                //根据第一个checkbox是否checked来设置下面的checked的值
+            document.getElementById("first").onclick = function() {
+                    var status = this.checked;
+                    var inputs = document.getElementsByTagName("input");
+                    for (var i = 1; i < inputs.length; i++) {
+                        inputs[i].checked = status;
+                    }
+                }
+                //F5刷新后失效dom输重新生成
+                //临时删除这行的checkbox为checked才能进行删除操作
+            document.getElementById("delSelected").onclick = function() {
+                if (confirm("您确定要删除选中条目吗？")) {
+                    var flag = false;
+                    //判断是否有选中条目
+                    var cbs = document.getElementsByTagName("input");
+                    for (i = 0; i < cbs.length; i++) {
+                        if (cbs[i].checked) {
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (flag) { //有选中条目，再提表单
+                        // 提交一个数组的json到后端,后端进行批量删除。概念模型没有实现
+                        alert("提交表单");
+                    } else {
+                        alert("没选中删除的项目")
+                    }
+                }
+            }
+            document.getElementById("deleteuserId").onclick = function() {
+                    //alert(document.getElementById("deleteuserId").parentElement.parentElement.firstElementChild.firstElementChild.checked == true);
+                    //判断逻辑，checkbox选中,弹出提示框是否删除选中的条目
+                    if (document.getElementById("deleteuserId").parentElement.parentElement.firstElementChild.firstElementChild.checked == true) {
+                        //进行逻辑判断，根据用户选择执行操作
+                        var flag = confirm("您确定要删除选中条目吗？");
+                        //如果用户选择是，进行数据删除
+                        if (flag) {
+                            alert('前面的checked为true时，才能删除');
+                        }
+
+                    }
+                }
+                //使用js的事件实现动态效果。
+            var trs = document.getElementsByTagName("tr");
+            for (var i = 0; i < trs.length; i++) {
+                trs[i].onmouseover = function() {
+                    //this表示当前的元素。
+                    this.className = 'over';
+
+                }
+                trs[i].onmouseout = function() {
+                    this.className = 'out';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <caption>学生信息表</caption>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" id='first'></td>
+                <td>编号</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>操作</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>1</td>
+                <td>令狐冲</td>
+                <td>男</td>
+                <td>
+                    <a id='deleteuserId' href='#'>删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>2</td>
+                <td>令狐冲</td>
+                <td>男</td>
+                <!--进行模拟，实际没有被删除-->
+                <td><a id='delete' href='#'>删除</a></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>3</td>
+                <td>令狐冲</td>
+                <td>男</td>
+                <!--单个删除可以设置路径拼接userid然后进行删除-->
+                <td><a id='delete' href='#'>删除</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button id='selectAll'>全选</button>
+        <button id='unselectAll'>全不选</button>
+        <button id='reverseSelect'>反选</button>
+        <button id='delSelected'>删除选中</button>
+    </div>
+
+</body>
+
+</html>

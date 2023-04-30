@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td {
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        #account thead th {
+            height: 30px;
+            line-height: 30px;
+            padding: 0 60px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        #account thead {
+            background-color: skyblue;
+        }
+        
+        #account tbody td {
+            height: 30px;
+            line-height: 30px;
+            padding: 0 60px;
+            font-size: 16px;
+        }
+        
+        #account tbody tr:nth-child(2n) {
+            background-color: orange;
+        }
+        
+        #account tbody tr:nth-child(2n+1) {
+            background-color: orangered;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        //模拟从数据库中查到的数据
+        var data = [{
+            "name": "Hejiaming",
+            "age": 25,
+            "gender": "male"
+        }, {
+            "name": "Wangzhimin",
+            "age": 24,
+            "gender": "male"
+        }, {
+            "name": "WangYuting",
+            "age": 24,
+            "gender": "female"
+        }, {
+            "name": "Zoulihui",
+            "age": 24,
+            "gender": "male"
+        }, {
+            "name": "Fengruonan",
+            "age": 24,
+            "gender": "female"
+        }];
+        //使用html()来展示数据,html设置页面的内容会覆盖原有内容，因此必须处理完数据然后进行添加到表格中。
+        // $(function() {
+        //     $("#getData").click(function() {
+        //         //定义数组用来存放数据；
+        //         var list = [];
+        //         for (var i = 0; i < data.length; i++) {
+        //             list.push("<tr>");
+        //             //生成td；
+        //             for (var key in data[i]) {
+        //                 list.push("<td>");
+        //                 list.push(data[i][key]);
+        //                 list.push("</td>");
+        //             }
+        //             list.push("</tr>");
+        //         }
+        //         $("#obj_data").html(list.join(""));
+        //     })
+        // });
+        //使用$()加上appendTo追加的方式来展示数据
+        $(function() {
+            $("#getData").click(function() {
+                for (var i = 0; i < data.length; i++) {
+                    //获取一个jquery的对象，内部的内容设置如下
+                    var $tr = $("<tr><td>" + data[i]['name'] + "</td><td>" + data[i]['age'] + "</td><td>" + data[i]['gender'] + "</td></tr>");
+                    //在obj_data绑定的对象的内部添加子元素
+                    //$("#obj_data").append($tr);
+                    //把元素添加到tbody的内部
+                    $tr.appendTo("#obj_data");
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="getData">get data from database</button>
+    <table id="account">
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </thead>
+        <tbody id="obj_data">
+
+        </tbody>
+    </table>
+</body>
+
+</html>

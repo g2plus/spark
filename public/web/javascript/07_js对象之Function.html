@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun() {
+            //利用Function的隐藏数组arguments来求和。
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            alert(sum);
+        }
+        fun(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        function fun() {
+            //js中，同方法名，之后的方法会覆盖之前的方法
+            //利用Function的隐藏数组arguments来求和。
+            var value = 1;
+            for (var i = 0; i < arguments.length; i++) {
+                value *= arguments[i];
+            }
+            return value;
+        }
+        var retValue = fun(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        alert(retValue);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

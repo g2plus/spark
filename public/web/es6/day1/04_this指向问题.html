@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+</body>
+<script>
+    var that;
+    var _that;
+    class Object {
+        constructor(userName, userAge) {
+            that = this;
+            console.log(this);
+            this.userName = userName;
+            this.userAge = userAge;
+            this.btn = document.querySelector('button');
+            this.btn.onclick = this.sing;
+        }
+        sing() {
+            console.log(this);
+            alert(this.userName); //undefined;
+            console.log(that.userName); //朴树
+        }
+        dance() {
+            _that = this;
+            console.log(this);
+            console.log(_that.userName === "朴树"); //true;
+        }
+    }
+    var obj = new Object("朴树", 18);
+    obj.dance();
+    console.log(obj === that); //true;
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        //if you want to use it here,please use window.onload event.
+        //or you use place it after the <div id='app'></div>,then it works.
+        //use {{}},and put the variable inside it, then the vue.js will parse it.
+        $(function () {
+            //create an Vue Obj
+            var app = new Vue({
+                //announce whilde element is binded for viewmodel
+                el: '#app',
+                data: {
+                    message: 'Hello Vue!'
+                }
+            })
+            alert(app.message);
+        })
+    </script>
+</head>
+
+<body>
+<!--插值表达式-->
+<!-- use {{}},so the vue.js can parse it -->
+<div id="app">{{message}}</div>
+
+</body>
+
+</html>

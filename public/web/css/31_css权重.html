@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31_css权重.html</title>
+    <style>
+        /* 修饰同一对象时，计算权重，设置样式 */
+        
+        .nav li {
+            color: red;
+        }
+        
+        .pink {
+            color: pink;
+        }
+        /* 如果想要设置who are you的字体颜色为pink，可以在使用.nav .pink */
+    </style>
+</head>
+
+<body>
+    <ul class='nav'>
+        <!-- .nav li 0,0,1,1 -->
+        <!-- .pink 0,0,1,0 -->
+        <!-- 字体的颜色为red -->
+        <li class='pink'>Who are you?</li>
+        <li>How are you doing?</li>
+    </ul>
+</body>
+
+</html>

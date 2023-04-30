@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #vue {
+            width: 600px;
+            height: 365px;
+            line-height: 365px;
+            text-align: center;
+            background-color: red;
+            color: white;
+            font-size: 95px;
+            display: none;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function() {
+            $("#fadeIn").click(function() {
+                $("#vue").fadeIn(1000, function() {
+
+                });
+            });
+            $("#fadeOut").click(function() {
+                $("#vue").fadeOut(1000, function() {
+
+                });
+            });
+            $("#fadeToggle").click(function() {
+                $("#vue").fadeToggle(1000, function() {
+
+                });
+            });
+            $("#fadeTo").click(function() {
+                $("#vue").fadeTo(1000, 0.5, function() {
+
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="fadeIn">淡入</button>
+    <button id="fadeOut">淡出</button>
+    <button id="fadeToggle">淡入淡出</button>
+    <button id="fadeTo">设置淡入的透明度</button>
+    <div id="vue">Hello world!</div>
+</body>
+
+</html>

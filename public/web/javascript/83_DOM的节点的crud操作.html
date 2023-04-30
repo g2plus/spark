@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var vue = document.querySelector('#vue');
+            var div1 = document.createElement("div");
+            div1.innerHTML = '<img src="https://w.wallhaven.cc/full/z8/wallhaven-z8jvmv.jpg"/>'
+            var div2 = document.createElement('div');
+            div2.innerHTML = '<h1>Welcome!</h1>';
+            var div3 = document.createElement('div');
+            div3.innerHTML = '<p>Hello world!</p>'
+            vue.appendChild(div1);
+            //在div1之间添加div2
+            vue.insertBefore(div2, div1);
+            vue.appendChild(div3);
+            var flag = confirm("是否删除p标签?")
+            if (flag) {
+                vue.removeChild(div3);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="vue"></div>
+</body>
+
+</html>

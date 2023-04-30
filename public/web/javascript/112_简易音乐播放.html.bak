@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div>模拟广告</div> -->
+
+    <button>prev</button>
+    <button>play</button>
+    <button>pause</button>
+    <button>next</button>
+    <audio src="audio/1.mp3" id="music" controls="controls" loop="loop" style="display: none;"></audio>
+    <script>
+        //TODO 单曲循环，随机播放，顺序播放
+
+        //模拟从数据库中取出的数据
+        var list = ["audio/1.mp3", "audio/2.aac", "audio/3.mp3"];
+        window.addEventListener("load", function() {
+
+            var i = 0;
+            var body = document.body;
+            var prev = body.children[0];
+            var play = body.children[1];
+            var pause = body.children[2];
+            var next = body.children[3];
+            var audio = document.getElementById("music");
+
+
+            prev.onclick = function() {
+                i--;
+                if (i < 0) {
+                    i = list.length - 1;
+                    audio.pause();
+                    audio.src = list[i];
+                    audio.play();
+                } else {
+                    audio.pause();
+                    audio.src = list[i];
+                    audio.play();
+                }
+            }
+
+            play.onclick = function() {
+                audio.play();
+            }
+
+            pause.onclick = function() {
+                audio.pause();
+            }
+
+            next.onclick = function() {
+                i++;
+                if (i > list.length - 1) {
+                    i = 0;
+                    audio.pause();
+                    audio.src = list[i];
+                    audio.play();
+                } else {
+                    audio.pause();
+                    audio.src = list[i];
+                    audio.play();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+option = {
+  legend: {},
+  tooltip: {},
+  dataset: {
+    dimensions: ['product', '2015', '2016', '2017'],
+    source: [
+      { product: 'Matcha Latte', 2015: 43.3, 2016: 85.8, 2017: 93.7 },
+      { product: 'Milk Tea', 2015: 83.1, 2016: 73.4, 2017: 55.1 },
+      { product: 'Cheese Cocoa', 2015: 86.4, 2016: 65.2, 2017: 82.5 },
+      { product: 'Walnut Brownie', 2015: 72.4, 2016: 53.9, 2017: 39.1 }
+    ]
+  },
+  xAxis: { type: 'category' },
+  yAxis: {},
+  // Declare several bar series, each will be mapped
+  // to a column of dataset.source by default.
+  series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
+};

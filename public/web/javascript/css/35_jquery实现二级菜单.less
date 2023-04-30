@@ -1,0 +1,53 @@
+@zero:0;
+@_10px:10px;
+@white:white;
+@orange:orange;
+@red:red;
+@_30px:30px;
+@_80px:80px;
+* {
+    margin: @zero;
+    padding: @zero;
+}
+
+ul>li {
+    list-style-type: none;
+}
+
+#menu::after {
+    content: "";
+    display: block;
+    height: @zero;
+    clear: both;
+    visibility: hidden;
+}
+
+#menu {
+    margin: @_10px;
+    *zoom: 1;
+}
+
+#menu>li>a {
+    text-decoration: none;
+    padding:0 10px;
+    color: @white;
+}
+
+#menu>li {
+    float: left;
+    height: @_30px;
+    line-height: @_30px;
+    background-color:@red;
+    padding: @zero @_10px;
+    font-size: 12px;
+}
+
+
+.box {
+    width:@_80px;
+    text-align:center;
+    background-color: @orange;
+}
+.box>ul>li{
+    background-color:orange;
+}

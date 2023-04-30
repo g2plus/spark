@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .box {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <select v-model="selected">
+        <!-- <option v-for="option in options" v-bind:value="option.value">
+            v-for iterate this mark -->
+        <!--ajax提交value值-->
+        <option :value="option.value" v-for="option in options">
+            {{option.text}}
+        </option>
+        <!-- </option> -->
+    </select>
+    <span>Selected: {{ selected }}</span>
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            //default selected value is C
+            selected: 'C',
+            //options list
+            options: [{
+                text: 'One',
+                value: 'A'
+            }, {
+                text: 'Two',
+                value: 'B'
+            }, {
+                text: 'Three',
+                value: 'C'
+            }]
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,53 @@
+# Compiled class file
+*.class
+
+# maven ignore
+target/
+*.jar
+!.mvn/wrapper/*
+*.war
+*.zip
+*.tar
+*.tar.gz
+.flattened-pom.xml
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# visual-studio-code ignore
+.vscode/
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+.swp
+
+
+# system ignore
+.DS_Store
+Thumbs.db
+*.orig
+
+# global registry center
+.tmp
+
+#JRebel
+rebel.xml
+
+
+#node
+node_modules
+
+#webpack
+dist

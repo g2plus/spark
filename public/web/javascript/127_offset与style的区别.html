@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+        }
+        
+        #btn {
+            background: red;
+            border-radius: 10px;
+            border-color: transparent;
+            height: 50px;
+            width: 200px;
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" style="width: 200px;"></div>
+    <button id="btn">button</button>
+    <script>
+        // offset与style的区别
+        var box = document.querySelector('.box');
+        console.log(box.offsetWidth); //padding + border + width 200（offsetWidth没有单位）
+        console.log(box.style.width); //200px(style有单位)
+        // box.offsetWidth = '300px';
+        var btn = document.querySelector("#btn");
+        btn.addEventListener("click", function() {
+            var flag = confirm("设置width为300px");
+            if (flag) {
+                box.style.width = '300px';
+            }
+        })
+    </script>
+</body>
+
+</html>

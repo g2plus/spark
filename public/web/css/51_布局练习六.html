@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>51_布局练习六.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .top {
+            width: 90%;
+            margin: 0 auto;
+            height: 200px;
+            background-color: red;
+            margin-top: 20px;
+            font-size: 30px;
+            color: white;
+            line-height: 200px;
+            text-align: center;
+        }
+        
+        .banner {
+            width: 1515px;
+            margin: 0 auto;
+            height: 200px;
+            background-color: red;
+            margin-top: 20px;
+            font-size: 30px;
+            color: white;
+            line-height: 200px;
+            text-align: center;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .main ul {
+            width: 1515px;
+            height: 200px;
+            background-color: blue;
+            margin: 20px auto;
+        }
+        
+        .main ul li {
+            float: left;
+            height: 200px;
+            width: 375px;
+            /*设置浮动的元素，margin-top与margin-bottom失效，margin-left与margin-right浮动元素之间有效*/
+            margin-right: 5px;
+            background-color: red;
+            font-size: 30px;
+            color: white;
+            line-height: 200px;
+            text-align: center;
+        }
+        
+        .main .right {
+            margin-right: 0;
+        }
+        
+        .footer {
+            width: 90%;
+            margin: 0 auto;
+            height: 200px;
+            margin-top: 20px;
+            background-color: red;
+            font-size: 30px;
+            color: white;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='top'>top</div>
+    <div class='banner'>banner</div>
+    <div class='main'>
+        <ul>
+            <li class='left'></li>
+            <li></li>
+            <li></li>
+            <li class='right'></li>
+        </ul>
+    </div>
+    <div class='footer'>footer</div>
+</body>
+
+</html>

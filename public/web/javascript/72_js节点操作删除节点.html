@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-decoration: none;
+        }
+        
+        #top #box {
+            position: relative;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        /* https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild */
+        window.onload = function() {
+            var vue = document.getElementById("vue");
+            var box = document.getElementById("box");
+            var removed = vue.removeChild(box);
+            removed.innerHTML = "<a href='https://www.baidu.com'>百度一下</a>"
+            var top = document.getElementById("top");
+            top.appendChild(removed);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="vue">
+        <div id="box">Hello world!</div>
+    </div>
+    <div id="top"></div>
+</body>
+
+</html>

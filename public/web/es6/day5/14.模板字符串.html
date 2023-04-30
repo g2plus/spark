@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>模板字符串</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // let name = `张三`;
+        // let sayHello = `Hello, 我的名字叫${name}`;
+        // console.log(sayHello);
+
+        // let result = {
+        // 	name: "zhangsan",
+        // 	age: 20
+        // };
+        // let html = `
+        // 	<div>
+        // 		<span>${result.name}</span>
+        // 		<span>${result.age}</span>
+        // 	</div>
+        // `;
+        // console.log(html);
+
+        const fn1 = () => {
+            return '我是fn1函数'
+        }
+
+        const fn2 = () => "我是fn2函数"
+
+        let html1 = `我是模板字符串 ${fn1()}`;
+        console.log(html1)
+
+        let html2 = `我是模板字符串 ${fn2()}`;
+        console.log(html2)
+    </script>
+</body>
+
+</html>

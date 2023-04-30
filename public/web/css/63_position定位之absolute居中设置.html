@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>63_position定位之absolute居中设置.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: black;
+        }
+        /*设置了定位的元素，根据边距来设置居中*/
+        
+        div {
+            position: absolute;
+            left: 50%;
+            margin-left: -480px;
+            top: 50%;
+            margin-top: -220.5px;
+            vertical-align: middle;
+        }
+        
+        img {
+            border: 15px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="image/bg.jpg" alt="" width='960'>
+    </div>
+</body>
+
+</html>

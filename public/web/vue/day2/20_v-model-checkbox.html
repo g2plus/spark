@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var obj = {
+                checked: true,
+                message: "我很无语"
+            }
+            var app = new Vue({
+                el: "#app",
+                data() {
+                    return obj
+                },
+                methods: {
+                    show: function () {
+                        alert("去你妈的");
+                    },
+                    display: function () {
+                        alert(this.message);
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <input id="checkbox" type="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
+    <button @click="display">点击我呀</button>
+</div>
+</body>
+
+</html>

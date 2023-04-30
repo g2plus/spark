@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <!-- div.nav+tab ==》<div clsaa="nav"></div> -->
+    <!-- div#nav+tab ==》<div id="nav"></div> -->
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/vue.js"></script>
+    <script>
+        //验证码图形有序验证
+        $(function () {
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    checkedNames: []
+                },
+                methods: {
+                    submitData: function () {
+                        var code = "";
+                        this.checkedNames.forEach(element => {
+                            code += element;
+                        });
+                        alert(code);
+                    }
+                }
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+<div id="app">
+    <input id="column1" type="checkbox" v-model="checkedNames" value="你">
+    <label for="column1">你</label>
+    <input id="column2" type="checkbox" v-model="checkedNames" value="就">
+    <label for="column2">就</label>
+    <input id="column3" type="checkbox" v-model="checkedNames" value="是">
+    <label for="column3">是</label>
+    <input id="column4" type="checkbox" v-model="checkedNames" value="个">
+    <label for="column4">个</label>
+    <input id="column5" type="checkbox" v-model="checkedNames" value="垃">
+    <label for="column5">垃</label>
+    <input id="column6" type="checkbox" v-model="checkedNames" value="圾">
+    <label for="column6">圾</label>
+    <br/>
+    <span class="hide">Checked names: {{checkedNames}}</span>
+    <!-- 会有字段的排序 -->
+    <button @click="submitData">点击提交数据</button>
+</div>
+</body>
+
+</html>

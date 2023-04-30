@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>112_动画效果.html</title>
+    <style>
+        body {
+            background-color: white;
+        }
+        
+        .map {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: black;
+            margin: 100px auto;
+        }
+        
+        .map .city {
+            position: absolute;
+            top: 135px;
+            right: 100px;
+            color: blue
+        }
+        
+        .city .dot {
+            /*子元素撑开盒子的大小*/
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: pink;
+        }
+        
+        .city div[class^='wave'] {
+            /*权重21*/
+            /*定位到盒子的正中心*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            transform: translate(-50%, -50%);
+            background-color: pink;
+            box-shadow: 0 0 12px red;
+            border-radius: 50%;
+            animation: move 2s linear infinite;
+        }
+        
+        .city div .wav2 {
+            /*权重21*/
+            animation-delay: 0.4;
+        }
+        
+        .city div .wav3 {
+            animation-delay: 0.8;
+        }
+        
+        @keyframes move {
+            0% {}
+            40% {
+                height: 40px;
+                width: 40px;
+                opacity: 1;
+            }
+            70% {
+                height: 70px;
+                width: 70px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class='map'>
+        <div class='city'>
+            <div class='dot'></div>
+            <div class='wave1'></div>
+            <div class='wave2'></div>
+            <div class='wave3'></div>
+        </div>
+    </div>
+</body>
+
+</html>

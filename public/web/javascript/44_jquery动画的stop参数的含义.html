@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #vue {
+            width: 300px;
+            height: 500px;
+            background-color: red;
+            display: none;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function() {
+            $("#on").click(function() {
+                //动画1，动画2
+                $("#vue").slideDown(2000).slideUp(2000);
+            });
+            $("#off").click(function() {
+                console.log(this);
+                //清除动画队列，跳到上一动画的最终状态
+                //$("#vue").stop(true, true);
+                //清除动画队列，停留在当前状态，在下拉菜单中采取此策略
+                //$("#vue").stop(true, false);
+                //保留动画队列，跳到上一动画的最终状态
+                //$("#vue").stop(false, true);
+                //保留动画队列，停止在上一动画某时刻运行到的位置
+                $("#vue").stop(false, false);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="on">显示动画</button>
+    <button id="off">停止动画</button>
+    <div id="vue"></div>
+</body>
+
+</html>

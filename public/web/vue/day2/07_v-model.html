@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+
+        $(function () {
+            var times = 0;
+            var app = new Vue({
+                el: '#app',
+                data() {
+                    return {
+                        message: 'Hello Vue!'
+                    }
+                },
+                methods: {
+                    nanjing() {
+                        times++;
+                        console.log(times);
+                        if (times % 2 == 0) {
+                            this.message = "去你妈的vue";
+                        } else {
+                            this.message = "南京师范大学!";
+                        }
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <!--v-model的作用是双向数据绑定
+        模型数据的通信
+        v-bind 与属性相关的--->
+    <p>{{message}}</p>
+    <input v-model="message">
+    <button @click="nanjing">点击</button>
+</div>
+</body>
+
+</html>

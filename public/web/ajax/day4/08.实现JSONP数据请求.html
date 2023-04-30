@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp解决跨域</title>
+    <script src="./lib/jquery.js"></script>
+    <script>
+        // 去除服务端response.addHeader("X-Content-Type-Options", "nosniff");的配置，
+        // 但可能造成一些安全上的问题， 笔者这里不做扩展， 有兴趣的同学可以留言讨论
+        // 服务指定Content-Type为Javascript类型的一种即可
+        // 启用jsonp，将跨域的数据请求转到本站服务器，由本站服务器去做跨域请求，即跳过浏览器同源策略的限制
+        //回调函数
+        function showData(data) {
+            var result = JSON.stringify(data);
+            $("#text").val(result);
+        }
+        // 调用
+        $(function() {
+            $("#btn").click(function() {
+                $.ajax({
+                    url: "http://localhost:8080/api/jsonp1",
+                    type: "GET",
+                    dataType: "jsonp", //指定服务器返回的数据类型
+                    jsonpCallback: "showData", // 指定回调函数名称或直接使用回掉函数success
+                    jsonp: "callback", // 默认callback
+                    success: function(data) {
+
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input id="btn" type="button" value="跨域请求数据" />
+    <textarea id="text" style="width: 200px; height: 100px;"></textarea>
+</body>
+
+</html>
+调用结果

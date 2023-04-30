@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>116_3D转换之3D旋转.html</title>
+    <style>
+        div {
+            /*块元素，不设置宽度，独占一行*/
+            width: 600px;
+            margin: 200px auto;
+            background-color: red;
+            /*近大远小*/
+            perspective: 100px;
+        }
+        
+        .rotateX {
+            transform: rotateX(10deg);
+        }
+        
+        .rotateY {
+            transform: rotateY(10deg);
+        }
+        
+        .rotateZ {
+            transform: rotateZ(10deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img class='rotateX' src="image/tudou.png" alt="">
+    </div>
+    <div>
+        <img class='rotateY' src="image/tudou.png" alt="">
+    </div>
+    <div>
+        <img class='rotateZ' src="image/tudou.png" alt="">
+    </div>
+</body>
+
+</html>

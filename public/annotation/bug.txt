@@ -1,0 +1,5 @@
+div出现异常
+异常名称:java.lang.ArithmeticException
+异常原因:/ by zero
+------------------------------------
+本次测试共出现1次异常

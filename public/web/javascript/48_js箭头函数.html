@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 80px;
+            height: 36px;
+            border: 0px solid orangered;
+            border-radius: 18px;
+            background-color: orangered;
+            color: white;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1" onclick="normal()">普通函数</button>
+    <button id="btn2" onclick="arrow()">箭头函数</button>
+    <button id="btn3">普通按钮</button>
+</body>
+<script>
+    window.onload = function() {
+        var sum = 0;
+        var btn3 = document.getElementById("btn3");
+        btn3.onclick = function() {
+            alert(sum + getNumber(20170531));
+        }
+
+    }
+    var normal = function() {
+            alert("Hello!");
+        }
+        //简化函数体 () 参数列表，{} 在只有一条语句时，可以省略，{}只有一条语句且是return语句时，可以省略return
+    var arrow = () => alert("Halo!");
+
+    var getNumber = (num) => num;
+</script>
+
+</html>

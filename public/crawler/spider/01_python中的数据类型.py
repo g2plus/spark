@@ -1,0 +1,11 @@
+str="hello"
+print(type(str))
+number=1
+print(type(number))
+lista=[1,2,3]
+print(type(lista))
+tupplea=(1,2,3)
+print(type(tupplea))
+dicta={'name':'zhangsan','age':23}
+print(type(dicta))
+print('Jrebel')

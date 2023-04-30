@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var closebtn = document.getElementById('close');
+            closebtn.onclick = function() {
+                var flag = confirm('是否关闭本窗口');
+                if (flag) {
+                    window.close();
+                }
+            }
+            var openbtn = document.getElementById('open');
+            openbtn.onclick = function() {
+                var flag = confirm('是否打开一个新窗口');
+                if (flag) {
+                    var input = prompt('请输入网络地址');
+                    while (input == null || input == '') {
+                        input = prompt('请重新输入');
+                    }
+                    var answer = confirm('是否去往该地址');
+                    if (answer) {
+                        //注意：输入网址时需要输入网络协议
+                        location.href = input;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id='close'>关闭窗口</button>
+    <button id='open'>打开新的窗口去往cgtn</button>
+</body>
+
+</html>

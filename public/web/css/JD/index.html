@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- meta视口标签 user-scalable=no禁止用户缩放，
+    initial-scale=1.0 默认缩放, maximum-scale=1.0 最大缩放, minimum-scale=1.0 最小缩放-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>京东首页</title>
+    <script type='text/javascript'>
+        //js代码与html分离便于开发
+        window.onload = function() {
+            var element = document.getElementById("close");
+            var app = document.getElementById('app');
+            var body = document.getElementById('body')
+            element.onclick = function() {
+                alert(element);
+                app.className = "off";
+            }
+            body.onwheel = function() {
+
+                app.className = "off";
+            }
+
+        }
+    </script>
+
+</head>
+
+<body id='body'>
+    <!-- 在html中调用js函数 -->
+    <div class='app' id='app' onclick='myAlert()'>
+        <ul>
+            <li>
+                <img id="close" src="images/close.png" alt="">
+            </li>
+            <li>
+                <img src="images/logo.png" alt="">
+            </li>
+            <li>
+                <span>
+                    <em>打开京东APP</em>
+                    <em>购物实惠又轻松</em>
+                </span>
+
+            </li>
+            <li>立即打开</li>
+        </ul>
+    </div>
+    <div class='nav'>
+        <div class='jd-header-icon'>
+        </div>
+        <div class='search'>
+            <div class='jd-icon'></div>
+            <div class='sou'></div>
+            <div class='form'>
+                <input type="text" placeholder='鼠标'>
+            </div>
+        </div>
+        <div class='login'>登录</div>
+    </div>
+    <div class=main-content>
+        <div class='banner'>
+            <img src="images/banner_1.png">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class='label'>
+            <div>
+                <img src="upload/pic11.dpg">
+            </div>
+            <div>
+                <img src="upload/pic22.dpg">
+            </div>
+            <div>
+                <img src="upload/pic33.dpg">
+            </div>
+        </div>
+        <nav>
+            <a href="#">
+                <img src="upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="#">
+                <img src="upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="#">
+                <img src="upload/nav2.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="#">
+                <img src="upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="#">
+                <img src="upload/nav2.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="#">
+                <img src="upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="#">
+                <img src="upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="#">
+                <img src="upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="#">
+                <img src="upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="#">
+                <img src="upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+        </nav>
+        <div class="news">
+            <div class='first'>
+                <img src="upload/new1.dpg" alt="">
+            </div>
+            <div class='second'>
+                <img src="upload/new2.dpg" alt="">
+            </div>
+            <div class='third'>
+                <img src="upload/new3.dpg" alt="">
+            </div>
+
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        function myAlert() {
+            alert("谢谢支持!");
+        }
+    </script>
+
+</body>
+
+</html>

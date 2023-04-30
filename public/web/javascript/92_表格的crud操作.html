@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>科目</td>
+                <td>成绩</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>name1</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name2</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>name3</td>
+                <td>subject1</td>
+                <td>course1</td>
+                <td>删除</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        //模拟从后端取数据放到页面
+        var trs = document.querySelectorAll("tbody tr td:nth-child(4)");
+        var tbody = document.querySelector("tbody");
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onclick = function() {
+                //removeChild的练习
+                tbody.removeChild(this.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>

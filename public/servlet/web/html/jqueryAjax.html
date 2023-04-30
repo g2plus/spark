@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            type:"get",
+            url:"http://localhost/ajaxServlet",
+            dataType:"text",
+            success: function(obj){
+                var str = jQuery.parseJSON(obj);
+                alert(typeof str);
+                document.write("<h2>"+str.msg+"</h2>");
+            }
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

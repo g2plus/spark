@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //js的执行机制，
+        //1.先执行主线程栈中的同步任务
+        //2.异步任务(回调函数(click,resize,setTimeout等)（根据行为）放入到任务队列（FIFO）中)
+        //3.一旦执行栈中的所有同步任务执行完毕，系统就会按照次序读取任务队列中的异步任务,
+        //于是被读取的异步任务结束等待状态，进入到执行栈中，开始执行
+        //1->2->4->3 （2s<5s,console.log(4)优先入放入队列）
+        console.log(1);
+        setTimeout(function() {
+            console.log(3);
+        }, 5000);
+        setTimeout(function() {
+            console.log(4);
+        }, 2000);
+        console.log(2);
+    </script>
+</body>
+
+</html>

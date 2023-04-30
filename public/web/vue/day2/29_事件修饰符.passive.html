@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .box {
+            height: 40px;
+            width: 40px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 -->
+    <!-- 而不会等待 `onScroll` 完成  -->
+    <!-- 这其中包含 `event.preventDefault()` 的情况 -->
+    <div @scroll.passive="onScroll" class="box">{{message}}</div>
+    <!-- <div v-on:scroll.passive="onScroll" class="box">{{message}}</div> -->
+</div>
+</body>
+<script>
+    var obj = {
+        message: "Hello world!"
+    }
+    new Vue({
+        el: "#app",
+        data() {
+            return obj;
+        },
+        methods: {
+            onScroll: function () {
+                console.log(this.message);
+            }
+        }
+    })
+</script>
+
+</html>

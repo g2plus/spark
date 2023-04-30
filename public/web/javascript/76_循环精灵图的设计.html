@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul>li {
+            width: 80px;
+            height: 80px;
+            list-style-type: none;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var lis = document.getElementsByTagName("li");
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.backgroundImage = "url(image/localnav.png)";
+                lis[i].style.backgroundPosition = "" + 0 + "px" + " -" + 80 * i + "px";
+                lis[i].style.backgroundRepeat = "no-repeat";
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Document</title>
+</head>
+
+<body>
+<div id="app">
+    <input @keyup.enter="submit" @keyup.esc="clearInput($event)" type="text"/>
+    <hr/>
+    <input @keyup="print" type="text"/>
+</div>
+
+<script src="./lib/vue-2.6.12.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {},
+        methods: {
+            // 获取文本框最新的值
+            submit(e) {
+                console.log(e);
+                console.log('摁下了 enter 键，最新的值是：' + e.target.value)
+            },
+            // 清空文本框的值
+            clearInput(e) {
+                e.target.value = ''
+            },
+            print(e) {
+                console.log(e);
+            }
+        },
+    })
+</script>
+</body>
+
+</html>

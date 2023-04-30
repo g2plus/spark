@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            Vue.component('todo-item', {
+                props: ['todo'], //属性绑定item
+                template: '<li>{{todo.id}}-----{{ todo.text }}</li>'
+            })
+            var vm = new Vue({
+                el: "#app-4",
+                //things about data,all put it in here.
+                data: {
+                    todos: [{
+                        text: "vue helps solve ui",
+                        index: 1
+                    }, {
+                        text: "vue is created by Evan You",
+                        index: 2
+                    }, {
+                        text: "vue is a progressive framework",
+                        index: 3
+                    }],
+                    seen: true,
+                    numbers: [1, 2, 3, 4, 5],
+                    groceryList: [{
+                        id: 0,
+                        text: 'Vegetables'
+                    }, {
+                        id: 1,
+                        text: 'Cheese'
+                    }, {
+                        id: 2,
+                        text: 'Whatever else humans are supposed to eat'
+                    }]
+                },
+                //vue的计算
+                computed: {
+                    evenNumbers: function () {
+                        return this.numbers.filter(function (number) {
+                            return number % 2 === 1;
+                        })
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div id="app-4">
+    <ul>
+        <!--if kind of like for(var item in list)-->
+        <!-- v-for的作用用来遍历生成dom元素
+        for i in
+        todo 代表子元素，通过对象.字段获取元素的值 --
+        添加额外的索引判断该dom是否显示
+    https://www.jianshu.com/p/f25a1c13d0dc-->
+        <!-- 2.2.0+ 的版本里，当在组件上使用 v-for 时，key 现在是必须的。 -->
+        <li style="font-size:20px" v-for="todo in todos" v-if="todo.index%2==0">
+            <a href="javasrcipt:;">你好呀</a>
+        </li>
+        <!--计算属性-->
+        <li v-for="n in evenNumbers">{{ n }}</li>
+        <todo-item :key="item.id" :todo="item" v-for="item in groceryList" v-if=item.id%2==0></todo-item>
+    </ul>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function countChar(input) {
+            var ch = [];
+            //进行str的字符去重操作
+            for (var i = 0; i < input.length; i++) {
+                if (ch.indexOf(input.charAt(i)) == -1) {
+                    ch.push(input.charAt(i));
+                }
+            }
+            //统计某个字符的出现次数
+            var max = 0;
+            for (var i = 0; i < ch.length; i++) {
+                var count = 0;
+                for (var j = 0; j < input.length; j++) {
+                    if (ch[i] === input.charAt(j)) {
+                        count++;
+                    }
+                }
+                if (count > max) {
+                    max = count
+                }
+            }
+        }
+        var input = prompt("请输入");
+        countChar(input);
+
+        var test = "hexxoworxd";
+        var obj = {};
+        for (var i = 0; i < test.length; i++) {
+            var chars = test.charAt(i);
+            //判断是否有该属性值，没有初始化为1
+            if (obj[chars]) {
+                obj[chars]++;
+            } else {
+                obj[chars] = 1;
+            }
+        }
+        var max = 0;
+        var ch1 = "";
+        for (var key in obj) {
+            if (obj[key] > max) {
+                max = obj[key];
+                ch1 = key;
+            }
+        }
+        console.log(ch1 + ":" + max);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

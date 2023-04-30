@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>知否知否,应是绿肥红瘦</li>
+        <li>知否知否,应是绿肥红瘦</li>
+        <li>知否知否,应是绿肥红瘦</li>
+        <li>知否知否,应是绿肥红瘦</li>
+        <li>知否知否,应是绿肥红瘦</li>
+    </ul>
+    <script>
+        //事件委托，将资源处理的事件交给父元素处理，仅需处理一次dom，节约交互事件。
+        var ul = document.querySelector("ul");
+        ul.onclick = function(e) {
+            for (var i = 0; i < ul.children.length; i++) {
+                //排他思想的体现
+                ul.children[i].style.backgroundColor = "transparent";
+            }
+            //事件属性target的使用
+            e.target.style.backgroundColor = 'orange';
+        }
+    </script>
+</body>
+
+</html>

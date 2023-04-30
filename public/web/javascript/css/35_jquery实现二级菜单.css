@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul > li {
+  list-style-type: none;
+}
+#menu::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#menu {
+  margin: 10px;
+  *zoom: 1;
+}
+#menu > li > a {
+  text-decoration: none;
+  padding: 0 10px;
+  color: white;
+}
+#menu > li {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  background-color: red;
+  padding: 0 10px;
+  font-size: 12px;
+}
+.box {
+  width: 80px;
+  text-align: center;
+  background-color: orange;
+}
+.box > ul > li {
+  background-color: orange;
+}

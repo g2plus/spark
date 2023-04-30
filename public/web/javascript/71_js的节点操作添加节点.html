@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>||Working with elements||</title>
+    <style>
+        .cls {
+            position: relative;
+            height: 100px;
+            background-color: orange;
+        }
+        
+        a {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-decoration: none;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vue">The text above has been created dynamically.</div>
+</body>
+<script>
+    /* https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild */
+    window.onload = function() {
+        // create a new div element
+        const newDiv = document.createElement("div");
+        newDiv.className = "cls";
+        newDiv.innerHTML = "<a href='https://www.baidu.com'>百度一下</a>";
+        // add the newly created element and its content into the DOM
+        const currentDiv = document.getElementById("vue");
+        document.body.insertBefore(newDiv, currentDiv);
+    }
+</script>
+
+</html>

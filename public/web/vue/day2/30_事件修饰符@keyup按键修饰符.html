@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <!-- 只有在 `key` 是 `Enter` 时调用 `vm.submit()` -->
+    <input v-model="message" v-on:keyup.enter="submit1">
+    <button @click="submit1">提交</button>
+    <!-- keyCode 的事件用法已经被废弃了并可能不会被最新的浏览器支持。
+    使用 keyCode attribute 也是允许的： -->
+    <!-- window.event.keyCode==13代表的就是回车键Enter -->
+    <input @keyup.13="submit2">
+    <button @click="submit2">提交</button>
+</div>
+</body>
+<script>
+    var obj = {
+        message: ""
+    }
+    new Vue({
+        el: "#app ",
+        data() {
+            return obj;
+        },
+        methods: {
+            submit1: function () {
+                console.log(this.message);
+                this.message = "";
+
+            },
+            submit2: function () {
+                console.log("Hello world!");
+            }
+        }
+    })
+</script>
+
+</html>

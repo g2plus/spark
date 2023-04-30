@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>37_未设置宽或高pading不会撑开盒子大小.html</title>
+    <style>
+        h1 {
+            height: 200px;
+            background-color: pink;
+            /*在设置了高度的情况下，盒子会被撑开,
+            宽度设置为100%的情况下，盒子会被撑开*/
+            padding: 20px;
+        }
+        
+        div {
+            /* padding: 20px; */
+            background-color: orange;
+            width: 60%;
+            height: 100px;
+        }
+        /* 后代选择器 */
+        
+        div p {
+            padding: 20px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <div>
+        <p></p>
+    </div>
+    <!-- 此处p的背景为transparent，div p限定p为div的后代，然而此处p不为div的后代 -->
+    <p></p>
+</body>
+
+</html>

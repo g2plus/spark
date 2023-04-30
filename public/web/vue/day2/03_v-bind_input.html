@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    message: "Hello vue!"
+                }
+            })
+            //use this to get data obj
+            alert(app.$data);
+            alert(typeof app.$data.message);
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <!--when use use message as attribute please do not use {{}}-->
+    <!--属性设置显示出来-->
+    <input type="text" v-bind:value="message">
+    <input :value="message" type="text">
+    <!--if you do use it here,and div will not display-->
+    <!-- <input type="text" :value="{{message}}"> -->
+</div>
+</body>
+
+</html>

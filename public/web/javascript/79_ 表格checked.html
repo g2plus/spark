@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            background-color: pink;
+            border-collapse: collapse;
+        }
+        
+        table thead,
+        table thead tr th {
+            background-color: aqua;
+            border-collapse: collapse;
+            font-size: 16px;
+            font-weight: normal;
+        }
+        
+        table tbody {
+            font-weight: normal;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            //1.全选与全不选
+            //获取全选按钮
+            var all = document.getElementById("tb_all");
+            //获取子选项
+            var subs = document.getElementById("tb_sub").getElementsByTagName("input");
+            all.onclick = function() {
+                //答应this.checked的值（true/fasle）
+                console.log(this.checked);
+                //设置属性值
+                for (var i = 0; i < subs.length; i++) {
+                    subs[i].checked = this.checked;
+                }
+            }
+
+            //2.根据子选项的是否全打勾给全选设置打勾
+            //编程思想的体现：给下面所有复选框绑定点击事件，
+            //每次点击，都有循环查看下面所有的复选框是否有没选中的。如果有一个没选中的，上面的全选就不选中。
+            //设置变量flag来控制是否全选。
+            for (var i = 0; i < subs.length; i++) {
+                subs[i].onclick = function() {
+                    var flag = true;
+                    for (var i = 0; i < subs.length; i++) {
+                        if (!subs[i].checked) {
+                            flag = false;
+                            break; //如果一个没有checked，跳出循环，优化。
+                        }
+                    }
+                    all.checked = flag;
+                }
+
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>
+                <input type="checkbox" id="tb_all">
+            </th>
+            <th>商品</th>
+            <th>价格</th>
+        </thead>
+        <tbody id="tb_sub">
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>iphone8</th>
+                <th>110</th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>iphone10</th>
+                <th>200</th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>iphone13</th>
+                <th>300</th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>iphone13</th>
+                <th>300</th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>iphone13</th>
+                <th>300</th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>iphone13</th>
+                <th>300</th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>iphone13</th>
+                <th>300</th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>iphone13</th>
+                <th>300</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var obj = {
+                message: "Hello world!"
+            }
+            var app = new Vue({
+                el: "#app",
+                data() {
+                    return obj
+                },
+                methods: {
+                    show: function () {
+                        alert("你他妈的就是个垃圾!");
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <input placeholder="edit me" v-model="message">
+    <p>Message is: {{ message }}</p>
+    <button @click="show">点击我呀</button>
+</div>
+
+</body>
+
+</html>

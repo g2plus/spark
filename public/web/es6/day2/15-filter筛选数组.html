@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // filter 筛选数组
+        var arr = [12, 66, 4, 88, 3, 7];
+        var newArr = arr.filter(function(value, index, arr) {
+            // return value >= 20;
+            if (value % 2 == 0) {
+                console.log(arr);
+            }
+            //进行过滤，仅保留偶数
+            return value % 2 === 0;
+        });
+        console.log(Array.prototype);
+        console.log(newArr); //12，66，4，88
+    </script>
+</body>
+
+</html>

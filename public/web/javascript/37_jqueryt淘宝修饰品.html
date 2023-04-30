@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/37_jquery淘宝修饰品.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        var leftCount;
+        $(function() {
+            //jquery对象转换为js对象
+            var data = $(".left")[0].getElementsByTagName("li");
+            leftCount = data.length;
+        })
+        $(function() {
+            $(".left>li").mouseenter(function() {
+                var idx = ($(this).index());
+                //parent() 父元素
+                //siblings("li") 同级别的某类型元素
+                $(".center>li").eq(idx).show().siblings("li").hide();
+            });
+            $(".right>li").mouseenter(function() {
+                var idx = ($(this).index());
+                idx = idx + leftCount;
+                //siblings("li") 同级别的某类型元素
+                $(".center>li").eq(idx).show().siblings("li").hide();
+            })
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #box {
+            position: absolute;
+            width: 520px;
+            height: 360px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: red;
+        }
+        
+        #vue::after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        
+        #vue {
+            *zoom: 1;
+        }
+        
+        #vue ul {
+            float: left;
+        }
+        
+        ul li {
+            list-style-type: none;
+        }
+        
+        #vue ul:nth-child(1),
+        #vue ul:nth-child(3) {
+            width: 80px;
+            background-color: pink;
+        }
+        
+        #vue .center {
+            width: 360px;
+        }
+        
+        .left li,
+        .right li {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        .center li {
+            width: 360px;
+            height: 360px;
+        }
+        
+        img {
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="vue">
+            <ul class="left">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+            <ul class="center">
+                <li style="background-color: red;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: orange;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: green;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: brown;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: gray;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color:blueviolet;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: red;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: black;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: yellow;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: purple;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;display:none;background-color: pink;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: skyblue;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;display:none;background-color: orangered;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: yellowgreen;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;display:none;background-color: greenyellow;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color:gold;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;display:none;background-color: lemonchiffon;">
+                    <a href="#"><img src=""></a>
+                </li>
+                <li style="display:none;background-color: burlywood;">
+                    <a href="#"><img src=""></a>
+                </li>
+            </ul>
+            <ul class="right">
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+            </ul>
+        </div>
+    </div>
+    <!-- <div>Hello world!</div> -->
+
+</body>
+
+</html>

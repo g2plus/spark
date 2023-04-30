@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <!--without attr value, the value equal to the content text-->
+    <select v-model="selected">
+        <option disabled value="">请选择</option>
+        <option value="0">A</option>
+        <option value="1">你好</option>
+        <option value="2">English</option>
+    </select>
+    <span>Selected: {{ selected }}</span>
+    <br>
+    <button @click="showWhathasBeenPicked" class="btn">click me</button>
+</div>
+</body>
+<script>
+    //this.selected = the attr value of the option selected
+    var obj = {
+        selected: "0"
+    }
+    var app = new Vue({
+        el: "#app",
+        data() {
+            return obj;
+        },
+        methods: {
+            showWhathasBeenPicked() {
+                //0,1,2
+                alert(this.selected);
+            }
+        }
+    });
+</script>
+
+</html>

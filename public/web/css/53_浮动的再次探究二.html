@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>53_浮动的再次探究二.html</title>
+    <style>
+        .box {
+            float: left;
+            background-color: yellow;
+            width: 400px;
+            height: 183.75px;
+            font-size: 50px;
+            line-height: 183.75px;
+            text-align: center;
+            color: red;
+        }
+        /* container的盒子大小正好放下图片无法放下浮动盒子，此时，子盒子设置浮动；但是盒子放置不下，此时盒子溢出。浮动元素在父盒子的左下方放置
+            如何复合大小能过放下浮动盒子，则浮动盒子在父盒子的左边缘放置。浮动的特点。
+        
+        */
+        
+        .container {
+            width: 700px;
+            height: 183.75px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <img src="image/bg.jpg" alt="王者荣耀" width='400'>
+        <div class='box'>120</div>
+    </div>
+
+</body>
+
+</html>

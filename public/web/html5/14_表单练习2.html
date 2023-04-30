@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_表单练习2.html</title>
+</head>
+
+<body>
+    <h3>青春不常在,抓紧谈恋爱。</h3>
+    <form action="#" method='post' name='register'>
+        <table width='500' border='0'>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type='radio' name='gender' value='male' id='male'><label for='male'>男</label>
+                    <input type='radio' name='gender' value='female' id='female'><label for='female'>女</label>
+                </td>
+            </tr>
+            <tr>
+                <td>生日</td>
+                <td>
+                    <select name='year'>
+                        <option>--请选择年--</option>
+                        <option>1997</option>
+                        <option>1998</option>
+                        <option>1999</option>
+                    </select>
+                    <select name='month'>
+                        <option>--请选择月--</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                    <select name='day'>
+                        <option>--请选择日--</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>所在地区</td>
+                <td>
+                    <input type='text' name='address' value=''>
+                </td>
+            </tr>
+            <tr>
+                <td>婚姻状态</td>
+                <td>
+                    <input type='radio' name='marriage' value='未婚'>未婚
+                    <input type='radio' name='marriage' value='已婚'>已婚
+                    <input type='radio' name='marriage' value='离婚'>离婚
+                </td>
+            </tr>
+            <tr>
+                <td>学历</td>
+                <td>
+                    <input type='text' name='degree' value=''>
+                </td>
+            </tr>
+            <tr>
+                <td>喜欢的类型</td>
+                <td>
+                    <input type='checkbox' name='kind' value='妩媚的'>妩媚的
+                    <input type='checkbox' name='kind' value='可爱的'>可爱的
+                    <input type='checkbox' name='kind' value='小鲜肉'>小鲜肉
+                    <input type='checkbox' name='kind' value='老腊肉'>老腊肉
+                    <input type='checkbox' name='kind' value='都喜欢'>都喜欢
+                </td>
+            </tr>
+            <tr>
+                <td>自我介绍</td>
+                <td><textarea rows='5' cols='45'></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type='submit'>免费注册</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type='checkbox'>我同意注册条款和会员加入标准</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href='#'>我是会员，立即登录</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <h2>我承诺</h2>
+                    <ul type='desc'>
+                        <li>年满18岁、单身</li>
+                        <li>抱着严肃的态度</li>
+                        <li>真诚寻找另一半</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

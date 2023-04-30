@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>38_盒子模型之相邻块元素垂直外边距合并.html</title>
+    <style>
+        div {
+            background-color: pink;
+            width: 400px;
+            height: 400px;
+            padding: 10px;
+            color: white;
+        }
+        
+        .one {
+            margin-bottom: -80px;
+            background-color: red;
+        }
+        
+        .two {
+            margin-top: -40px;
+            background-color: blue;
+        }
+        
+        .three {
+            width: 400px;
+            height: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='one'>1</div>
+    <!-- two设置margin-top为-40px向上移动40px,one设置margin-bottome为-80px，则还需向上移动40px -->
+    <div class='two'>1</div>
+    <!-- 从显示效果来看，one可见宽度为320px -->
+    <div class='three'>1</div>
+</body>
+
+</html>

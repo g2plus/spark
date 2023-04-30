@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>91_结构伪选择器(子代选择器).html</title>
+    <style>
+        section div:nth-child(1) {
+            /* nth-child（1）->p p!=div,不进行解析 */
+            height: 20px;
+            background-color: pink;
+        }
+        
+        section div:nth-of-type(1) {
+            height: 20px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <p>我是p标签</p>
+        <div>我是div标签</div>
+        <div>我是div标签</div>
+    </section>
+</body>
+
+</html>

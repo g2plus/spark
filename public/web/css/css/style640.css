@@ -1,0 +1,28 @@
+div {
+    width: 50%;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    color: red;
+}
+
+body {
+    *zoom: 1;
+}
+
+body::after {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+div:nth-child(1) {
+    float: left;
+    background-color: skyblue;
+}
+
+div:nth-child(2) {
+    float: left;
+    background-color: blue;
+}

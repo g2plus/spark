@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.登录表单练习.html</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class='box'>
+        <div class='boxleft'>
+            <p>新用户注册</p>
+            <p>USER REGISTER</p>
+        </div>
+        <div class='boxcenter'>
+            <form action='#' method='post' name='register'>
+                <table>
+                    <tr>
+                        <td class='left'>用户名</td>
+                        <td class='right'>
+                            <input id='username' type='text' name='username' placeholder='请输入账号' value='' required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>密码</td>
+                        <td class='right'>
+                            <input id='password' type='password' name='password' placeholder='请输入密码' value='' required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>Email</td>
+                        <td class='right'>
+                            <input id='email' type='email' name='email' placeholder='请输入Email' value='' required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>姓名</td>
+                        <td class='right'>
+                            <input id="name" type='text' name='name' placeholder='请输入姓名' value='' required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>手机号</td>
+                        <td class='right'>
+                            <input id='tel' type='text' name='phoneNumber' placeholder='请输入手机号' value='' required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>性别</td>
+                        <td class='right'>
+                            <input id='male' type='radio' name='gender' value='male' id='male' required><label for='male'>男</label>
+                            <input id='female' type='radio' name='gender' value='female' id='female' required><label for='female'>女</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>出生日期</td>
+                        <td class='right'>
+                            <input id='dob' type='date' name='birthday' value='' required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='left'>验证码</td>
+                        <td class='right'>
+                            <input id='checkcode' type='text' name='code' value='' required>
+                            <image src='image/favicon.ico' height='30'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=2 align='center'>
+                            <button type='submit'>注&nbsp;&nbsp;&nbsp;&nbsp;册</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class='boxright'>
+            <p>已有账号？<a href="#">立即登录</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

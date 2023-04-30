@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var data = {
+                message: "去你妈的vue"
+            }
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    message: data.message
+                }
+            })
+            //通过使用 v-once 指令，你也能执行一次性地插值，
+            //当数据改变时， 插值处的内容不会更新。 但请留心这会影响到该节点上的其它数据绑定：
+            app.$data.message = "World!"
+        })
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <p v-once>{{message}}</p>
+</div>
+
+</body>
+<script>
+</script>
+
+</html>

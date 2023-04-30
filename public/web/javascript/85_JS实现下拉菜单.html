@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .nav::after {
+            content: "";
+            display: block;
+            visibility: hidden;
+            height: 0;
+            clear: both;
+        }
+        
+        .nav {
+            *zoom: 1;
+        }
+        
+        .nav>li {
+            float: left;
+            padding: 5px 30px;
+        }
+        
+        .nav>li>a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .nav>li>ul {
+            display: none;
+        }
+        
+        .nav>li>ul>li {
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            //核心思想：将导航栏中的每个li添加鼠标注册事件
+            //原理：当鼠标经过li的第二个孩子ul先死，当鼠标离开，则ul隐藏
+            var lis = document.querySelectorAll(".nav>li");
+            //练习children的作用:用于获取子节点。
+            var nav = document.querySelector(".nav");
+            var alis = nav.children;
+            alert(alis.length);
+            var as = document.querySelectorAll(".nav>li>a");
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].onmouseover = function() {
+                    this.children[1].style.display = "block";
+                }
+                lis[i].onmouseout = function() {
+                    this.children[1].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <!--TODO实现js下拉菜单-->
+    <ul class="nav">
+        <li>
+            <a href="#">weibo</a>
+            <ul>
+                <li>weibo</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">twitter</a>
+            <ul>
+                <li>twitter</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

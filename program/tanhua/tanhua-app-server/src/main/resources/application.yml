@@ -1,0 +1,54 @@
+#服务端口
+server:
+  port: 18080
+spring:
+  application:
+    name: tanhua-app-server
+  redis:  #redis配置
+    port: 6379
+    host: 192.168.136.160
+  cloud:  #nacos配置
+    nacos:
+      discovery:
+        server-addr: 192.168.136.160:8848
+dubbo:    #dubbo配置
+  registry:
+    address: spring-cloud://localhost
+  consumer:
+    check: false
+    retries: 0
+tanhua:
+  sms:
+    url: http://106.ihuyi.com/webservice/sms.php?method=Submit
+    account: C80305290
+    password: e6e474c1e7b4f88889f3fd67b474bd68
+  face:
+    APP_ID: 24021388
+    API_KEY: ZnMTwoETXnu4OPIGwGAO2H4G
+    SECRET_KEY: D4jXShyinv5q26bUS78xRKgNLnB9IfZh
+  oss:
+    endpoint: https://oss-cn-hangzhou.aliyuncs.com
+    bucketName: fiesacyum
+    accessKeyId: LTAI5tNjNJUb1zms8B8UX6Ri
+    accessKeySecret: Fn0SRuVaDVZ7CsP0WSM1CoxYQvm3zX
+    domainName: https://fiesacyum.oss-cn-hangzhou.aliyuncs.com
+  huanxin:
+    appkey: 1103211012040467#tanhua
+    clientId: YXA61pu9ZslLThmA6j3HKrtN2Q
+    clientSecret: YXA66AOvtx6GQ9HqRp8QQQ7rBrxlp_g
+# ===================================================================
+# 分布式文件系统FDFS配置
+# ===================================================================
+fdfs:
+  so-timeout: 1500
+  connect-timeout: 600
+  #缩略图生成参数
+  thumb-image:
+    width: 150
+    height: 150
+  #TrackerList参数,支持多个
+  tracker-list: 192.168.136.160:22122
+  web-server-url: http://192.168.136.160:8888/
+
+
+

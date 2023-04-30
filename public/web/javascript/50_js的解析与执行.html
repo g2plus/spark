@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(number); //undefined
+        var number = 30;
+        //上面的代码等同于下面的代码
+        // var number;
+        // console.log(number);
+        // number = 30;
+        //console.log(data); //ReferenceError
+        fun2();
+
+        function fun2() {
+            console.log("Go!");
+        }
+
+
+        fun();
+        var fun = function() {
+            alert("Hello world!");
+        }
+
+        //var fun;
+        //fun();
+        // fun = function() {
+        //     alert("Hello world!");
+        // }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

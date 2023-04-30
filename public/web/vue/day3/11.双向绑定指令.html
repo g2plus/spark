@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Document</title>
+</head>
+
+<body>
+<div id="app">
+    <p>用户名是：{{username}}</p>
+    <input type="text" v-model="username"/>
+
+    <hr/>
+
+    <p>选中的省份是：{{province}}</p>
+    <select v-model="province">
+        <!--value的值对应数据库中的主键一般在前端显示为加密的符文-->
+        <option value="null">请选择</option>
+        <option value="1">南京</option>
+        <option value="2">河北</option>
+        <option value="3">黑龙江</option>
+    </select>
+</div>
+
+<script src="./lib/vue-2.6.12.js"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            // 姓名
+            username: 'hjm',
+            // 省份
+            province: '1',
+        },
+    })
+</script>
+</body>
+
+</html>

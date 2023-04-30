@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .active {
+            background-color: pink;
+        }
+
+        .textDanger {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px 10px;
+            margin: auto;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <!-- 使用数组的方式添加多个class -->
+    <div v-bind:class="[activeClass,textDangerClass]">
+        <p>想见你 只想见你 未来过去 我只想见你</p>
+        <p>穿越了千个万个 时间线里 人海里相依</p>
+        <p>用尽了逻辑心机 推理爱情 最难解的迷</p>
+        <p>会不会你也 和我一样 在等待一句 我愿意</p>
+    </div>
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            activeClass: 'active',
+            textDangerClass: 'textDanger'
+        }
+    })
+</script>
+
+</html>

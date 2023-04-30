@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+</head>
+
+<body>
+<div id="app">
+    <!-- <p v-text="username"></p>
+<p v-text="gender">性别</p> -->
+
+    <p>姓名：{{username}}</p>
+    <p>性别：{{gender}}</p>
+
+    <p>---------</p>
+    <!--v-text会替换文本的原有内容--->
+    <p v-text="desc">下里巴人</p>
+    <p>{{desc}}</p>
+    <p>----解析为html内容-----</p>
+    <p v-html="desc"></p>
+</div>
+
+<script src="./lib/vue-2.6.12.js"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            username: 'zs',
+            gender: '男',
+            desc: '<i style="color:red;">二胡卵子<i>'
+        }
+    })
+</script>
+</body>
+
+</html>

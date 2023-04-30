@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--文件上传参考链接:
+https://www.runoob.com/servlet/servlet-file-uploading.html-->
+<!--enctype="multipart/form-data" post 连个条件-->
+<form method="post" action="/uploadFileServlet" enctype="multipart/form-data">
+    选择一个文件:
+    <input type="file" name="upload" />
+    <br/><br/>
+    <input type="submit" value="上传" />
+</form>
+</body>
+</html>
