@@ -6,7 +6,7 @@
         <slot name="header"></slot>
       </tr>
     </thead>
-    <!-- 内容主体区域 -->
+    <!-- 数据插槽内容主体区域 -->
     <tbody>
       <tr v-for="(item, index) in data" :key="item.id">
         <slot name="body" :row="item" :index="index"></slot>

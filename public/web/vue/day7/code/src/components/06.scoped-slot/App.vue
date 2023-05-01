@@ -5,9 +5,19 @@
 
     <!-- 使用自定义组件 -->
     <my-test>
-      <template #default="{ msg, info }">
+      <!--异构-->
+      <template #default="{ info,msg  }">
         <p>{{ msg }}</p>
         <p>{{ info.address }}</p>
+        <p>{{ info.phone }}</p>
+      </template>
+    </my-test>
+
+    <my-test>
+      <template #default="scope">
+        <p>{{ scope.info }}</p>
+        <p>{{ scope.msg }}</p>
+        <p>{{ scope}}</p>
       </template>
     </my-test>
     <hr />

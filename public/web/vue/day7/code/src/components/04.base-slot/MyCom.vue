@@ -4,7 +4,7 @@
     <hr />
 
     <p>这是第一个 p 标签</p>
-    <slot>这是后备内容</slot>
+    <slot name="default">这是后备内容</slot>
     <p>这是最后一个 p 标签</p>
   </div>
 </template>

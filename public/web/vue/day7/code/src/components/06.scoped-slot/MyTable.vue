@@ -28,6 +28,7 @@ export default {
         { id: 1, name: '张三', state: true },
         { id: 2, name: '李四', state: false },
         { id: 3, name: '赵六', state: false },
+        { id: 4, name: '王五', state: true },
       ],
     }
   },

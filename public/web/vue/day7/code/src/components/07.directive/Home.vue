@@ -1,9 +1,9 @@
 <template>
   <div class="home-container">
-    <h3 v-color="'red'">MyHome 组件 --- {{ count }}</h3>
+    <h3 v-color="'blue'">MyHome 组件 --- {{ count }}</h3>
     <hr />
-
-    <input type="text" class="form-control" v-focus v-color="'cyan'" />
+    <!--使用自定义指令-->
+    <input type="text" class="form-control" v-focus v-color="'red'" />
     <button type="button" class="btn btn-primary" @click="count += 1">+1</button>
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
       count: 0,
     }
   },
+  //局部注册方式
   directives: {
     // focus: {
     //   mounted(el) {

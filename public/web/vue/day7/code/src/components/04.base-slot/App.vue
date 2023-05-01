@@ -5,6 +5,9 @@
 
     <!-- 使用组件 -->
     <my-com>
+      <template #default>
+        你是真的狗
+      </template>
     </my-com>
   </div>
 </template>

@@ -20,7 +20,10 @@ export default {
     showInput() {
       // 要展示文本框
       this.inputVisible = true
-      //页面的渲染是异步的 因此需要使用$nextTick
+      //页面的渲染是异步的 因此需要使用$nextTick 原理，
+      //一般开发中使用自定义命令解决如v-focus
+      //如果需要组件切换保留上一次操作的记录，需要vue的keep-alive
+      //详情见03.dynamic
       this.$nextTick(() => {
         console.log(this.$refs.ipt)
         // 获取到文本框的引用对象，然后调用 focus() 方法
