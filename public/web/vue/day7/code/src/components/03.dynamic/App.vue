@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 class="mb-4">App 根组件</h1>
+    <!--点击修改comName的值，决定挂载什么组件-->
     <button type="button" class="btn btn-primary" @click="comName = 'MyHome'">首页</button>
     <button type="button" class="btn btn-info ml-2" @click="comName = 'MyMovie'">电影</button>
     <hr />
