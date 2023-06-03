@@ -10,11 +10,12 @@
 
 <body>
     <form action='#' method='post' name='select1'>
+        <label for="pet-select">Choose an address:</label>
         <select name='address'>
-            <option>湖南</option>
-            <option selected>河北</option>
-            <option>河南</option>
-            <option>广东</option>
+            <option value="HuNan">湖南</option>
+            <option selected value="HeBei">河北</option>
+            <option value="HeNan">河南</option>
+            <option disabled value="GuangDong">广东</option>
         </select>
         <button type=submit>提交</button>
     </form>

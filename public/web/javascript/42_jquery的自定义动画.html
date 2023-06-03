@@ -13,6 +13,7 @@
             left: 0;
             width: 200px;
             height: 200px;
+            border-radius: 50%;
             line-height: 200px;
             text-align: center;
             background-color: red;
@@ -27,19 +28,18 @@
             $("#selfdefined").click(function() {
                 $("#vue").animate({
                     left: 800
-                }, 2000, "linear", function() {
+                }, 6000, "linear", function () {
                     $("#vue").animate({
                         left: 0
-                    }, 2000, "linear", function() {
+                    }, 6000, "linear", function () {
                         $("#vue").animate({
                             left: 800
-                        }, 2000, "linear", function() {
+                        }, 6000, "linear", function () {
                             $("#vue").animate({
                                     left: 0
-                                }, 2000, "linear", function() {
-                                    alert("done");
+                                }, 6000, "linear", function () {
+                                    console.log("done");
                                 }
-
                             )
                         });
                     });

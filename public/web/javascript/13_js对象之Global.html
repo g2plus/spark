@@ -16,9 +16,9 @@
         window.document.write(decodeURI(encode) + "<br>");
         //解析能解析的数字例如"123abc"解析成123
         var number = "123abc";
-        alert(parseInt(number) + 1);
+        console.log(parseInt(number) + 1);
         var numberC = NaN;
-        window.alert(isNaN(numberC));
+        console.log(isNaN(numberC));
         // eval可解析js字符串进行执行命令
         eval('document.write("Hello World!"+"<br>")');
     </script>

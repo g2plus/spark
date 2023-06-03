@@ -7,22 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>52_浮动的再次探究一.html</title>
     <style>
+        /*block元素独占一行*/
         .box1 {
             background-color: red;
-            width: 100px;
+            width: 200px;
             height: 100px;
         }
-        
+
+        /*浮动元素，不占用当前图层*/
         .box2 {
-            float: left;
-            width: 100px;
-            height: 200px;
+            float: right;
+            width: 200px;
+            height: 90px;
             background-color: yellow;
         }
         
         .box3 {
             background-color: blue;
-            width: 200px;
+            width: 300px;
             height: 300px;
         }
     </style>

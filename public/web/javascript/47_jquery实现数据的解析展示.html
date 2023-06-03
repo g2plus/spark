@@ -66,36 +66,36 @@
             "gender": "female"
         }];
         //使用html()来展示数据,html设置页面的内容会覆盖原有内容，因此必须处理完数据然后进行添加到表格中。
+        $(function () {
+            $("#getData").click(function () {
+                //定义数组用来存放数据；
+                var list = [];
+                for (var i = 0; i < data.length; i++) {
+                    list.push("<tr>");
+                    //生成td；
+                    for (var key in data[i]) {
+                        list.push("<td>");
+                        list.push(data[i][key]);
+                        list.push("</td>");
+                    }
+                    list.push("</tr>");
+                }
+                $("#obj_data").html(list.join(""));
+            })
+        });
+        //使用$()加上appendTo追加的方式来展示数据
         // $(function() {
         //     $("#getData").click(function() {
-        //         //定义数组用来存放数据；
-        //         var list = [];
         //         for (var i = 0; i < data.length; i++) {
-        //             list.push("<tr>");
-        //             //生成td；
-        //             for (var key in data[i]) {
-        //                 list.push("<td>");
-        //                 list.push(data[i][key]);
-        //                 list.push("</td>");
-        //             }
-        //             list.push("</tr>");
+        //             //获取一个jquery的对象，内部的内容设置如下
+        //             var $tr = $("<tr><td>" + data[i]['name'] + "</td><td>" + data[i]['age'] + "</td><td>" + data[i]['gender'] + "</td></tr>");
+        //             //在obj_data绑定的对象的内部添加子元素
+        //             //$("#obj_data").append($tr);
+        //             //把元素添加到tbody的内部
+        //             $tr.appendTo("#obj_data");
         //         }
-        //         $("#obj_data").html(list.join(""));
         //     })
-        // });
-        //使用$()加上appendTo追加的方式来展示数据
-        $(function() {
-            $("#getData").click(function() {
-                for (var i = 0; i < data.length; i++) {
-                    //获取一个jquery的对象，内部的内容设置如下
-                    var $tr = $("<tr><td>" + data[i]['name'] + "</td><td>" + data[i]['age'] + "</td><td>" + data[i]['gender'] + "</td></tr>");
-                    //在obj_data绑定的对象的内部添加子元素
-                    //$("#obj_data").append($tr);
-                    //把元素添加到tbody的内部
-                    $tr.appendTo("#obj_data");
-                }
-            })
-        })
+        // })
     </script>
 </head>
 

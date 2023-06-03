@@ -86,8 +86,8 @@
                 //临时删除这行的checkbox为checked才能进行删除操作
             document.getElementById("delSelected").onclick = function() {
                 if (confirm("您确定要删除选中条目吗？")) {
-                    var flag = false;
                     //判断是否有选中条目
+                    var flag = false;
                     var cbs = document.getElementsByTagName("input");
                     for (i = 0; i < cbs.length; i++) {
                         if (cbs[i].checked) {
@@ -97,9 +97,9 @@
                     }
                     if (flag) { //有选中条目，再提表单
                         // 提交一个数组的json到后端,后端进行批量删除。概念模型没有实现
-                        alert("提交表单");
+                        console.log("提交表单");
                     } else {
-                        alert("没选中删除的项目")
+                        console.log("没选中删除的项目")
                     }
                 }
             }

@@ -6,25 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        var arr = new Array(1, 2, 3);
-        document.write(arr.toString() + "<br>");
-        document.write(arr + "<br>");
-        // js的数组对象不存在索引越界问题，自动扩容
-        arr[5] = 10;
-        // length属性
-        document.write(arr.length + "<br>");
-        // 尾部添加元素的push方法
-        arr.push(11);
-        document.write(arr.length + "<br>");
-        for (var i = 0; i < arr.length; i++) {
-            alert(arr[i]);
-        }
-    </script>
 </head>
 
 <body>
-
 </body>
+<script>
+    var arr = new Array(1, 2, 3);
+    console.log(arr.toString())
+    document.write(arr.toString() + "<br>");
+    document.write(arr + "<br>");
+    // js的数组对象不存在索引越界问题，自动扩容
+    arr[5] = 10;
+    // length属性
+    document.write(arr.length + "<br>");
+    // 尾部添加元素的push方法
+    arr.push(11);
+    document.write(arr.length + "<br>");
+    for (var i = 0; i < arr.length; i++) {
+        if (Boolean(arr[i])) {
+            console.log(arr[i]);
+        }
+
+    }
+</script>
 
 </html>

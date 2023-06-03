@@ -9,28 +9,17 @@
     <script>
         console.log(number); //undefined
         var number = 30;
-        //上面的代码等同于下面的代码
-        // var number;
-        // console.log(number);
-        // number = 30;
-        //console.log(data); //ReferenceError
-        fun2();
 
         function fun2() {
             console.log("Go!");
         }
 
+        fun2();
 
-        fun();
         var fun = function() {
-            alert("Hello world!");
+            console.log("Hello world!");
         }
-
-        //var fun;
-        //fun();
-        // fun = function() {
-        //     alert("Hello world!");
-        // }
+        fun();
     </script>
 </head>
 

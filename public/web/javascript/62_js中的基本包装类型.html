@@ -9,13 +9,11 @@
     <script>
         //为了方便基本数据类型的操作，js中提供了三个特殊的引用类型：String，Number，Boolean
         var str = "I hate you,I love you.";
-        console.log(str.length);
-
-
         var temp = new String("I hate you,I love you");
         var str2 = temp;
         temp = null;
-        console.log(str.length);
+        console.log(str2.length);
+        console.log(temp.length);
     </script>
 </head>
 

@@ -23,17 +23,17 @@
         $(function() {
             $("#show").click(function() {
                 $("#vue").slideDown(1000, function() {
-                    alert("it showed");
+                    console.log("it showed");
                 });
             });
             $("#hide").click(function() {
                 $("#vue").slideUp(1000, function() {
-                    alert("it hided");
+                    console.log("it hided");
                 });
             });
             $("#toggle").click(function() {
                 $("#vue").slideToggle(1000, function() {
-                    alert("it toggled");
+                    console.log("it toggled");
                 });
             });
         });

@@ -15,7 +15,7 @@
             color: grey;
             text-decoration: none;
         }
-        
+        /*伪选择器*/
         a:hover {
             color: blue;
             text-decoration: underline;
@@ -24,9 +24,16 @@
 </head>
 
 <body>
-    <div>
-        <a href='https:www.bilibili.com'>bilibili</a>
-    </div>
+<div onClick=sayHello()>
+    <a href='https:www.bilibili.com' onClick="alert('Hello!')" target='_self'>bilibili</a>
+</div>
 </body>
+<script>
+    function sayHello() {
+        debugger
+        console.log("Hello world!");
+    }
+
+</script>
 
 </html>

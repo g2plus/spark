@@ -15,7 +15,28 @@
 </head>
 
 <body>
-    <input type='text' placeholder='请输入密码'>
+<!-- 模拟密码的隐藏与显示 -->
+<div>
+    <input id='password' placeholder='请输入密码' type='password'>
+    <button id='converter'>show password</button>
+</div>
+
 </body>
+<script>
+    window.onload = function () {
+        debugger
+        let inputElement = document.getElementById("password");
+        let spanElement = document.getElementById("converter");
+        console.log(spanElement);
+        console.log(inputElement);
+        spanElement.onmouseenter = function () {
+            inputElement.type = 'text';
+        }
+        spanElement.onmouseout = function () {
+            inputElement.type = 'password';
+        }
+
+    }
+</script>
 
 </html>

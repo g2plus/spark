@@ -14,12 +14,13 @@
             //     alert() 警告框
             //     confirm() 确认框
             //     prompt() 对话框
-            alert('Hello World!');
-            confirm('是否关闭本窗口');
+            window.alert('Hello World!');
+            window.confirm('是否关闭本窗口');
             //对话提示输入框
-            var value = prompt('请输入手机号码');
+            var value = window.prompt('请输入手机号码');
             //弹窗
-            alert('输入的手机号为：' + value);
+            window.alert('输入的手机号为：' + value);
+            console.log(window)
         }
     </script>
 </head>

@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        //原因：字符串的不可变性
+        //原因:字符串的不可变性底层指针
+        //更多拼接方式 https://blog.csdn.net/Colbyzn/article/details/107743059
         var str = "";
         for (var i = 0; i < 1000; i++) {
             str += i; //开辟新空间存储变量值

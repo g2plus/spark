@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script>
-        function countDown(time) {
-            //https://devnote.pro/posts/10000004891159
-            alert(new Date().getTime());
-            var now = +new Date(); //时间以毫秒值进行显示。
-            var input = +new Date(time);
-            var gap = (input - now) / 1000 //剩余的时间的总秒数
-            var d = parseInt(gap / 60 / 60 / 24);
-            d = d < 10 ? "0" + d : d;
-            var h = parseInt(gap / 60 / 60 % 24);
-            h = h < 10 ? "0" + h : h;
-            var m = parseInt(gap / 60 % 60);
-            m = m < 10 ? "0" + m : m;
-            var s = parseInt(gap % 60);
-            s = s < 10 ? "0" + s : s;
-            return d + "天" + h + "时" + m + "分" + s + "秒";
+    <style>
+        p {
+            font-size: 24px;
+            color: red;
+            border: 1px solid red;
+            text-align: center;
+            width: 600px;
+            margin: 20% auto;
+            line-height: 50px;
         }
-        console.log(countDown("2022-03-12 00:00:00"));
-    </script>
+    </style>
 </head>
-
 <body>
-
+<p id="djs"></p>
 </body>
+<script>
+    window.onload = function() {
+        setInterval(function() {
+            var nowTime = new Date();//获取当前时间
+            //创建日期对象
+            var endTime = new Date("2024-02-10 00:00:00");
+            var seconds = parseInt((endTime.getTime() - nowTime.getTime()) / 1000);//两个时间点的时间差(秒)
+            var d = parseInt(seconds / 3600 / 24);//得到天数
+            var h = parseInt(seconds / 3600 % 24);//小时
+            var m = parseInt(seconds / 60 % 60);//分钟
+            var s = parseInt(seconds % 60);//秒
+            document.getElementById("djs").innerHTML = "距离春节还有" + d +"天" + h + "小时" + m + "分钟" + s + "秒";
+        }, 1000);
+    }
+</script>
 
 </html>

@@ -1,0 +1,11 @@
+div {
+    width: 70px;
+    height: 55px;
+    line-height: 55px;
+    background-color: pink;
+    background-image: url(../image/favicon.ico);
+    background-repeat: no-repeat;
+    background-position: 10px;
+    padding-left: 45px;
+    font-size: 20px;
+}

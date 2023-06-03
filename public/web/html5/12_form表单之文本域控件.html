@@ -10,8 +10,11 @@
 
 <body>
     <form action='#' method='post' name='textarea'>
+        <label for="story">Tell us your story:</label>
         我的留言：
-        <textarea name='comment'></textarea>
+        <!--Default content entered between the opening and closing tags. <textarea> does not support the value attribute.--->
+        <textarea cols="33" id="story"
+                  name="story" rows="5">It was a dark and stormy night...</textarea>
         <button type='submit'>评论</button>
     </form>
 </body>

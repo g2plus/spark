@@ -25,21 +25,23 @@
     <button id="btn3">普通按钮</button>
 </body>
 <script>
-    window.onload = function() {
-        var sum = 0;
-        var btn3 = document.getElementById("btn3");
-        btn3.onclick = function() {
-            alert(sum + getNumber(20170531));
-        }
-
-    }
-    var normal = function() {
-            alert("Hello!");
-        }
-        //简化函数体 () 参数列表，{} 在只有一条语句时，可以省略，{}只有一条语句且是return语句时，可以省略return
-    var arrow = () => alert("Halo!");
-
     var getNumber = (num) => num;
+    window.onload = function () {
+        var btn3 = document.getElementById("btn3");
+        btn3.onclick = function () {
+            console.log(str() + getNumber(20170531));
+        }
+    }
+
+    function str() {
+        return "Hello:"
+    }
+
+    function normal(){
+        console.log("normal");
+    }
+
+    var arrow=()=>console.log("arrow");
 </script>
 
 </html>

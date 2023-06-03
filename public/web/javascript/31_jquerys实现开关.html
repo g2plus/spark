@@ -12,7 +12,7 @@
             var i = 0;
             $("div#vue").click(function() {
                 i++;
-                alert(i)
+                console.log(i);
                 if (i % 2 == 0) {
                     $("#vue").text("Hello world!").attr("class", "on");
                     //添加单个样式
@@ -22,7 +22,7 @@
                     //$("div#vue ").css("background-color ", 'green');
                 }
                 var vue2 = document.getElementById("vue");
-                alert(vue2.textContent)
+                console.log(vue2.textContent)
             });
         });
     </script>

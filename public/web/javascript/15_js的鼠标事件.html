@@ -20,11 +20,11 @@
             //event事件
             mouse.onmousedown = function(event) {
                     if (event.button == 0) {
-                        alert("鼠标左键被按下");
+                        console.log("鼠标左键被按下");
                     } else if (event.button == 1) {
-                        alert("鼠标滚轮被按下");
+                        console.log("鼠标滚轮被按下");
                     } else {
-                        alert("鼠标右键被按下");
+                        console.log("鼠标右键被按下");
                     }
                 }
                 //onkeydown仅对输入有用
@@ -32,7 +32,7 @@
             keyboard.onkeydown = function(event) {
                 //13为enter键被按下
                 if (event.which == 13) {
-                    alert("提交表单");
+                    console.log("提交表单");
                 }
             }
         }

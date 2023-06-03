@@ -7,15 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript">
-        var xhr = new XMLHttpRequest();
-        //xhr的内部方法
-        xhr.open("get", "https://www.baidu.com", false);
-        xhr.setRequestHeader('Content-type', 'text/html');
-        xhr.send(null);
-        xhr.onload = function() {
-            //xhr的内部属性
-            console.log(xhr.responseText);
+        try {
+            var xhr = new XMLHttpRequest();
+            //xhr的内部方法
+            xhr.open("get", "https://www.baidu.com", false);
+            xhr.setRequestHeader('Content-type', 'text/html');
+            xhr.send(null);
+            xhr.onload = function () {
+                //xhr的内部属性
+                console.log(xhr.responseText);
+            }
+        } catch (e) {
+            console.log(e);
         }
+
     </script>
 </head>
 

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript">
-        var xhr = new XMLHttpRequest();
-        //xhr的内部方法
-        xhr.open("get", "https://www.baidu.com", false);
-        xhr.send(null);
-        xhr.onload = function() {
-            //xhr的内部属性
-            console.log(xhr.responseText);
+        // var xhr = new XMLHttpRequest();
+        // //xhr的内部方法
+        //存在跨越问题
+        // xhr.open("get", "https://www.baidu.com", false);
+        // xhr.send(null);
+        // xhr.onload = function() {
+        //     //xhr的内部属性
+        //     console.log(xhr.responseText);
+        // }
+        function callback2(data) {
+            console.log('JSONP响应回来的数据是：')
+            console.log(data)
         }
     </script>
+    <script src="https://www.baidu.com?callback=callback2"></script>
 </head>
 
 <body>
