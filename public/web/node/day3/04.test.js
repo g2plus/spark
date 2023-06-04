@@ -20,7 +20,6 @@
 // 再被加载的目录中查找package.json文件中寻找main属性,作为require()加载的入口
 // 如果目录里没有package.json文件,或者main入口不存在,则node.js尝试加载目录下的index.js文件
 // 如果两步失败,报告模块的缺失
-
 require('./03.自定义模块')
 require('./03.自定义模块')
 require('./03.自定义模块')

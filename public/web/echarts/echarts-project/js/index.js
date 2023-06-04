@@ -5,7 +5,6 @@
       .addClass("active")
       .siblings("a")
       .removeClass("active");
-
     // console.log($(this).index());
     //   选取对应索引号的content
     $(".monitor .content")

@@ -14,19 +14,20 @@
         window.addEventListener("load", function() {
             console.log("0-----------------------");
             console.log(this);
-            var btn = document.querySelector("button");
-            btn.onclick = function() {
+            let btn = document.querySelector("button");
+            btn.onclick = function () {
                 console.log("1-----------------------");
                 console.log(this);
             }
 
-            function Fun() {
+            function fun() {
                 console.log("2-----------------------");
                 console.log(this);
             }
-            var fun = new Fun();
-            var obj = {
-                sayHi: function() {
+
+            fun();
+            let obj = {
+                sayHi: function () {
                     console.log("3-----------------------");
                     console.log(this);
                 }

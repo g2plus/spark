@@ -9,31 +9,37 @@
 </head>
 
 <body>
-    <button>start timer</button>
-    <button>stop timer</button>
-    <script>
-        let btn1 = document.querySelector("body button:nth-child(1)");
-        //alert(btn1);
-        let btn2 = document.querySelector("body button:nth-child(2)");
-        //alert(btn2);
-        var timer = null //null为对象的占位符号
-        btn1.onclick = function() {
-            timer = setInterval(callback, 1000);
-        }
-        btn2.onclick = function() {
-            clearInterval(timer);
-        }
+<button>init timer</button>
+<button>clear timer</button>
+<script>
+    let btn1 = document.querySelector("body button:nth-child(1)");
+    let btn2 = document.querySelector("body button:nth-child(2)");
 
-        function callback() {
-            console.log("it runs"); //一般采用这种模式，清晰
-        }
+    var timer = null
 
-        var fn = function() {
-            console.log("it runs");
-        }
+    btn1.onclick = function () {
+        timer = setInterval(callback, 1000);
+    }
+    btn2.onclick = function () {
+        clearInterval(timer);
+    }
 
-        var fun = Function("console.log('it runs')");
-    </script>
+    function callback() {
+        console.log(leftTime());
+    }
+
+    function leftTime() {
+        var nowTime = new Date();//获取当前时间
+        //创建日期对象
+        var endTime = new Date("2024-02-10 00:00:00");
+        var seconds = parseInt((endTime.getTime() - nowTime.getTime()) / 1000);//两个时间点的时间差(秒)
+        var d = parseInt(seconds / 3600 / 24);//得到天数
+        var h = parseInt(seconds / 3600 % 24);//小时
+        var m = parseInt(seconds / 60 % 60);//分钟
+        var s = parseInt(seconds % 60);//秒
+        return "距离春节还有" + d + "天" + h + "小时" + m + "分钟" + s + "秒";
+    }
+</script>
 </body>
 
 </html>

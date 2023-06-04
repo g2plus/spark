@@ -16,33 +16,33 @@
     <button>btn4</button>
     <script>
         var body = document.body;
-        alert(body);
+        console.log(body);
         var btn1 = body.children[0];
-        alert(btn1);
+        console.log(btn1);
         //传统方式只能绑定同一相同的事件，后面相同事件对之前相同的事件进行覆盖
         btn1.onclick = function() {
-            alert("click");
+            console.log("click");
         }
         btn1.onclick = function() {
-            alert("hello");
+            console.log("hello");
         }
 
         function fun() {
-            alert("在html标签中绑定事件");
+            console.log("在html标签中绑定事件");
         }
         var btn3 = body.children[2];
         //事件监听方式，同一事件，可以绑定多个function
         btn3.addEventListener("click", function() {
-            alert("see you later");
+            console.log("see you later");
         }, false);
         btn3.addEventListener("click", function() {
-            alert("see you");
+            console.log("see you");
         }, false);
         // var btn4 = body.children[3];
         // //使用attachEvent ie9之后不在支持
-        // alert(btn4 + "------");
+        // console.logbtn4 + "------");
         // btn4.attachEvent("onclick", function() {
-        //     alert("------------------");
+        //     console.log("------------------");
         // })
     </script>
 </body>

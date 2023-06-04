@@ -13,26 +13,26 @@
         function add(num1, num2) {
             return num1 + num2;
         }
-        var sum = add(400, 4);
+        let sum = add(400, 4);
         window.document.write(sum); //404
         window.document.write("<br>")
     </script>
 
-    <script type="text/javascript">
-        var add = new Function("num", " return num+200"); //此时Function 这种方法用的比较少
-        var sum = add(0);
-        window.document.write(sum); //200
-        window.document.write("<br>")
-    </script>
+<!--    <script type="text/javascript">-->
+<!--        var add = new Function("num", " return num+200"); //此时Function 这种方法用的比较少-->
+<!--        var sum = add(0);-->
+<!--        window.document.write(sum); //200-->
+<!--        window.document.write("<br>")-->
+<!--    </script>-->
 
-    <script type="text/javascript">
-        var add = function(num1, num2) {
-            return num1 + num2 + 200;
-        }
-        var sum = add(100, 200);
-        window.document.write(sum); //500
-        window.document.write("<br>")
-    </script>
+<!--    <script type="text/javascript">-->
+<!--        var add = function(num1, num2) {-->
+<!--            return num1 + num2 + 200;-->
+<!--        }-->
+<!--        var sum = add(100, 200);-->
+<!--        window.document.write(sum); //500-->
+<!--        window.document.write("<br>")-->
+<!--    </script>-->
 </body>
 
 </html>

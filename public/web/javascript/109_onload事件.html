@@ -7,25 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        window.addEventListener("load", function() {
-                let btn = document.querySelector("button");
-                btn.addEventListener("click", function() {
-                    alert("click");
-                })
+        window.addEventListener("load", function () {
+            let btn = document.querySelector("button");
+            btn.addEventListener("click", function () {
+                console.log("click");
             })
-            //整个网页加载完成后执行
-        window.addEventListener("load", function() {
-                alert("Hello world!");
-            })
-            //DOM内容加载完毕就可执行，不用加载图片，css，flash等就可用
-        document.addEventListener("DOMContentLoaded", function() {
-            alert("DOMContentLoaded");
+        })
+        //整个网页加载完成后执行
+        window.addEventListener("load", function () {
+            console.log("ALL DATA LOADED");
+        })
+        //DOM内容加载完毕就可执行，不用加载图片，css，flash等就可用
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("DOMContentLoaded");
         })
     </script>
 </head>
 
 <body>
-    <button>click</button>
+<img src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/55ef8b6d-ce52-4998-a3cc-e336bd7a4f50/width=1024/00895-894388517-polaroid%20photo,%20,%201girl,%20stylish%20outfit,%20fitted%20jeans,%20oversized%20jacket,%20fashionable%20accessories,%20(realistic%20detailed%20eyes,%20natu.jpeg">
+<button>click</button>
 </body>
 
 </html>

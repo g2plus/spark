@@ -16,7 +16,7 @@
         var btn1 = body.children[0];
         //传统方式进行事件的解绑
         btn1.onclick = function() {
-            alert("Hello world!");
+           console.log("Hello world!");
             this.onclick = null;
         }
         var btn2 = body.children[1];
@@ -24,7 +24,8 @@
         //使用监听方式下，如何进行事件解绑
         btn2.addEventListener("click", fun);//注意不用加()
         function fun() {
-            alert("Hello world!");
+            console.log("Hello world!");
+            //再次点击无效
             btn2.removeEventListener("click", fun);
         }
     </script>

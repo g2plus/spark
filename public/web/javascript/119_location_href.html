@@ -11,27 +11,27 @@
 <body>
     <button>获取href</button>
     <div></div>
-    <script>
-        var btn1 = document.querySelector("body button:nth-child(1)");
-        var div = document.querySelector("body div");
-        btn1.addEventListener("click", function() {
-            console.log(location.href);
-        })
-        var second = 5;
-        var timer = null;
-        countDown();
-        setInterval(countDown, 1000);
-
-        function countDown() {
-            if (second <= 0) {
-                clearInterval(timer);
-                location.href = "https://www.baidu.com";
-            } else {
-                div.innerHTML = second + "s后跳转到百度首页";
-            }
-            second--;
-        }
-    </script>
 </body>
+<script>
+    var btn1 = document.querySelector("body button:nth-child(1)");
+    var div = document.querySelector("body div");
+    btn1.addEventListener("click", function () {
+        console.log(location.href);
+    })
+    var second = 60;
+    var timer = null;
+    countDown();
+    setInterval(countDown, 1000);
+
+    function countDown() {
+        if (second <= 0) {
+            clearInterval(timer);
+            location.href = "https://www.baidu.com";
+        } else {
+            div.innerHTML = second + "s后跳转到百度首页";
+        }
+        second--;
+    }
+</script>
 
 </html>

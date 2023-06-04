@@ -40,31 +40,31 @@
         var body = document.body;
         const ul = document.querySelector("body ul");
         ul.onclick = function() {
-            alert("0");
+            console.log("0");
         }
         var li = ul.children[0];
         li.onclick = function() {
-            alert("1");
+            console.log("1");
         }
 
         //true 在捕获时生效。
         const ol = document.querySelector("body ol");
         ol.addEventListener("click", function() {
-            alert("father1");
+            console.log("father1");
         }, true);
         li2 = document.querySelector("body ol li");
         li2.addEventListener("click", function() {
-            alert("son1");
+            console.log("son1");
         }, true)
 
         //false 在冒泡时生效
         const ol2 = document.querySelector("body ol");
         ol.addEventListener("click", function() {
-            alert("father2");
+            console.log("father2");
         }, false);
         li3 = document.querySelector("body ol li");
         li3.addEventListener("click", function() {
-            alert("son2");
+            console.log("son2");
         }, false)
     </script>
 </body>

@@ -39,11 +39,11 @@
             //false在冒泡时生效(最底层开始执行)
         const ol = document.querySelector("body ol");
         ol.addEventListener("click", function() {
-            alert("father");
+            console.log("father");
         }, false);
         li = document.querySelector("body ol li");
         li.addEventListener("click", function(event) {
-            alert("son");
+            console.log("son");
             event.stopPropagation();
         }, false)
     </script>

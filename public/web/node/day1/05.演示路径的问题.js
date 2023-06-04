@@ -20,7 +20,7 @@ const fs = require('fs')
 // __dirname 表示当前文件所处的目录 nodejs定义的
 // console.log(__dirname)
 
-fs.readFile(__dirname + '/files/1.txt', 'utf8', function(err, dataStr) {
+fs.readFile(__dirname + '/files/5.txt', 'utf8', function(err, dataStr) {
     if (err) {
         return console.log('读取文件失败！' + err.message)
     }

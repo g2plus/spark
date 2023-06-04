@@ -27,13 +27,19 @@
         // 4. 加一个结束定时器的条件
         // 5. 注意此元素需要添加定位， 才能使用element.style.left
         // 6.缓动动画公式(目标位置-现在位置)/10
-        var timer = setInterval(function() {
-            if (div.offsetLeft >= 400) {
-                // 停止动画 本质是停止定时器
-                clearInterval(timer);
-            }
-            div.style.left = div.offsetLeft + 1 + 'px';
-        }, 30);
+        window.onload=function(){
+            var elementsByName = document.getElementsByTagName("div");
+            var div=elementsByName[0];
+            console.log(div);
+            let timer = setInterval(function() {
+                if (div.offsetLeft >= 400) {
+                    // 停止动画 本质是停止定时器
+                    clearInterval(timer);
+                }
+                div.style.left = div.offsetLeft + 1 + 'px';
+            }, 30);
+        }
+
     </script>
 </body>
 

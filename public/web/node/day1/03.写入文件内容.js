@@ -18,6 +18,8 @@ fs.writeFile('./files/3.txt', content, function(err) {
 
     if (err) {
         return console.log('文件写入失败！' + err.message)
+    }else{
+        return console.log("文件写入成功");
     }
 
     console.log('文件写入成功！')

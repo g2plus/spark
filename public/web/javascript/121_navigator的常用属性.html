@@ -23,7 +23,7 @@
                 isLB: /lbbrowser/.test(UserAgent), // 猎豹浏览器
                 isUc: /ucweb/.test(UserAgent), // UC浏览器
                 is360: /360se/.test(UserAgent), // 360浏览器
-                isBaidu: /bidubrowser/.test(UserAgent), // 百度浏览
+                isBaidu: /baidubrowser/.test(UserAgent), // 百度浏览
                 isSougou: /metasr/.test(UserAgent), // 搜狗浏览器
                 isChrome: /chrome/.test(UserAgent),
                 //Chrome浏览器
@@ -38,7 +38,7 @@
         if (getBrowserType(UserAgent).isChrome) {
             location.href = "https://www.baidu.com";
         }
-        alert(window.navigator.appVersion)
+        console.log(window.navigator.appVersion)
     </script>
 
 </body>

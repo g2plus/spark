@@ -43,15 +43,28 @@
     <script>
         //mouseover事件冒泡，mouseenter没有这个特点
         //mouseleave与mouseenter一样，不会冒泡
-        var mouseover = document.querySelector("#father");
-        mouseover.addEventListener("mouseover", function() {
-                console.log("Another me!");
-            })
-            // var mouseenter = document.querySelector("#father");
+        let ele1 = document.querySelector("#father");
+        let ele2 = document.querySelector("#son");
+        ele1.addEventListener("mouseover", function () {
+            console.log("mouseover-bubble");
+        })
+        ele2.addEventListener("mouseover", function () {
+            console.log("mouseover");
+        })
+        ele1.addEventListener("mouseenter", function () {
+            console.log("mouseenter")
+        })
+        ele2.addEventListener("mouseenter", function () {
+            console.log("mouseenter");
+        })
 
-        // mouseenter.addEventListener("mouseenter", function() {
-        //     console.log("another me!");
-        // })
+        ele1.addEventListener("mouseleave", function () {
+            console.log("mouseenter")
+        })
+        ele2.addEventListener("mouseleave", function () {
+            console.log("mouseenter");
+        })
+
     </script>
 </body>
 

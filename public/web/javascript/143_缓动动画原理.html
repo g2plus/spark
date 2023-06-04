@@ -41,7 +41,7 @@
             clearInterval(obj.timer);
             obj.timer = setInterval(function() {
                 // 步长值写到定时器的里面
-                var step = Math.ceil((target - obj.offsetLeft) / 10);
+                let step = Math.ceil((target - obj.offsetLeft) / 10);
                 if (obj.offsetLeft == target) {
                     // 停止动画 本质是停止定时器
                     clearInterval(obj.timer);
@@ -51,8 +51,8 @@
 
             }, 15);
         }
-        var span = document.querySelector('span');
-        var btn = document.querySelector('button');
+        let span = document.querySelector('span');
+        let btn = document.querySelector('button');
 
         btn.addEventListener('click', function() {
                 // 调用函数
