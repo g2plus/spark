@@ -1,6 +1,6 @@
 package com.cpc.multidbtx.mapper;
 
-import com.cpc.multidbtx.entity.AccountInfo;
+import com.cpc.multidbtx.domain.AccountInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.*;

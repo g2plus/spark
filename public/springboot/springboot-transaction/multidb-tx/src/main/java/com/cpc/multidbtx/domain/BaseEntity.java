@@ -1,4 +1,4 @@
-package com.cpc.multidbtx.entity;
+package com.cpc.multidbtx.domain;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;

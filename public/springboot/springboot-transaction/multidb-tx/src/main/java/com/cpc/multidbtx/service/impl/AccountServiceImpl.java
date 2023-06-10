@@ -1,7 +1,7 @@
 package com.cpc.multidbtx.service.impl;
 
 import com.cpc.multidbtx.config.DataSource;
-import com.cpc.multidbtx.entity.Account;
+import com.cpc.multidbtx.domain.Account;
 import com.cpc.multidbtx.mapper.AccountMapper;
 import com.cpc.multidbtx.service.AccountService;
 import lombok.extern.slf4j.Slf4j;

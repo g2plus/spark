@@ -1,6 +1,6 @@
 package com.cpc.multidbtx.service;
 
-import com.cpc.multidbtx.entity.Good;
+import com.cpc.multidbtx.domain.Good;
 
 import java.util.Map;
 

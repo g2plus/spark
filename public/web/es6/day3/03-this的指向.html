@@ -36,7 +36,7 @@
             console.log('绑定时间函数的this:' + this);
         };
         // 5. 定时器函数 this 指向的也是window
-        window.setTimeout(function() {
+        window.setInterval(function () {
             console.log('定时器的this:' + this);
         }, 1000);
         // 6. 立即执行函数 this还是指向window

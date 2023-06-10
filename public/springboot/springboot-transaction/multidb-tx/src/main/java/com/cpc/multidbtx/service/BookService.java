@@ -1,6 +1,6 @@
 package com.cpc.multidbtx.service;
 
-import com.cpc.multidbtx.entity.Book;
+import com.cpc.multidbtx.domain.Book;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 
 

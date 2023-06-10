@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 
+//简单连接配置
 var connection = mysql.createConnection({
     host: '114.132.210.77',
     user: 'root',
@@ -8,7 +9,7 @@ var connection = mysql.createConnection({
     database: 'remote'
 });
 
-
+//建立连接
 connection.connect();
 
 var sql = 'SELECT * FROM book';
@@ -28,4 +29,5 @@ connection.query(sql, function(err, result) {
     console.log(endTime - startTime);
 });
 
+//关闭连接
 connection.end();

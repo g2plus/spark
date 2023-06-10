@@ -2,7 +2,7 @@ package com.cpc.multidbtx.service.impl;
 
 import com.cpc.multidbtx.config.DataSource;
 import com.cpc.multidbtx.config.DynamicDataSource;
-import com.cpc.multidbtx.entity.AccountInfo;
+import com.cpc.multidbtx.domain.AccountInfo;
 import com.cpc.multidbtx.mapper.AccountInfoMapper;
 import com.cpc.multidbtx.service.AccountInfoService;
 import com.github.pagehelper.Page;

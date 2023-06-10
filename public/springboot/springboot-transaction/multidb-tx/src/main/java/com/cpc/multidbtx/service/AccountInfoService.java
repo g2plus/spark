@@ -1,7 +1,7 @@
 package com.cpc.multidbtx.service;
 
 
-import com.cpc.multidbtx.entity.AccountInfo;
+import com.cpc.multidbtx.domain.AccountInfo;
 import com.github.pagehelper.Page;
 
 

@@ -5,7 +5,7 @@
 <mapper namespace="com.cpc.multidbtx.mapper.GoodMapper">
 
     <!--Good-->
-    <resultMap id="baseGoodMap" type="com.cpc.multidbtx.entity.Good">
+    <resultMap id="baseGoodMap" type="com.cpc.multidbtx.domain.Good">
         <id property="goodId" column="good_id"/>
         <result property="goodName" column="good_name"/>
         <result property="total" column="total"/>

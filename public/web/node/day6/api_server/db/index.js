@@ -1,3 +1,4 @@
+//mysql的连接信息
 const mysql = require('mysql')
 
 const db = mysql.createPool({

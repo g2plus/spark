@@ -7,15 +7,19 @@ var ajaxResult = {
 }
 
 // 挂载路由
+//get
 app.get('/', (req, res) => {
     res.send('hello world.')
 })
+//post
 app.post('/', (req, res) => {
     res.send('Post Request.')
 })
+//delete
 app.delete("/", (req, res) => {
     res.send("Delete Request")
 })
+//put
 app.put("/", (req, res) => {
     res.send(ajaxResult)
 })

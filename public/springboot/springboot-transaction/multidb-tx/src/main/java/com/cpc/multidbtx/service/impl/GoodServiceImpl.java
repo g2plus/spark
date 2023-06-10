@@ -2,7 +2,7 @@ package com.cpc.multidbtx.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.cpc.multidbtx.config.DataSource;
-import com.cpc.multidbtx.entity.Good;
+import com.cpc.multidbtx.domain.Good;
 import com.cpc.multidbtx.mapper.GoodMapper;
 import com.cpc.multidbtx.service.GoodService;
 import lombok.extern.slf4j.Slf4j;

@@ -81,7 +81,7 @@
     </update>
 
 
-    <update id="updateC" parameterType="com.cpc.multidbtx.entity.Book">
+    <update id="updateC" parameterType="com.cpc.multidbtx.domain.Book">
         update book
         set book_id=#{bookId},
             book_name=#{bookName},

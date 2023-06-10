@@ -33,7 +33,7 @@ cpc:
     mybatis:
         location-pattern: classpath*:mapper/**/*Mapper.xml
         type-enums-package: com.cpc.multidbtx.enums
-        type-aliases-package: com.cpc.multidbtx.entity
+        type-aliases-package: com.cpc.multidbtx.domain
 
 table:
     config:

@@ -1,12 +1,11 @@
 package com.cpc.multidbtx.controller;
 
-import com.cpc.multidbtx.entity.Good2;
+import com.cpc.multidbtx.domain.Good2;
 import com.cpc.multidbtx.service.GoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sun.security.krb5.internal.crypto.dk.ArcFourCrypto;
 
 import java.util.ArrayList;
 import java.util.HashMap;

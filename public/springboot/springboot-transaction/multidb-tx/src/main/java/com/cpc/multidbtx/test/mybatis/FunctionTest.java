@@ -2,10 +2,11 @@ package com.cpc.multidbtx.test.mybatis;
 
 import com.cpc.multidbtx.Application;
 import com.cpc.multidbtx.config.DynamicDataSource;
-import com.cpc.multidbtx.entity.Account;
-import com.cpc.multidbtx.entity.Book;
-import com.cpc.multidbtx.entity.Good;
+import com.cpc.multidbtx.domain.Account;
+import com.cpc.multidbtx.domain.Book;
+import com.cpc.multidbtx.domain.Good;
 import com.cpc.multidbtx.enums.StateEnum;
+import com.cpc.multidbtx.mapper.BookMapper;
 import com.cpc.multidbtx.service.AccountService;
 import com.cpc.multidbtx.service.BookService;
 import com.cpc.multidbtx.service.GoodService;
@@ -21,6 +22,7 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -37,6 +39,10 @@ public class FunctionTest {
     @Autowired
     private GoodService goodService;
 
+
+    @Autowired
+    private BookMapper bookMapper;
+
     /**
      * 测试多线程事务.
      *
@@ -45,7 +51,7 @@ public class FunctionTest {
     @Test
     public void test1() throws InterruptedException {
         long begin = System.currentTimeMillis();
-        int size = 1000000;
+        int size = 100;
         List<Book> bookList = new ArrayList<Book>(size);
         for (long i = 0; i < size; i++) {
             Book book = new Book();
@@ -55,7 +61,8 @@ public class FunctionTest {
             bookList.add(book);
         }
         try {
-            bookService.saveThreads(bookList, 1);
+            DynamicDataSource.setDataSource("default");
+            bookMapper.saveBatch(bookList);
             long end = System.currentTimeMillis();
             System.out.println("添加成功,耗时" + (end - begin) + "ms");
         } catch (Exception e) {

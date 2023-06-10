@@ -1,7 +1,7 @@
 package com.cpc.multidbtx.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cpc.multidbtx.entity.Account;
+import com.cpc.multidbtx.domain.Account;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

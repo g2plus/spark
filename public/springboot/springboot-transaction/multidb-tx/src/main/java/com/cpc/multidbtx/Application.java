@@ -1,7 +1,6 @@
 package com.cpc.multidbtx;
 
 import com.cpc.multidbtx.config.MapperScanCompoent;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;

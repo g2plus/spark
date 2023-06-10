@@ -1,6 +1,6 @@
 package com.cpc.multidbtx.mapper;
 
-import com.cpc.multidbtx.entity.Good;
+import com.cpc.multidbtx.domain.Good;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

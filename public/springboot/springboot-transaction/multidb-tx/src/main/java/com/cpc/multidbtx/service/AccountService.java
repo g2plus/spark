@@ -1,6 +1,6 @@
 package com.cpc.multidbtx.service;
 
-import com.cpc.multidbtx.entity.Account;
+import com.cpc.multidbtx.domain.Account;
 
 public interface AccountService {
 

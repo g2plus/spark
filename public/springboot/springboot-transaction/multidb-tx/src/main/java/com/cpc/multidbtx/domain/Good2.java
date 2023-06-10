@@ -1,4 +1,4 @@
-package com.cpc.multidbtx.entity;
+package com.cpc.multidbtx.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

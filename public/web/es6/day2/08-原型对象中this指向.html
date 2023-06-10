@@ -14,8 +14,9 @@
             this.uname = uname;
             this.age = age;
         }
+
         var that;
-        Star.prototype.sing = function() {
+        Star.prototype.sing = function () {
             console.log('我会唱歌');
             that = this;
         }
@@ -24,6 +25,8 @@
         ldh.sing();
         // 2.原型对象函数里面的this 指向的是 实例对象 ldh
         console.log(that === ldh); //true
+        console.log(this === ldh) //false
+        console.log(this);
     </script>
 </body>
 

@@ -23,3 +23,11 @@
 require('./03.自定义模块')
 require('./03.自定义模块')
 require('./03.自定义模块')
+
+function hello(msg) {
+    console.log("Hello world!"+msg);
+}
+
+module.exports = {
+    hello
+}

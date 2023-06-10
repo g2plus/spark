@@ -1,4 +1,4 @@
-package com.cpc.multidbtx.entity;
+package com.cpc.multidbtx.domain;
 
 import com.cpc.multidbtx.enums.StateEnum;
 import com.baomidou.mybatisplus.annotation.IdType;

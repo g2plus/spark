@@ -1,7 +1,7 @@
 package com.cpc.multidbtx.test.activiti;
 
 import com.cpc.multidbtx.Application;
-import com.cpc.multidbtx.entity.Evection;
+import com.cpc.multidbtx.domain.Evection;
 import org.activiti.engine.*;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.task.Task;
@@ -9,8 +9,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.HashMap;

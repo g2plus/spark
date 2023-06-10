@@ -1,5 +1,5 @@
 
-package com.cpc.multidbtx.entity;
+package com.cpc.multidbtx.domain;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;

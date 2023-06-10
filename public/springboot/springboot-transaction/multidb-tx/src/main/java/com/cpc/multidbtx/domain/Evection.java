@@ -1,4 +1,4 @@
-package com.cpc.multidbtx.entity;
+package com.cpc.multidbtx.domain;
 
 import java.io.Serializable;
 import java.util.Date;

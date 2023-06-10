@@ -20,7 +20,7 @@ module.exports = {
                 // 查询数据成功
                 // 注意：如果执行的是 select 查询语句，则执行的结果是数组
             console.log(results);
-            res.send(results);
+            res.send({"code": 200, "message": "success", "data": results});
         })
     },
     test2(req, res) {

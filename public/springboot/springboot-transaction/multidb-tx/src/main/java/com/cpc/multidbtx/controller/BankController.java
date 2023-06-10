@@ -3,8 +3,8 @@ package com.cpc.multidbtx.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.cpc.multidbtx.config.DynamicDataSource;
-import com.cpc.multidbtx.entity.AccountInfo;
-import com.cpc.multidbtx.entity.Book;
+import com.cpc.multidbtx.domain.AccountInfo;
+import com.cpc.multidbtx.domain.Book;
 import com.cpc.multidbtx.service.AccountInfoService;
 import com.cpc.multidbtx.service.BookService;
 import com.github.pagehelper.Page;

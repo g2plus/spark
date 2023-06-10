@@ -1,6 +1,6 @@
 package com.cpc.multidbtx.mapper;
 
-import com.cpc.multidbtx.entity.Book;
+import com.cpc.multidbtx.domain.Book;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

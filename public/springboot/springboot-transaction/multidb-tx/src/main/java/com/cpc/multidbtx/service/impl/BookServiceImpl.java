@@ -3,7 +3,7 @@ package com.cpc.multidbtx.service.impl;
 import com.cpc.multidbtx.config.DataSource;
 import com.cpc.multidbtx.config.ExecutorConfig;
 import com.cpc.multidbtx.config.SqlContext;
-import com.cpc.multidbtx.entity.Book;
+import com.cpc.multidbtx.domain.Book;
 
 import com.cpc.multidbtx.mapper.BookMapper;
 import com.cpc.multidbtx.service.BookService;
