@@ -2,8 +2,7 @@
   <div>
     <input type="text" v-model.number="count" />
     <p>{{ count }} 乘以 2 的值为：{{ plus }}</p>
-    <p>{{ count }} 乘以 2 的值为：{{ plus }}</p>
-    <p>{{ count }} 乘以 2 的值为：{{ plus }}</p>
+    <p>{{ count }} 乘以 2 的值为：{{ count*2 }}</p>
   </div>
 </template>
 

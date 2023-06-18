@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>app 根组件</h1>
-    <hr />
-
-    <my-counter @countChange="getCount"></my-counter>
+    <h1>app根组件</h1>
+    <hr/>
+    <!--调用自定义事件-->
+    <my-counter @countAdd="getCount"></my-counter>
   </div>
 </template>
 

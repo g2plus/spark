@@ -4,7 +4,7 @@
     <hr />
 
     <!-- <my-count count="abc" :state="3"></my-count> -->
-    <my-count :count="99" :state="true" info="abc" type="success"></my-count>
+    <my-count :state="true" info="abc" type="success"></my-count>
 
   </div>
 </template>

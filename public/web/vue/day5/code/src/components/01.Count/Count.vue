@@ -1,7 +1,9 @@
 <template>
   <div>
-    <p>数量：{{ count }}</p>
-    <p>状态：{{ state }}</p>
+    <p>数量:{{ count }}</p>
+    <p>状态:{{ state }}</p>
+    <p>信息:{{ info }}</p>
+    <p>类别:{{ type }}</p>
   </div>
 </template>
 
@@ -12,7 +14,7 @@ export default {
   props: {
     count: {
       type: Number,
-      required: true,
+      required: false,
       default: 100
     },
     state: Boolean,
