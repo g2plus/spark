@@ -7,10 +7,9 @@ import {createApp} from 'vue'
 //测试props
 //import App from './components/04.props/App.vue'
 //测试style与class的使用
-import App from './components/05.class&style/App.vue'
-
+//import App from './components/05.class&style/App.vue'
 //测试全局组件
-//import App from './components/App.vue'
+import App from './components/App.vue'
 // 1. 导入需要被全局注册的组件
 import Swiper from './components/01.globalReg/Swiper.vue'
 import Test from './components/01.globalReg/Test.vue'

@@ -10,9 +10,6 @@ export function show() {
     console.log("Hello!")
 }
 
-// export default {
-
-// }
 //默认导出，只能使用导出一次
 export default {
     n1,

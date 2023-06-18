@@ -10,6 +10,7 @@
     <script src="js/jquery-1.12.4.js"></script>
     <script>
         $(function () {
+            debugger
             Vue.component('todo-item', {
                 props: ['todo'], //属性绑定item
                 template: '<li>{{todo.id}}-----{{ todo.text }}</li>'

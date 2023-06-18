@@ -14,6 +14,7 @@
         //use {{}},and put the variable inside it, then the vue.js will parse it.
         $(function () {
             //create an Vue Obj
+            debugger
             var app = new Vue({
                 //announce whilde element is binded for viewmodel
                 el: '#app',
@@ -21,7 +22,11 @@
                     message: 'Hello Vue!'
                 }
             })
-            alert(app.message);
+            console.log(app);
+            console.log(app.$data.message);
+            console.log(app.message);
+            console.log(app.$data.message == app.message);
+            console.log(app._data.message == app.message);
         })
     </script>
 </head>

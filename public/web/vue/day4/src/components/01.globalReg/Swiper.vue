@@ -1,5 +1,5 @@
 <template>
-  <h3>Swiper 轮播图组件</h3>
+  <h3>Swiper轮播图组件</h3>
 </template>
 
 <script>

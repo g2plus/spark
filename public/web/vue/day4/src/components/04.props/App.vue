@@ -16,7 +16,7 @@ export default {
       info: {
         title: '从你的全世界路过',
         author: '张嘉佳',
-        publishTime:'2016'
+        publishTime:'2016-06-16 09:00:00'
       },
     }
   },

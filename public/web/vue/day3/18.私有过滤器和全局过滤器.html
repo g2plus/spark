@@ -31,7 +31,7 @@
             message: 'hello vue.js',
             info: 'title info',
         },
-        // 私有过滤器，只能被当前 vm 所控制的区域所使用
+        // 私有过滤器，只能被当前 vm 所控制的区域所使用 私有化过滤器与全局过滤器重名，使用个性化过滤器
         filters: {
             capitalize(str) {
                 return str.charAt(0).toUpperCase() + str.slice(1)

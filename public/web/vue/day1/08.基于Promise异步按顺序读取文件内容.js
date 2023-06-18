@@ -2,7 +2,7 @@ import thenFs from 'then-fs'
 
 //异步读取文件，没有读取到的文件会被catch捕获
 thenFs
-    .readFile('./files/11.txt', 'utf8')
+    .readFile('./files/戴望舒.txt', 'utf8')
     .catch((err) => {
         console.log(err.message)
     })

@@ -1,5 +1,5 @@
 <template>
-  <p>Search 搜索组件</p>
+  <p>Search搜索组件</p>
 </template>
 
 <script>

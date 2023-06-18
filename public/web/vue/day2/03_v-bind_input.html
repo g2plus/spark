@@ -10,6 +10,7 @@
     <script src="js/jquery-1.12.4.js"></script>
     <script>
         $(function () {
+            debugger
             var app = new Vue({
                 el: "#app",
                 data: {
@@ -17,8 +18,9 @@
                 }
             })
             //use this to get data obj
-            alert(app.$data);
-            alert(typeof app.$data.message);
+            console.log(app);
+            console.log(app.$data);
+            console.log(typeof app.$data.message);
         })
     </script>
 </head>

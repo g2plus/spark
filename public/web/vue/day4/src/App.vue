@@ -38,7 +38,7 @@ export default {
 
 <style lang="less">
 h1 {
-  color: red;
+  color: purple;
 
   i {
     color: blue;

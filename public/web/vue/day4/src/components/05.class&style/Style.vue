@@ -35,7 +35,7 @@ export default {
       // 文字的大小
       fntSize: 18,
       // 背景颜色
-      backgroundColor: 'blue',
+      backgroundColor: 'pink',
     }
   },
 }

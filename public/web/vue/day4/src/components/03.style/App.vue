@@ -24,7 +24,7 @@ export default {
 
 <style lang="less" scoped>
 p {
-  color: red;
+  color: purple;
 }
 
 // /deep/ .title {
