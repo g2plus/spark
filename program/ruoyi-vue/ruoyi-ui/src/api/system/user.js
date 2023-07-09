@@ -1,8 +1,9 @@
 import request from '@/utils/request'
-import { parseStrEmpty } from "@/utils/ruoyi";
+import {parseStrEmpty} from "@/utils/ruoyi";
 
 // 查询用户列表
 export function listUser(query) {
+  debugger
   return request({
     url: '/system/user/list',
     method: 'get',

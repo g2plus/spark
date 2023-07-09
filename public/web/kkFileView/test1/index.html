@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-base64@3.6.0/base64.min.js"></script>
+</head>
+<body>
+<div>
+    <button id="onlineView">查看附件</button>
+</div>
+</body>
+<script>
+    window.onload = function () {
+        let btn = document.getElementById("onlineView");
+        btn.onclick = function () {
+            let previewUrl = 'http://114.132.210.77:9000/ruoyi/2023/07/01/c8ae5dae8dd94bcb8d0bb09114a576c3.jpeg'; //要预览文件的访问地址
+            window.open('http://127.0.0.1:8012/onlinePreview?url=' + encodeURIComponent(Base64.encode(previewUrl)));
+        }
+
+    }
+</script>
+</html>

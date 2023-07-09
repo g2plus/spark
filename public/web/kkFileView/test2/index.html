@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-base64@3.6.0/base64.min.js"></script>
+</head>
+<body>
+<div>
+    <button id="onlineView">查看附件</button>
+</div>
+</body>
+<script>
+    window.onload = function () {
+        let btn = document.getElementById("onlineView");
+        btn.onclick = function () {
+            let originUrl = "http://127.0.0.1:8081/filedownload?fileId=c3394d5a-336a-4270-b99d-5f7479655276"; //要预览文件的访问地址
+            let previewUrl = originUrl + '&fullfilename=deploy.pdf'
+            window.open('http://127.0.0.1:8012/onlinePreview?url=' + encodeURIComponent(Base64.encode(previewUrl)));
+        }
+
+    }
+</script>
+</html>
